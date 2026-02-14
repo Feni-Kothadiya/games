@@ -1,0 +1,527 @@
+
+@media (max-width:576px) {
+    .app-wrapper-container,
+    .redirection-strips,
+    .coins-strip-background,
+    .redirection-strip,
+    .recent-winner-section .tab-content .winner-list-ul .your-rank {
+        max-width: 100%;
+    }
+    .featuredimage-section {
+        padding:0 0 15px;
+    }
+}
+
+@media (min-width:320px) {
+    .gameplaynow .score-screen-content h4 {
+        padding: 0 0;
+    }
+}
+
+@media (max-width:359px) {
+    .paragraph-1-center {
+        margin-top: 0;
+    }
+    .paragraph-2-center {
+        margin-top: 20px;
+    }
+    .users-datas-counter h4 {
+        font-size: 15px;
+        padding: 0;
+    }
+    .modal-dialog {
+        max-width: 100%;
+        margin: 0 auto;
+        width: calc(100% - 18px);
+    }
+    .head-section img {
+        width: 115px;
+    }
+    .head-section h1 {
+        font-size: 22px;
+    }
+    .playgames-wincoins h2 {
+        font-size: 15px;
+    }
+    .playgames-wincoins img {
+        max-width: 50px;
+    }
+    .top-games-section h2 {
+        font-size: 24px;
+        margin: 0 0 18px;
+    }
+    /* .top-games-section .card-box .featured-image {
+        height: 75px;
+    } */
+    .top-games-section .card-box .content h4 {
+        font-size: 11px;
+        margin: 0 0 2px;
+    }
+    .gameplaynow .score-screen-head h3 {
+        font-size: 20px;
+    }
+    .gameplaynow .score-screen-head h3 img {
+        width: 22px;
+    }
+    .top-games-section .card-box .content p {
+        font-size: 10px;
+    }
+    .top-games-section .card-box .content p img {
+        width: 11px;
+    }
+    .users-datas-counter ul li h2 {
+        font-size: 20px;
+    }
+    .users-datas-counter ul li h4 {
+        font-size: 11px;
+    }
+    .coins-strip-background {
+        margin: 10px 0 0;
+    }
+    .contain {
+        padding-left: 26px;
+    }
+    .pagination-and-skip a {
+        font-size: 13px;
+        margin: 0 0 0 8px;
+    }
+
+    /**** Dashboard Pre Login Style ****/
+    .tabs-section .nav-tabs .nav-link {
+        padding: 4px 2px;
+        font-size: 10px;
+        letter-spacing: -0.3px;
+    }
+    .tabs-section ul .external-plus {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        top: 1px;
+    }
+    .tabs-section ul .external-plus a {
+        line-height: 14px;
+    }
+    .tabs-section .tab-content .tab-pane .featured-image {
+        height: 150px;
+    }
+    .tabs-section .tab-content .tab-pane .featured-image .active-users {
+        font-size: 12px;
+    }
+    .tabs-section .tab-content .tab-pane h4 {
+        font-size: 15px;
+    }
+    .tabs-section .tab-content .tab-pane h4 span {
+        font-size: 20px;
+    }
+    .tabs-section .tab-content .tab-pane .play-now-btn {
+        font-size: 16px;
+        line-height: 45px;
+        min-width: 165px;
+        margin: 10px auto 15px;
+    }
+    .tabs-section .tab-content .tab-pane p {
+        font-size: 14px;
+    }
+    .top-games-section h2 {
+        font-size: 22px;
+        margin: 0 0 10px;
+    }
+    .top-games-active-users h3 {
+        font-size: 14px;
+    }
+    .top-games-active-users .card-box .content h5 span {
+        width: 7px;
+        height: 7px;
+        margin: 2px 3px 0 0;
+    }
+    footer .social-icons {
+        padding: 0 0;
+    }
+    footer .privacy-text a, footer .terms-text a {
+        font-size: 10px;
+        display: inline-block;
+        line-height: 14px;
+    }
+    footer .privacy-text {
+        padding-right: 8px;
+    }
+    footer .terms-text {
+        padding-left: 8px;
+    }
+
+    /********* Start Game Screen Login *********/
+
+    .gameplaynow .userplaying-totalprize h4 {
+        font-size: 12px;
+    }
+    /* .gameplaynow .userplaying-totalprize h2 {
+        font-size: 18px;
+    } */
+    .gameplaynow .userplaying-totalprize h2 img {
+        width: 16px;
+    }
+    .gameplaynow .userplaying-totalprize .image-outer {
+        max-width: 75px;
+        height: 75px;
+    }
+    .gameplaynow .userplaying-totalprize {
+        padding: 20px 0 15px;
+    }
+    .gameplaynow .maincontent .play-now-btn {
+        font-size: 16px;
+        padding: 0 15px;
+        line-height: 42px;
+        min-width: 172px;
+    }
+
+    /***** Registration Screen *****/
+
+    .registration-screen .logo {
+        width: 80px;
+    }
+    .registration-screen h1 {
+        font-size: 26px;
+        margin: 0 0 15px;
+    }
+    .registration-screen p {
+        font-size: 12px;
+    }
+    .registration-screen .sign-with-google, .registration-screen .sign-with-facebook {
+        font-size: 16px;
+        max-width: 250px;
+    }
+    .registration-screen .sign-with-facebook {
+        margin: 0 auto 30px;
+    }
+    .registration-screen .sign-with-google img, .registration-screen .sign-with-facebook img {
+        width: 30px;
+        margin-right: 4%;
+    }
+    .registration-screen h3 {
+        font-size: 18px;
+        margin: 0 0 40px;
+    }
+    .registration-screen .white-space {
+        height: 10px;
+    }
+    .registration-screen .sign-with-google a, .registration-screen .sign-with-facebook a {
+        padding: 12px 20px;
+        line-height: 31px;
+    }
+    .systemlogin-screen h1 {
+        font-size: 20px;
+        margin: 0 0 15px;
+    }
+    .systemlogin-screen h3 {
+        font-size: 16px;
+        margin: 0 0 25px;
+    }
+    .systemlogin-screen .username-password-fields input {
+        line-height: 48px;
+        max-width: 280px;
+    }
+    /****** Dashboard Post Login *******/
+
+    .hamburger-logo img {
+        width: 18px;
+        margin: 2px 0% 0 0;
+    }
+    .hamburger-logo h1 {
+        font-size: 20px;
+        margin: 0 0 0 8%;
+        float: left;
+    }
+    header .logo-col {
+        padding-right: 8px;
+        flex: 0 0 31.333333%;
+        max-width: 31.333333%;
+    }
+    header .right-cols {
+        padding-right: 7px;
+    }
+    header .coins-wallet {
+        margin-left: 5%;
+    }
+    .recent-winner-btn a {
+        font-size: 10px;
+        padding: 5px 8px;
+        width: 100px;
+    }
+    .coins-wallet span {
+        width: 28px;
+        height: 28px;
+        margin: 2px 5px 0 0;
+        padding: 0;
+    }
+    .coins-wallet span img {
+        width: 14px;
+        margin: 3px 0 2px;
+    }
+    .coins-wallet small {
+        font-size: 10px;
+        line-height: 19px;
+        float: left;
+    }
+    .coins-wallet h6 {
+        font-size: 14px;
+        line-height: 10px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .image-area {
+        max-width: 55px;
+        height: 55px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .content h4 {
+        font-size: 13px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .content h3 {
+        font-size: 14px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .content h3 img {
+        width: 15px;
+        margin: 0 2px 0 0;
+    }
+    .allgames_mygames_tabs .cards-group .main-content a {
+        padding: 0 8px;
+        font-size: 10px;
+        line-height: 34px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .left-cols {
+        flex: 0 0 60.666667%;
+        max-width: 60.666667%;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .right-cols {
+        flex: 0 0 38.333333%;
+        max-width: 38.333333%;
+        text-align: right;
+        padding-left: 0;
+    }
+    .allgames_mygames_tabs .nav-tabs .nav-item .nav-link {
+        font-size: 15px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .right-cols h6 {
+        font-size: 9px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .right-cols h6 span {
+        margin: -4px 0 0 2px;
+        font-size: 13px;
+    }
+    .allgames_mygames_tabs .cards-group .head-texts h6 {
+        font-size: 11px;
+    }
+    .allgames_mygames_tabs .cards-group .head-texts p,
+    .allgames_mygames_tabs .cards-group .contest-running h6 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .allgames_mygames_tabs .cards-group .contest-running h6 span {
+        font-size: 16px;
+    }
+    .contest-post-login .repeater {
+        padding: 8px;
+    }
+    .contest-post-login .mid-cols small {
+        font-size: 9px;
+    }
+    .contest-post-login .mid-cols h6 {
+        font-size: 13px;
+    }
+    .contest-post-login .right-cols .play-btn {
+        min-width: 83px;
+        font-size: 10px;
+    }
+    .contest-post-login .practice-game .leftarrow img {
+        width: 11px;
+        margin: 20px 10px 20px 0;
+    }
+    .contest-post-login .practice-game .icon-outer {
+        width: 55px;
+        height: 58px;
+    }
+    .contest-post-login .practice-game h4 {
+        font-size: 11px;
+    }
+    .gameplay-startpost-login .left-cols .content h4 {
+        font-size: 14px;
+    }
+    .gameplay-startpost-login .practice-game .leftarrow img {
+        width: 12px;
+        margin: 18px 8px 18px 0;
+    }
+    .gameplay-startpost-login .left-cols .content {
+        padding: 8px 0 8px 14px;
+    }
+    .gameplay-startpost-login .right-cols small {
+        font-size: 11px;
+    }
+    .gameplay-startpost-login .right-cols h6 {
+        font-size: 13px;
+    }
+    .gameplay-startpost-login .repeater .price-mondey-card .image-outer {
+        width: 55px;
+        height: 55px;
+    }
+    .gameplay-startpost-login .repeater .price-mondey-card .content {
+        padding: 0 0 0 64px;
+    }
+    .gameplay-startpost-login .repeater .price-mondey-card .content h5 {
+        font-size: 13px;
+    }
+    .gameplay-startpost-login .repeater .price-mondey-card .content h4 {
+        font-size: 16px;
+        margin: 1px 0 0;
+    }
+    .gameplay-startpost-login .repeater .price-mondey-card .content h4 img {
+        width: 16px;
+    }
+    .gameplay-startpost-login .repeater .price-mondey-card .content a {
+        font-size: 9px;
+    }
+    .gameplay-startpost-login .repeater .start-game-btn a {
+        font-size: 13px;
+    }
+    .gameplay-startpost-login .repeater .price-mondey-card h6 {
+        font-size: 8px;
+    }
+    .rankbreakup-modal .modal-header p {
+        font-size: 12px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .content h4 {
+        font-size: 14px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .content h3 {
+        font-size: 15px;
+    }
+    .allgames_mygames_tabs .cards-group .main-content .content h3 img {
+        width: 15px;
+    }
+    .rank-every-gameplay .left-cols .content {
+        padding: 12px 0 12px 58px;
+    }
+    .rank-every-gameplay .left-cols .content .image-outer {
+        max-width: 38px;
+        height: 38px;
+        top: 9px;
+        left: 12px;
+    }
+    .backpage-arrow-name .logo-col {
+        max-width: 50%;
+        width: 100%;
+        flex: 0 0 50%;
+    }
+    .backpage-arrow-name .hamburger-logo h1 {
+        font-size: 13px;
+    }
+    .recent-winner-section .recent-winner-tabs .tab-content .games-list span {
+        height: 58px;
+    }
+    .logout-content .success-message {
+        font-size: 15px;
+        margin: 0 0 15px;
+    }
+    .logout-content p {
+        margin: 0 0 20px;
+        font-size: 16px;
+    }
+    .logout-content a {
+        font-size: 16px;
+        min-width: 250px;
+    }
+    .my-games-section .live-contest-strip .top-ten-played p {
+        font-size: 10px;
+    }
+    .my-games-section .live-contest-strip .top-ten-played p img {
+        width: 15px;
+    }
+    .my-games-section .live-contest-strip h6 {
+        font-size: 12px;
+    }
+    .my-games-section .live-contest-strip .users-active {
+        font-size: 10px;
+    }
+    .my-games-section .live-contest-strip .users-active .active-sign {
+        width: 6px;
+        height: 6px;
+    }
+    .my-games-section .card-box .title-and-times .left-cols {
+        flex: 0 0 62.333333%;
+        max-width: 62.333333%;
+    }
+    .my-games-section .card-box .title-and-times .right-cols {
+        padding-left: 8px;
+        flex: 0 0 36.666667%;
+        max-width: 36.666667%;
+    }
+    .my-games-section .card-box .title-and-times .image-outer {
+        width: 45px;
+        height: 45px;
+    }
+    .my-games-section .card-box .title-and-times .content h6 {
+        font-size: 12px;
+    }
+    .my-games-section .card-box .title-and-times .content {
+        padding: 8px 0 7px 30%;
+    }
+    .my-games-section .card-box .title-and-times .content small {
+        font-size: 8px;
+    }
+    .my-games-section .card-box .title-and-times ul li span {
+        font-size: 9px;
+    }
+    .my-games-section .card-box .title-and-times ul li h6 {
+        font-size: 11px;
+    }
+    .my-games-section .card-box .bottom-content .play-btn {
+        font-size: 9px;
+        padding: 0 9px;
+        border: 1px solid #5758e8;
+        line-height: 32px;
+    }
+    .my-games-section .card-box .bottom-content a {
+        font-size: 10px;
+    }
+    .my-games-section .card-box .bottom-content span {
+        font-size: 10px;
+    }
+    .my-games-section .card-box .bottom-content h6 {
+        font-size: 13px;
+    }
+    .my-games-section .card-box .bottom-content h6 img {
+        width: 13px;
+    }
+    .my-games-section .card-box .won-content h6 br {
+        display: block;
+    }
+    .my-games-section .card-box .won-content h6 {
+        text-align: left;
+        padding-left: 32px;
+    }
+    .my-games-section .card-box .won-content span {
+        top: 1px;
+    }
+    
+    .contact-us-page p {
+        font-size: 18px;
+    }
+    .output-page-content .confirm-btn {
+        font-size: 13px;
+    }
+    .partnerus-page .text-reactout {
+        font-size: 13px;
+    }
+    .partnerus-page p {
+        font-size: 12px;
+    }
+    .gameplaynow .userplaying-totalprize h2 {
+        font-size: 19px;
+    }
+}
+
+@-moz-document url-prefix() { 
+    @media (max-width:359px) {
+        header .logo-col {
+            padding-right: 8px;
+            flex: 0 0 30.333333%;
+            max-width: 30.333333%;
+        }
+    }
+}

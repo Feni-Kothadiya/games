@@ -1,0 +1,26 @@
+<% if (games) { %>
+    <% games.forEach(function(item,index) { %>
+        <a href=<%=item.pagelink.replace(/ /g,'_') %>
+            lang="en"
+            class="hover:-translate-y group relative
+            aspect-square
+            h-full min-h-[94px] w-full cursor-pointer
+            rounded-xl
+            text-center font-medium tracking-wide
+            transition-transform delay-100 duration-300
+            ease-in-expo hover:scale-[1.04]">
+            <span
+                class="pointer-events-none absolute inset-0 z-20 rounded-xl bg-gradient-to-t from-[#000000] to-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
+            <div class="relative aspect-square h-full w-full rounded-xl">
+                <img src=<%=item.thumb %> alt=<%= item.pagelink %> width="350"
+                    height="350" title=<%= item.pagelink %> content=<%= item.pagelink %>
+                            class="h-auto w-auto
+                            rounded-xl">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 right-0 z-30 p-[6px] text-center text-sm font-semibold text-white antialiased opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <%= item.name %>
+            </div>
+        </a>
+        <% }); %>
+ <% } %>

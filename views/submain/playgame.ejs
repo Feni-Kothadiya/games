@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/public/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>
+        <%= game.title %>
+    </title>
+    <meta property="canonical" content=<%=url %> />
+    <meta rel="canonical" content=<%=url %> />
+    <meta data-react-helmet="true" name="keywords" content="Free Online Games,Tap Tap">
+    <meta data-react-helmet="true" name="description"
+        content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
+    <meta data-react-helmet="true" property="og:title" content="Tap Tap Games - Play Online Games for Free!">
+    <meta data-react-helmet="true" property="og:url" content="https://taptapgames.fun/">
+    <meta data-react-helmet="true" property="og:description"
+        content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Taptapgames.fun">
+    <meta name="twitter:title" content="Tap Tap Games - Play Online for Free!">
+    <meta name="twitter:description"
+        content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
+    <meta name="twitter:image" content="https://taptapgames.fun/images/taptap_meta.png">
+    <%- include('../partials/head') %>
+    <%- include('topadsscript') %>
+    <% if(isMobile){ %>
+        <script>
+            googletag.cmd.push(() => {
+                googletag
+                .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid',[300, 100], [300, 250], [300, 50], [300, 31], [300, 75]], 'fix-1')
+                .addService(googletag.pubads());
+
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+            });
+        </script>
+    <% } %>
+    <% if(!isMobile){ %>
+        <script>
+            googletag.cmd.push(() => {
+                googletag
+                .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid'], 'fix-1')
+                .addService(googletag.pubads());
+
+                googletag
+                    .defineSlot('/23149964868/taptapgames_ad1_top_728x90', [[300, 100], [300, 50], [300, 31], [300, 75]], 'fix-2')
+                    .addService(googletag.pubads());
+
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+            });
+        </script>
+    <% } %>
+
+    <script>
+        googletag.cmd.push(() => {
+
+                googletag
+                    .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid',[300, 100], [300, 250], [300, 50], [300, 31], [300, 75]], "gpt-ad-5")
+                    .addService(googletag.pubads());
+
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+        });
+ 
+</script>
+
+</head>
+
+<body id="page-top">
+    <span class="search-trans-bg"></span>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BGZ3CVT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <iframe id="mobile-gameframe" class="gameframe"
+        allow="autoplay; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope"
+        scrolling="no"></iframe>
+    <div class="relative px-4 pt-4">
+        <div style="min-height:calc(100svh - 84px);padding-bottom:1rem">
+            <div class="homepage-root">
+                <div class="homepage">
+                    <%- include('../partials/nav') %>
+                        <div class="game-container flex justify-center">
+                            <div class="game-iframe-container">
+
+                                <img id="img_thumb" src=<%=game.banner %>>
+                                <a id="play_game_link" onclick="return openGamePage(this);" href=<%=game.gamelink %>
+                                    class="PlayBtn">
+                                    Play Game
+                                </a>
+                                <iframe id="desktop-gameframe" class="gameframe"
+                                    allow="fullscreen;autoplay; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope"
+                                    scrolling="no"></iframe>
+                            </div>
+                            <div class="back-div" style="--mobileNavDragY: 24px;">
+                                <div class="back-icons-div"><svg width="23" height="23" viewBox="0 0 52 52" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M37.8792 26.0001C37.8792 24.8783 36.9699 23.9689 35.848 23.9689H21.1442L25.3526 19.8646C26.1557 19.0814 26.1718 17.7954 25.3886 16.9922C24.6052 16.1891 23.3192 16.1729 22.5162 16.9563L14.7338 24.5459C14.3418 24.9282 14.1207 25.4526 14.1207 26.0001C14.1207 26.5476 14.3418 27.072 14.7338 27.4543L22.5162 35.0439C22.9113 35.4292 23.4229 35.621 23.9342 35.621C24.4626 35.621 24.9906 35.4161 25.3886 35.008C26.1718 34.2048 26.1557 32.9189 25.3526 32.1356L21.1442 28.0314H35.848C36.9699 28.0314 37.8792 27.122 37.8792 26.0001Z"
+                                            fill="white" />
+                                        <path
+                                            d="M44.3848 7.61516C39.474 2.70451 32.9448 0 26 0C19.0552 0 12.526 2.70451 7.61516 7.61516C2.70451 12.526 0 19.0552 0 26C0 32.9448 2.70451 39.474 7.61516 44.3847C12.526 49.2955 19.0552 52 26 52C31.1384 52 36.1076 50.503 40.3707 47.6707C41.3051 47.0499 41.5594 45.7892 40.9385 44.8548C40.3179 43.9204 39.057 43.666 38.1226 44.2869C34.5279 46.6751 30.3359 47.9375 26 47.9375C13.9036 47.9375 4.0625 38.0964 4.0625 26C4.0625 13.9036 13.9036 4.0625 26 4.0625C38.0964 4.0625 47.9375 13.9036 47.9375 26C47.9375 30.1254 46.7867 34.1443 44.6095 37.6224C44.0142 38.5733 44.3026 39.8267 45.2535 40.4219C46.2038 41.0169 47.4576 40.7288 48.0529 39.7779C50.6352 35.6528 52 30.8885 52 26C52 19.0552 49.2955 12.526 44.3848 7.61516Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <% var count=3; %>
+
+                            
+
+                            <div id='fix-1'
+                                class="center-ads layout5_5_responsive hover:-translate-y group relative  h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item item-grid gameslink"
+                                style='display:block;'>
+                            </div>
+
+                            <script>
+                                googletag.cmd.push(() => {
+                                    googletag.display("fix-1");
+                                });
+                            </script>
+
+                            <% data.forEach(function(item,index) { %>
+                                <% if (!isMobile && index==1) { %>
+
+                                  
+
+                                    <div id='fix-2'
+                                        class="layout7_7_responsive center-ads  hover:-translate-y group relative h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item item-grid gameslink"
+                                        style='display:block;'>
+                                    </div>
+
+                                    <script>
+                                        googletag.cmd.push(() => {
+                                            googletag.display("fix-2");
+                                        });
+                                    </script>
+
+                                    <% } %>
+
+                                        <% if(index % (10*count)===0 && index!=0 && count<5){ %>
+                                            <% count++ %>
+                                                <% count++ %>
+                                                    <div id='gpt-ad-<%= count %>'
+                                                        class="gpt-ads layout3_3 aspect-square hover:-translate-y group relative aspect-square h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item span-2 item-grid gameslink"
+                                                        style='min-width: 300px; min-height: 31px;text-align: center;'>
+                                                    </div>
+
+                                                    <% } %>
+                                                        <% switch (item.size) { case 3 : %>
+                                                            <a href=<%=item.pagelink.replace(/ /g,'_').replace('game/','play/') %> lang="en"
+                                                                class="layout3_3 aspect-square hover:-translate-y group
+                                                                relative
+                                                                aspect-square h-full min-h-[94px] w-full cursor-pointer
+                                                                rounded-xl
+                                                                text-center font-medium tracking-wide
+                                                                transition-transform
+                                                                delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
+                                                                <% break; case 2 : %>
+                                                                    <a href=<%=item.pagelink.replace(/ /g,'_').replace('game/','play/') %> lang="en"
+                                                                        class="layout2_2 aspect-square
+                                                                        hover:-translate-y group
+                                                                        relative
+                                                                        aspect-square h-full min-h-[94px] w-full
+                                                                        cursor-pointer
+                                                                        rounded-xl text-center font-medium tracking-wide
+                                                                        transition-transform delay-100 duration-300
+                                                                        ease-in-expo
+                                                                        hover:scale-[1.04]">
+                                                                        <% break; case 1 : %>
+                                                                            <a href=<%=item.pagelink.replace(/ /g,'_').replace('game/','play/') %>
+                                                                                lang="en"
+                                                                                class="hover:-translate-y group relative
+                                                                                aspect-square
+                                                                                h-full min-h-[94px] w-full
+                                                                                cursor-pointer
+                                                                                rounded-xl text-center font-medium
+                                                                                tracking-wide transition-transform
+                                                                                delay-100
+                                                                                duration-300
+                                                                                ease-in-expo hover:scale-[1.04]">
+                                                                                <% break; } %>
+                                                                                    <span
+                                                                                        class="pointer-events-none absolute inset-0 z-20 rounded-xl bg-gradient-to-t from-[#000000] to-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
+                                                                                    <div
+                                                                                        class="relative aspect-square h-full w-full rounded-xl">
+                                                                                        <img src=<%=item.thumb %> alt=
+                                                                                        <%= item.pagelink %> width="350"
+                                                                                            height="350" title=<%=
+                                                                                                item.pagelink %>
+                                                                                                content=<%=
+                                                                                                    item.pagelink %>
+                                                                                                    class="h-auto w-auto
+                                                                                                    rounded-xl">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="absolute bottom-0 left-0 right-0 z-30 p-[6px] text-center text-sm font-semibold text-white antialiased opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                                                                                        <%= item.name %>
+                                                                                    </div>
+                                                                            </a>
+                                                                            <% }); %>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='div-gpt-ad-1717150728562-0' style='min-width: 300px; min-height: 31px;text-align: center;'>
+    </div>
+    <script>
+        googletag.cmd.push(() => {
+            googletag.display("gpt-ad-5");
+            googletag.display("div-gpt-ad-1717150728562-0");
+        });
+    </script>
+    
+    <article class="bottom_info container">
+        <h1>
+            <%= game.name %>
+        </h1>
+        <p>
+            <%= game.desc %>
+                </h1>
+        </p>
+    </article>
+
+    <%- include('../partials/footer') %>
+
+</body>
+
+</html>

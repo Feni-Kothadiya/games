@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="manifest" href="/public/manifest.json">
+    <link rel="icon" href="/public/images/favicon.ico">
+
+    <% if (category) { %>
+        <title>
+            <%= category %> Games - Play Online Games for Free!
+        </title>
+        <% } else { %>
+            <title>Tap Tap Games - Play Online Games for Free!</title>
+            <% } %>
+
+
+                <meta property="canonical" content=<%=url %> />
+                <meta rel="canonical" content=<%=url %> />
+                <meta data-react-helmet="true" name="keywords" content="Free Online Games,Tap Tap">
+                <meta data-react-helmet="true" name="description"
+                    content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
+                <meta data-react-helmet="true" property="og:title"
+                    content="Tap Tap Games - Play Online Games for Free!">
+                <meta data-react-helmet="true" property="og:url" content="https://taptapgames.fun/">
+                <meta data-react-helmet="true" property="og:description"
+                    content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
+
+                <meta name="twitter:card" content="summary_large_image">
+                <meta name="twitter:site" content="@Taptapgames.fun">
+                <meta name="twitter:title" content="Tap Tap Games - Play Online for Free!">
+                <meta name="twitter:description"
+                    content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
+                <meta name="twitter:image" content="https://taptapgames.fun/images/taptap_meta.png">
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217316241873105"
+                    crossorigin="anonymous"></script>
+                <%- include('partials/head') %>
+</head>
+
+<body id="page-top">
+    <span class="search-trans-bg"></span>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BGZ3CVT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Navigation-->
+
+    <div class="relative px-4 pt-4">
+        <div style="min-height:calc(100svh - 84px);padding-bottom:1rem">
+            <div class="homepage-root">
+                <div class="homepage">
+                    <%- include('partials/nav') %>
+                        <% var count=2; %>
+                            <% data.forEach(function(item,index) { %>
+                                <% if(index % (10*count)===0 && index!=0 && count<5 || index===2){ %>
+                                    <% count++ %>
+                                        <% count++ %>
+                                            <ins class="adsbygoogle layout3_3 aspect-square hover:-translate-y group relative aspect-square h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item span-2 item-grid gameslink"
+                                                style="display:block" data-ad-client="ca-pub-5217316241873105"
+                                                data-ad-slot="3089636456" data-full-width-responsive="true"></ins>
+                                            <script>
+                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                            </script>
+                                            <% } %>
+                                                <% switch (item.size) { case 3 : %>
+                                                    <a href=<%=item.pagelink.replace(/ /g,'_') %> lang="en"
+                                                        class="layout3_3 aspect-square hover:-translate-y group relative
+                                                        aspect-square h-full min-h-[94px] w-full cursor-pointer
+                                                        rounded-xl
+                                                        text-center font-medium tracking-wide transition-transform
+                                                        delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
+                                                        <% break; case 2 : %>
+                                                            <a href=<%=item.pagelink.replace(/ /g,'_') %> lang="en"
+                                                                class="layout2_2 aspect-square hover:-translate-y group
+                                                                relative
+                                                                aspect-square h-full min-h-[94px] w-full cursor-pointer
+                                                                rounded-xl
+                                                                text-center font-medium tracking-wide
+                                                                transition-transform delay-100 duration-300 ease-in-expo
+                                                                hover:scale-[1.04]">
+                                                                <% break; case 1 : %>
+                                                                    <a href=<%=item.pagelink.replace(/ /g,'_') %>
+                                                                        lang="en"
+                                                                        class="hover:-translate-y group relative
+                                                                        aspect-square
+                                                                        h-full min-h-[94px] w-full cursor-pointer
+                                                                        rounded-xl
+                                                                        text-center font-medium tracking-wide
+                                                                        transition-transform delay-100 duration-300
+                                                                        ease-in-expo hover:scale-[1.04]">
+                                                                        <% break; } %>
+                                                                            <span
+                                                                                class="pointer-events-none absolute inset-0 z-20 rounded-xl bg-gradient-to-t from-[#000000] to-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
+                                                                            <div
+                                                                                class="relative aspect-square h-full w-full rounded-xl">
+                                                                                <img src=<%=item.thumb %> alt=<%=
+                                                                                    item.pagelink %> width="350"
+                                                                                    height="350" title=<%= item.pagelink
+                                                                                        %> content=<%= item.pagelink %>
+                                                                                            class="h-auto w-auto
+                                                                                            rounded-xl">
+                                                                            </div>
+                                                                            <div
+                                                                                class="absolute bottom-0 left-0 right-0 z-30 p-[6px] text-center text-sm font-semibold text-white antialiased opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                                                                                <%= item.name %>
+                                                                            </div>
+                                                                    </a>
+                                                                    <% }); %>
+
+
+                                                                        <% categories.forEach(function(item,index) { %>
+                                                                            <a href="/category/<%= item.category %>"
+                                                                                class="rounded-xl bg-white layout1_2 hover:-translate-y group flex relative h-full min-h-[94px] w-full cursor-pointer text-center font-medium tracking-wide transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
+                                                                                <img src=<%=item.image %>
+                                                                                alt=<%= item.category %> loading="lazy"
+                                                                                    decoding="async" width="94"
+                                                                                    height="94"
+                                                                                    class="cat-img">
+                                                                                    <span class="cat-name">
+                                                                                        <%= item.category_name %>
+                                                                                    </span>
+                                                                            </a>
+                                                                            <% }); %>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ins class="adsbygoogle" style="display:block;margin-bottom: 20px;text-align: center;"
+        data-ad-client="ca-pub-5217316241873105" data-ad-slot="3089636456" data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <article class="bottom_info container">
+        <% if (category) { %>
+            <h1>
+                <%= category %> Games
+            </h1>
+            <% } else { %>
+                <h1>Online Games for Free</h1>
+                <% } %>
+                    <p>Tap Tap Fun Games has the best free online games selection and offers the most fun experience
+                        to play. We
+                        offer instant play to all our games without downloads, login, popups or other distractions.
+                        Our games are
+                        playable on desktop, tablet and mobile so you can enjoy them at home or anywhere. Every
+                        month over 100
+                        million gamers from all over the world play their favorite games on Tap Tap Games.
+                        Dive into the Digital Realm: Your Ultimate Online Gaming Escape!</p>
+                    <h2>Our game selection</h2>
+                    <p>We release fun New Games on our platform on a daily basis. Our most Popular Games include
+                        hits like Subway
+                        Surfers, Temple Run 2, Stickman Hook and Rodeo Stampede, Candy Crush. These games are
+                        playable on Tap Tap
+                        Games. We also have online classics like Moto X3M, Venge.io, Dino Game, Smash Karts, 2048,
+                        Penalty Shooters
+                        2 and Bad Ice-Cream to play for free. In total we offer more than 1000 game titles.</p>
+
+                    <h2>Start playing</h2>
+                    <p>Unsure what game to play? Start your game discovery on our homepage or pick a game from any
+                        of these popular
+                        categories:</p>
+                    <ul>
+                        <li>Brain Games</li>
+                        <li>.io Games</li>
+                        <li>2 Player Games</li>
+                        <li>Car Games</li>
+                        <li>Shooting Games</li>
+                        <li>Puzzle Games</li>
+                    </ul>
+                    <h2>What is Tap Tap Games?</h2>
+                    <p>Tap Tap Games is based in US and has a team of 20 people working on our gaming platform. Our
+                        goal is to
+                        create the ultimate online playground.</p>
+    </article>
+    <%- include('partials/footer') %>
+
+
+</body>
+
+</html>

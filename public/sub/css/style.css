@@ -1,0 +1,3621 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    width: 100%;
+    background-color: #707af3;
+}
+
+.mainLogo{
+    max-height: 30px;
+}
+
+/************ Progress Bar ************/
+
+.shimmer-effect{
+color: #222;
+text-align: center;
+color: rgba(5, 5, 5, 0.4);
+background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+-webkit-background-size: 125px 100%;
+-moz-background-size: 125px 100%;
+background-size: 75px 100%;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+background-clip: text;
+-webkit-animation-name: shimmer;
+-moz-animation-name: shimmer;
+animation-name: shimmer;
+-webkit-animation-duration: 2s;
+-moz-animation-duration: 2s;
+animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+-moz-animation-iteration-count: infinite;
+animation-iteration-count: infinite;
+background-repeat: no-repeat;
+background-position: 0 0;
+background-color: #000;
+}
+
+@-moz-keyframes shimmer {
+0% {
+background-position: top left;
+}
+
+100%
+{
+background-position:top right;
+}
+
+}
+@-webkit-keyframes shimmer { 0% {
+background-position: top left;
+}
+
+100%
+{
+background-position:top right;
+}
+}
+@-o-keyframes shimmer {
+0% {
+background-position: top left;
+}
+
+100%
+{
+background-position:top right;
+}
+}
+@keyframes shimmer {
+0% {
+background-position: top left;
+}
+
+100%
+{
+background-position:top right;
+}
+}
+
+html {
+    height:100%;
+}
+
+body {
+    margin:0;
+    padding:0;
+    background-image:  url(../images/bg.jpg);
+     height: 100%; 
+    background-size: cover;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+/* body {
+    margin:0;
+    padding:0;
+    background-image:  url(../images/bg.jpg);
+     height: 100%; 
+    background-size: cover;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    
+} */
+
+
+
+/* 
+.app-wrapper-container {
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #1b070c;
+    scrollbar-color: #eee #3e3e40;
+    scrollbar-width: none;
+} */
+
+
+.app-wrapper-container {
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #fff;
+    scrollbar-color: #eee #3e3e40;
+    scrollbar-width: none;
+}
+
+.blocked-page {
+    background-image:url('https://fecdn.mglgamez.com/assets/images/blocked-screen-bg.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.progress-track {
+    height: 4px;
+    width: 100%;
+    background: #d4d4d4;
+    position: relative;
+}
+
+.progress-track #progressbar {
+    background: #ffe403;
+    height: 4px;
+}
+
+.app-wrapper-container::-webkit-scrollbar-track{
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.app-wrapper-container::-webkit-scrollbar{
+    width: 2px;
+    background-color: transparent;
+}
+
+.app-wrapper-container::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #eee;
+}
+
+.intro-screen-bg {
+    background: url('https://fecdn.mglgamez.com/assets/images/intro-bg.jpg') no-repeat top center;
+    background-size:cover;
+}
+
+.pagination-and-skip .group-buttons {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.pagination-and-skip a {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+    float: right;
+    margin: 0 0px 0 18px;
+}
+
+
+/****** Radio Button Custom Style *******/
+
+.contain {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+.contain input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    line-height: 19px;
+}
+  
+.contain input:checked ~ .checkmark {
+    background-color: #ffffff;
+    color: #000;
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.contain input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.contain .checkmark:after {
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: white;
+}
+
+.head-section h1{
+    font-size: 28px;
+    color:#ffe403;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.head-section img {
+    width: 150px;
+}
+
+.head-section .intrologo {
+    margin: 15px auto 10px;
+    display: block;
+    width: 100px;
+}
+
+.playgames-wincoins img {
+    float: left;
+    margin: 0 10px 0 0;
+    width: 100%;
+    max-width: 60px;
+}
+
+.playgames-wincoins h2 {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0;
+    font-size: 20px;
+}
+
+.playgames-wincoins .playgame-cols:after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 1px;
+    height: 50px;
+    background: #afb0f4;
+}
+
+.playgames-wincoins .wincoins-cols img{
+    margin-left: 4%;
+}
+
+.top-games-section h2{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 15px;
+}
+
+.top-games-section .card-box {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 10px;
+}
+
+.top-games-section .col-4{
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.top-games-section .card-box a{
+    text-decoration: none;
+}
+
+.top-games-section .card-box .featured-image {
+    overflow: hidden;
+    border-radius: 10px;
+    width: 92%;
+    height: 140px;
+    margin: 0 auto;
+}
+
+.top-games-section .card-box .featured-image img{
+    object-fit: cover;
+    height: 100%;
+    width:100%;
+}
+
+.top-games-section .card-box .content {
+    /* border: 1px solid #fff; */
+    /* padding: 0px 10px 8px 10px; */
+    /* text-align: left; */
+    /* margin: -1px 0 0; */
+    /* border-radius: 0 0 10px 10px; */
+}
+
+.top-games-section .card-box .content h4 {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+.top-games-section .card-box .content p {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 2px;
+    text-align: center;
+}
+
+.top-games-section .card-box .content p img{
+    width: 9px;
+}
+
+
+.redirection-strip {
+    position: fixed;
+    background-color: #192989!important;
+    padding: 5px 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* .redirection-strip:before {
+    content: '';
+    position: fixed;
+    bottom: 33px;
+    left: 0;
+    right: 0;
+    background: url(https://fecdn.mglgamez.com/assets/images/coins-strip-landing-bg.png) bottom center no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+    height: 60px;
+} */
+
+.featuredimage-section {
+    padding:15px 0;
+}
+
+.redirection-strip p{
+    font-weight: 600;
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+}
+
+.redirection-strip a{
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.users-datas-counter {
+    padding:0 0;
+}
+
+.users-datas-counter ul {
+    height:55px;
+}
+
+.users-datas-counter ul li{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 32.333%;
+    padding: 0 4px;
+}
+
+/* .users-datas-counter ul li:after{
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: -3px;
+    height: 57px;
+    width: 1px;
+    background: #b1b1f1;
+} */
+
+.users-datas-counter ul li:last-child:after {
+    display: none;
+}
+
+.users-datas-counter ul li h2 {
+    font-size: 22px;
+    color: #ffe403;
+    font-weight: 700;
+    margin: 0 0;
+}
+
+.users-datas-counter h4{
+    font-size: 16px;
+    color: #ffe534;
+    font-weight: 600;
+    width: 100%;
+    padding: 0 4px;
+    margin: auto;
+    text-align: center;
+}
+
+.users-datas-counter ul li h4{
+    font-size: 12px;
+    margin: 0 0;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+}
+
+.paragraph-1-center{
+    font-size: 13px;
+    margin: auto;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.paragraph-2-center{
+    font-size: 13px;
+    margin: auto;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.coins-strip-background {
+    margin: 15px auto 0;
+    /* background: url(https://fecdn.mglgamez.com/assets/images/newbottomcoins-landingpage.png) no-repeat center bottom; */
+    height: 110px;
+    position: fixed;
+    background-size: 100%;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    width: 100%;
+}
+
+.top-games-active-users h2 {
+    font-size: 28px;
+    margin: 0 0 5px;
+}
+
+.top-games-active-users h3 {
+    font-size: 17px;
+    margin: 0 0 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.top-games-active-users .card-box .content h3 {
+    font-size: 20px;
+    margin: 0 0 5px;
+    color: #5758e8;
+    font-weight: 700;
+    text-align: center;
+}
+
+.top-games-active-users .card-box .content h3 img{
+    width: 20px;
+}
+
+.top-games-active-users h3 span{
+    color:#ffe403;
+}
+
+.top-games-active-users .form-row {
+    margin-top:20px;
+}
+
+.top-games-active-users .card-box{
+    /* border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px 0 0;
+    background: #fff; */
+    color: white;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #e3e5ff;
+    border: 1px solid #7882ff;
+}
+
+.top-games-active-users .card-box .content{
+    border: 0;
+}
+
+.top-games-active-users .card-box .content h5{
+    text-decoration: none;
+    color: #3cc300;
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.top-games-active-users .card-box .content h5 span{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3cc300;
+    margin: 0 5px 0 0;
+    display: inline-block;
+}
+
+.top-games-active-users .card-box .content  .play-now-btn {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    border-radius: 12px;
+    padding: 0 15px;
+    line-height: 35px;
+    text-decoration: none;
+    max-width: 130px;
+    margin: 10px auto 5px;
+    text-transform: capitalize;
+    background: #fff;
+    border: 1px solid #5758e8;
+}
+
+.top-games-active-users .card-box .content  .play-now-btn span{
+    font-size: 14px;
+    background-color: #5758e8;
+    color: rgb(255 255 255 / 0%);
+    background-size: 30px 100%;
+    -webkit-background-size: 30px 100%;
+    -moz-background-size: 30px 100%;
+    font-weight:700;
+}
+
+.tabs-section {
+    position: relative;
+    padding: 18px 0 15px;
+}
+
+.tabs-section .wrapper {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 5px 0 0;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.cata-sub-nav {
+    margin: 0 17px;
+    /* Make this scrollable when needed */
+    overflow-x: auto;
+    /* We don't want vertical scrolling */
+    overflow-y: hidden;
+    /* Make an auto-hiding scroller for the 3 people using a IE */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /* For WebKit implementations, provide inertia scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* We don't want internal inline elements to wrap */
+    white-space: nowrap;
+    /* Remove the default scrollbar for WebKit implementations */
+}
+.cata-sub-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.cata-sub-nav ul {
+    margin: 0;
+    display: flex;
+    -webkit-padding-start: 0px;
+}
+
+.arrow{
+  background: red;
+}
+
+.nav-prev {
+    width: 15px;
+    height: 33px;
+    position: absolute;
+    left: 12px;
+    background: url(https://fecdn.mglgamez.com/assets/images/left-arrow-icon.png);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    top:0;
+    display: block!important;
+}
+
+.nav-next {
+    width: 15px;
+    height: 33px;
+    position: absolute;
+    right: 12px;
+    background: url(https://fecdn.mglgamez.com/assets/images/left-arrow-icon.png);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    top: 0;
+    display: block!important;
+    transform: rotate(180deg);
+}
+
+.tabs-section .list {
+    margin-top: 0px;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.tabs-section .wrapper{
+    scrollbar-color: #f4f4f4 #0a0a0a24;
+    scrollbar-width: thin;
+}
+
+.tabs-section .wrapper::-webkit-scrollbar-track{
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.tabs-section .wrapper::-webkit-scrollbar{
+    height: 10px;
+    background-color: transparent;
+}
+
+.tabs-section .wrapper::-webkit-scrollbar-thumb{
+    border-radius: 0;
+    background-color: #eee;
+}
+
+.tabs-section .scroller {
+text-align: center;
+cursor: pointer;
+display: none;
+padding: 4px 3px;
+white-space: no-wrap;
+vertical-align: middle;
+background-color: #ffffff;
+margin: 5px 0 0;
+height: 33.7px;
+}
+
+.tabs-section .scroller-right{
+float:right;
+}
+
+.tabs-section .scroller-left {
+float:left;
+}
+
+.tabs-section ul {
+    position: relative;
+}
+
+.tabs-section ul .external-plus {
+    border: 1px solid #ffe403;
+    border-radius: 50%;
+    font-size: 22px;
+    width: 22px;
+    height: 23px;
+    float: right;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tabs-section ul .external-plus a {
+    color: #ffe403;
+    line-height: 19px;
+    vertical-align: text-top;
+    text-decoration: none;
+}
+
+.tabs-section .nav-tabs .nav-item {
+    margin-bottom: -1px;
+    margin-right: 2px;
+    min-width: 130px;
+    float: left;
+}
+
+.tabs-section .nav-tabs .nav-item:first-of-type {
+    margin-left:0;
+}
+
+.tabs-section .nav-tabs .nav-link {
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    padding: 6px 15px;
+    font-size: 13px;
+}
+
+.tabs-section .nav-tabs .nav-link br{
+    display: none;
+}
+
+.tabs-section .nav-tabs .nav-link.active {
+    background: transparent;
+    border-color: #ffe403;
+    color: #ffe403;
+    padding: 6px 15px;
+}
+
+.tabs-section .tab-content .tab-pane {
+    text-align: center;
+    padding: 15px 0 0;
+}
+
+.tabs-section .tab-content .tab-pane .featured-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 0 20px;
+}
+
+.tabs-section .tab-content .tab-pane .featured-image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.tabs-section .tab-content .tab-pane .featured-image .active-users,
+.tabs-section .tab-content .tab-pane .active-users{
+    width: 100%;
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 15px 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+}
+
+.tabs-section .tab-content .tab-pane .featured-image .active-users .active-sign,
+.tabs-section .tab-content .tab-pane .active-users .active-sign{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3cc300;
+    margin: 2px 5px 0 0;
+    display: inline-block;
+}
+
+.tabs-section .tab-content .tab-pane h4 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.tabs-section .tab-content .tab-pane h4 span{
+    color: #ffe403;
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.tabs-section .tab-content .tab-pane .play-now-btn {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    border: 3px solid #fff;
+    border-radius: 40px;
+    padding: 0 15px;
+    line-height: 50px;
+    text-decoration: none;
+    min-width: 180px;
+    text-transform: uppercase;
+    background:#fff;
+    margin: 10px auto 30px;
+    box-shadow: 3px 5px 5px rgb(99 99 99 / 0.3);
+}
+
+.tabs-section .tab-content .tab-pane .play-now-btn span{
+    background-color: #5758e8;
+    color: rgb(255 255 255 / 0%);
+    background-size: 28px 100%;
+    -webkit-background-size: 28px 100%;
+    -moz-background-size: 28px 100%;
+    font-weight: 700;
+}
+
+.tabs-section .tab-content .tab-pane p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+
+.tabs-section .tab-content .tab-pane .existing-user-text a{
+    text-decoration: underline;
+    color: #fafd08;
+}
+
+footer .privacy-text {
+    text-align: left;
+}
+
+footer .terms-text {
+    text-align: right;
+}
+
+footer .social-icons {
+    text-align: center;
+}
+.social-icons a{
+    margin-right: 10px;
+}
+.social-icons a i{
+    font-size: 25px;
+    color: #7882ff;
+}
+footer .privacy-text a, footer .terms-text a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+footer .social-icons a img {
+    margin: 0 2px;
+    width: 21px;
+}
+
+.sidebarmenu .do-not-sell-myinfo-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 15px;
+}
+
+.sidebarmenu .do-not-sell-myinfo-text a {
+    font-size: 13px;
+    color: #ada6a6;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.do-not-sell-myinfo-text a {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.gameplaynow {
+    position: relative;
+    padding-top:18px;
+}
+
+.gameplaynow .gamehead h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fcff00;
+    margin: 0 0;
+    align-items: center;
+    display: flex;
+}
+
+.gameplaynow .gamehead h3 a{
+    margin: 0 6% 0 0;
+}
+
+.gameplaynow .gamehead a {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0;
+    text-decoration: underline;
+}
+
+.gameplaynow .crickecols a img {
+    width: 12px;
+}
+
+.gameplaynow .gamehead a img{
+    margin: 0 3% 0 0;
+    width: 16px;
+}
+
+.gameplaynow .userplaying-totalprize {
+    padding: 0 0 0;
+}
+
+.gameplaynow .userplaying-totalprize .contentPart {
+    padding-left:20px;
+}
+
+.gameplaynow .userplaying-totalprize .contentPart h3{
+    font-size: 20px;
+    color: #fafd08;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.gameplaynow .userplaying-totalprize h4{
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+}
+
+.gameplaynow .userplaying-totalprize .left-cols{
+    padding-right: 5px;
+}
+
+.gameplaynow .userplaying-totalprize .right-cols {
+    padding-left:5px;
+}
+
+.gameplaynow .userplaying-totalprize h2{
+    font-size: 22px;
+    color: #fafd08;
+    font-weight: 600;
+    margin: 0 0;
+}
+
+.gameplaynow .userplaying-totalprize h2 img{
+    margin: 0 5px 0 0;
+    width: 18px;
+}
+
+.gameplaynow .userplaying-totalprize .image-outer {
+    display: inline-block;
+    width: 100%;
+    max-width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 3px solid #FFF;
+}
+
+.gameplaynow .userplaying-totalprize .image-outer img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.gameplaynow .rules-prizebreakup{
+    background:#4f50db;
+    padding: 10px 0;
+    min-height: 45px;
+}
+
+.gameplaynow .rules-prizebreakup p{
+    margin:0 0;
+}
+
+.gameplaynow .rules-prizebreakup p a{
+    font-size: 14px;
+    color: #fff!important;
+    font-weight: 400;
+    text-decoration: underline!important;
+}
+
+.gameplaynow .maincontent {
+    display: block;
+}
+
+.gameplaynow .maincontent .play-now-btn {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    border: 3px solid #fff;
+    border-radius: 40px;
+    padding: 0 15px;
+    line-height: 42px;
+    text-decoration: none;
+    min-width: 180px;
+    margin: 10px auto 20px;
+    text-transform: uppercase;
+    background:#fff;
+    box-shadow: 3px 5px 5px rgb(99 99 99 / 0.3);
+}
+
+
+.gameplaynow .maincontent .play-now-btn span{
+    font-size: 16px;
+    background-color: #5758e8;
+    color: rgb(255 255 255 / 0%);
+    background-size: 30px 100%;
+    -webkit-background-size: 30px 100%;
+    -moz-background-size: 30px 100%;
+    font-weight:700;
+}
+
+.gameplaynow .maincontent p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.gameplaynow .maincontent .existing-user-text {
+    font-weight: 600;
+    padding: 15px 0;
+    background: url(https://fecdn.mglgamez.com/assets/images/gradient-line-img.png) top center no-repeat, url(https://fecdn.mglgamez.com/assets/images/gradient-line-img.png) bottom center no-repeat;
+}
+
+.gameplaynow .maincontent .existing-user-text a {
+    text-decoration: underline;
+    color: #fafd08;
+}
+
+.gameplaynow .score-screen-head h3 {
+    position: relative;
+    font-size: 24px;
+    color: #fcff00;
+    margin: 0 0;
+    text-transform: capitalize;
+    font-weight: 700;
+    padding: 0 40px;
+}
+
+.gameplaynow .score-screen-head h3 img{
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 26px;
+}
+
+.gameplaynow .score-screen-content {
+    padding: 15px 0 0;
+}
+
+.gameplaynow .score-screen-content h6 {
+    margin: 0 0 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.gameplaynow .score-screen-content h4 {
+    font-size: 18px;
+    color: #fcff00;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.gameplaynow .score-screen-content small {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+}
+
+.gameplaynow .score-screen-content small img {
+    width: 12px;
+}
+
+.gameplaynow .score-screen-content .play-now-btn {
+    margin: 15px auto 30px;
+}
+
+.gameplaynow .score-screen-content .play-now-btn span{
+    background-color: #5758e8;
+    color: rgb(255 255 255 / 0%);
+    background-size: 30px 100%;
+    -webkit-background-size: 30px 100%;
+    -moz-background-size: 30px 100%;
+    margin: 0;
+    font-weight: 700;
+}
+
+.gameplaynow .score-screen-content span {
+    display: block;
+    color: #ffd400;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 50px;
+}
+
+.gameplaynow .score-screen-content span img {
+    width: 20px;
+}
+
+.registration-screen h1{
+    font-size: 30px;
+    color: #fcff00;
+    font-weight: 700;
+    margin: 0 0 25px;
+}
+
+.registration-screen h3{
+    font-size: 18px;
+    margin: 0 0 70px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.registration-screen .sign-with-google,
+.registration-screen .sign-with-facebook {
+    background: #fff;
+    border-radius: 12px;
+    margin: 0 auto 15px;
+    font-size: 18px;
+    color: #343434;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: -0.25px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    max-width: 280px;
+}
+
+.registration-screen .sign-with-google a,
+.registration-screen .sign-with-facebook a{
+    text-decoration: none;
+    display: inline-block;
+    color: #343434;
+    width: 100%;
+    padding: 15px 25px;
+}
+
+.registration-screen .sign-with-google img,
+.registration-screen .sign-with-facebook img{
+    float: left;
+    width: 28px;
+    margin-right: 3%;
+}
+
+.registration-screen .sign-with-facebook {
+    margin: 0 auto 60px;
+}
+
+.registration-screen .logo {
+    margin: 0 auto 10px;
+    width: 100px;
+
+}
+
+.registration-screen p {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0 15px;
+}
+
+.registration-screen p a{
+    text-decoration: underline;
+    color: #fff;
+}
+
+.registration-screen span {
+    font-size: 14px;
+    color: #ffd400;
+    font-weight: 600;
+    margin: 0 0 15px;
+}
+
+.registration-screen span img {
+    width: 26px;
+    margin-right: 0.5%;
+}
+
+.registration-screen .white-space {
+    width: 100%;
+    height: 40px;
+}
+
+/************* Dashboard Post Login *************/
+
+header {
+    padding: 15px 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background: #5758e8;
+    display: flex;
+    align-items: center;
+    border-bottom:1px solid #8a8aef;
+}
+
+.backto-page .back-icon-title img {
+    width: 100%;
+    max-width: 20px;
+    margin: 0 15px 0 0;
+}
+
+.backto-page .back-icon-title h6 {
+    margin: 0 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.hamburger-logo {
+    float: left;
+    padding: 0 0 0 0;
+    max-width: 130px;
+    width: 100%;
+    position: relative;
+}
+
+.hamburger-logo img {
+    float: left;
+    cursor: pointer;
+    width: 20px;
+    margin: 0 9% 0 0;
+}
+
+.hamburger-logo h1 {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 0;
+    line-height: 20px;
+}
+
+header .right-cols {
+    padding-left:0;
+} 
+
+.recent-winner-btn,
+.coins-wallet {
+    display: inline-block;
+    text-align: left;
+    vertical-align: text-bottom;
+}
+
+.coins-wallet a{
+    text-decoration: none;
+}
+
+.recent-winner-btn a {
+    font-size: 10px;
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 24px;
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: 8px 8px;
+    text-align: center;
+    line-height: 20px;
+    width: 100px;
+}
+
+.recent-winner-btn .joinmgl-btn {
+    background: #fff;
+}
+
+.recent-winner-btn .joinmgl-btn span{
+    background: -webkit-gradient(linear, left top, right top, from(#ffe403), to(#ffe403), color-stop(0.5, #fff));
+    background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background-size: 20px 100%;
+    -webkit-background-size: 20px 100%;
+    -moz-background-size: 20px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #5758e8;
+    color: rgb(255 255 255 / 0%);
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.coins-wallet {
+    margin-left: 3%;
+}
+
+.coins-wallet span{
+    background: #1f2435;
+    border-radius: 50%;
+    text-align: center;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin: 3px 5px 0 0;
+}
+
+.coins-wallet span img {
+    width: 15px;
+    margin: 6px 0 6px;
+}
+
+.coins-wallet small {
+    font-size: 11px;
+    color: #fff;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 16px;
+}
+
+.coins-wallet h6 {
+    font-weight: 700;
+    margin: 0 0;
+    color: #fff;
+    font-size: 15px;
+}
+
+@-moz-document url-prefix() { 
+    .hamburger-logo img {
+        width: 18px;
+    }
+    .hamburger-logo h1 {
+        font-size: 20px;
+        margin: -2px 0 0 9%;
+    }
+    header .logo-col {
+        flex: 0 0 30.333333%;
+        max-width: 30.333333%;
+    }
+    header .right-cols{
+        flex: 0 0 69.667%;
+        max-width: 69.667%;
+    }
+}
+
+.sidebarmenu {
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+    z-index: 99;
+    width: 100%;
+    max-width: 220px;
+    height: 100%;
+    bottom: 0;
+    /* -webkit-transform: translate(-280px, 0); */
+    /* -moz-transform: translate(-280px, 0); */
+    /* transform: translate(-280px, 0); */
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    transition: 0.4s;
+    opacity: 0;
+    z-index: -8;
+    padding-bottom: 70px!important;
+}
+
+.sidebarmenu.open {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    transition: 0.4s;
+    opacity: 10;
+    z-index: 99;
+}
+
+.sidebarmenu .close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    top: 5px;
+}
+
+.sidebarmenu .join-predguru {
+    margin: -16px -16px 0;
+    background: #ffffff;
+    min-height: 85px;
+    padding: 37px 15px 0 !important;
+}
+
+.sidebarmenu .join-predguru a {
+    color: #5758e8;
+    font-weight: 600;
+    border-radius: 12px;
+    line-height: 44px;
+    padding: 0 15px;
+    display: inline-block;
+    text-decoration: none;
+    background: #fff;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    border: 2px solid #5758e8;
+}
+
+.sidebarmenu .join-predguru a span{
+    background-color: #5758e8;
+    color: rgb(255 255 255 / 0%);
+    background-size: 28px 100%;
+    -webkit-background-size: 28px 100%;
+    -moz-background-size: 28px 100%;
+    font-weight: 700;
+}
+
+.sidebarmenu .close-btn img{
+    width: 12px;
+}
+
+.sidebarmenu ul{
+    margin: 15px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebarmenu ul li {
+    position: relative;
+    padding: 15px 0;
+}
+
+.sidebarmenu ul li a{
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    padding: 0 0;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+}
+
+.sidebarmenu ul li a img {
+    width: 20px;
+    margin: 0 15px 0 0;
+}
+
+.allgames_mygames_tabs {
+    position: relative;
+    padding: 15px 0;
+}
+
+.allgames_mygames_tabs .nav-tabs {
+    border: 0;
+}
+
+.allgames_mygames_tabs .nav-tabs .nav-item{
+    width: 50%;
+    text-align: center;
+    margin: 0 0 0;
+}
+
+.allgames_mygames_tabs .nav-tabs .lokmat-nav-item{
+    width: 100%;
+}
+
+.allgames_mygames_tabs .nav-tabs .nav-item .nav-link {
+    border: 0;
+    padding: 0 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.allgames_mygames_tabs .nav-tabs .nav-link.active {
+    background: transparent;
+    color: #ffe403;
+}
+
+.allgames_mygames_tabs .tab-content {
+    margin:12px 0 0;
+}
+
+.allgames_mygames_tabs .cards-group {
+    position: relative;
+    width: 100%;
+}
+
+.allgames_mygames_tabs h2{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 6px;
+    text-align: center;
+}
+
+/**** Card Box Style Start ****/
+
+.allgames_mygames_tabs .cards-group .card-box{
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    background: #fff;
+    padding: 15px;
+    margin: 0 0 5px;
+}
+
+.allgames_mygames_tabs .cards-group .head-texts h6{
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    margin: 0 0;
+}
+
+.allgames_mygames_tabs .cards-group .head-texts p{
+    margin: 0 0;
+    color: #737373;
+    font-weight: 600;
+    font-size: 10px;
+}
+
+.allgames_mygames_tabs .cards-group .head-texts p span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #66d290;
+    margin-right: 5px;
+}
+
+.allgames_mygames_tabs .cards-group .main-content {
+    padding: 10px 0 0;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .left-cols{
+    flex: 0 0 62.666667%;
+    max-width: 62.666667%;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .right-cols{
+    flex: 0 0 36.333333%;
+    max-width: 36.333333%;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .right-cols h6{
+    margin: 15px 0 0;
+    color: #737373;
+    font-weight: 600;
+    font-size: 9px;
+    line-height: 17px;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .right-cols h6 span{
+    color: #fe4b38;
+    font-weight: 600;
+    margin: 2px 0px 0 0;
+    font-size: 12px;
+    line-height: normal;
+    float: right;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .image-area {
+    width: 100%;
+    max-width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 15px;
+    float: left;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .image-area img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .content {
+    padding-left: 10px;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .content h3{
+    margin: 0 0;
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .content h3 img{
+    width: 18px;
+    margin: 0 4px 0 0;
+}
+
+.allgames_mygames_tabs .cards-group .main-content .content h4{
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #fe4b38;
+    font-weight: 600;
+}
+
+.allgames_mygames_tabs .cards-group .main-content a{
+    border: 2px solid #5758e8;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #000;
+    padding: 0 9px;
+    font-size: 11px;
+    line-height: 30px;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+
+/**** Card Box Style End ****/
+
+.contest-post-login {
+    padding: 10px 0;
+}
+
+.contest-post-login .repeater {
+    padding: 10px;
+    border-radius: 12px;
+    margin: 0 0 5px;
+}
+
+.contest-post-login .left-cols span{
+    font-size: 11px;
+    color: #fe4b38;
+    font-weight: 600;
+    line-height: 14px;
+    display: inline-block;
+}
+
+.contest-post-login .left-cols h6{
+    margin: 4px 0 4px;
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.contest-post-login .left-cols h6 img{
+    width: 13px;
+    margin: 0 3px 0 0;
+}
+
+.contest-post-login .left-cols .user-active{
+    margin: 0 0;
+    font-size: 9px;
+    color: #3e3332;
+    font-weight: 400;
+}
+
+.contest-post-login .left-cols .user-active .active-sign{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #59d765;
+    margin-right: 4px;
+}
+
+.contest-post-login .mid-cols {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contest-post-login .mid-cols small{
+    color: #282828;
+    font-size: 10px;
+    font-weight: 400;
+    display: inline-block;
+    width: 100%;
+}
+
+.contest-post-login .mid-cols h6{
+    display: inline-block;
+    color: #5758e8;
+    font-weight: 700;
+    margin: 0 0;
+    vertical-align: text-top;
+    line-height: 8px;
+}
+
+.contest-post-login .right-cols a{
+    font-size: 10px;
+    color: #3e3332;
+    font-weight: 400;
+    text-decoration: underline!important;
+}
+
+.contest-post-login .right-cols .play-btn{
+    text-decoration: none;
+    border: 2px solid #5758e8;
+    text-align: center;
+    padding: 0 8px;
+    border-radius: 18px;
+    line-height: 27px;
+    display: inline-block;
+    font-weight: 700;
+    min-width: 90px;
+    color: #000;
+    margin: 4px 0 0;
+    text-decoration: none!important;
+    font-size: 11px;
+}
+
+.contest-post-login .right-cols span{
+    font-size: 10px;
+    color: #5758e8;
+    font-weight: 400;
+    margin: 5px 0 0;
+    float: right;
+}
+
+.contest-post-login .right-cols .watchvideo,
+.contest-post-login .right-cols .watchvideo > span {
+    white-space: nowrap;
+    float: none;
+    cursor: pointer;
+}
+
+#videoshow .close{
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    font-size: 30px;
+    color: #000;
+    opacity: 1;
+    font-weight: 400;
+}
+
+#videoshow .modal-body{
+    padding: 1.7rem 1rem;
+}
+
+#videoshow .modal-body h6 {
+    font-weight: 700;
+    color: #000;
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+#videoshow .modal-body .gameicon {
+    width: 80px;
+    margin: 0 auto 15px;
+}
+
+#videoshow .modal-body h5 {
+    color: #5758e8;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0;
+}
+
+#videoshow .modal-body p {
+    color: #000000;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#videoshow .modal-body .btn-style {
+    border: 2px solid #5758e8;
+    color: #5758e8;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 26px;
+    padding: 0 15px;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.contest-post-login .right-cols span img{
+    width: 12px;
+    margin: 0 2px;
+}
+
+.contest-post-login .practice-game {
+    padding-top: 13px;
+    background: #f3f3f3!important;
+}
+
+.contest-post-login .practice-game .right-cols{
+    padding-top: 13px;
+}
+
+.contest-post-login .practice-game .leftarrow img{
+    width: 15px;
+    margin: 18px 10px 18px 0;
+}
+
+.contest-post-login .practice-game .icon-outer{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 8px;
+}
+
+.contest-post-login .practice-game .icon-outer img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.contest-post-login .practice-game h4{
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0;
+    align-items: center;
+    display: flex;
+}
+
+.gameplay-startpost-login {
+    position: relative;
+}
+
+.gameplay-startpost-login .repeater {
+    padding: 10px;
+    border-radius: 12px;
+    margin: 0 0 5px;
+    display: inline-block;
+}
+
+.gameplay-startpost-login .practice-game .leftarrow img {
+    width: 15px;
+    margin: 18px 10px 18px 0;
+}
+
+.gameplay-startpost-login .practice-game h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0;
+    align-items: center;
+    display: flex;
+}
+
+.gameplay-startpost-login .left-cols .leftarrow{
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.gameplay-startpost-login .left-cols .content{
+    padding: 8px 0 8px 18px;
+}
+
+.gameplay-startpost-login .left-cols .content h4 {
+    font-size: 16px;
+}
+
+.gameplay-startpost-login .left-cols .content small {
+    font-size: 11px;
+    color: #5f5f5f;
+    font-weight: 400;
+    float: left;
+    width: 100%;
+}
+
+.gameplay-startpost-login .left-cols .content small img{
+    width:12px;
+    margin:0 3px;
+}
+
+.gameplay-startpost-login .left-cols .content small b {
+    color: #5758e8;
+}
+
+.gameplay-startpost-login .practice-game .right-cols {
+    padding-top: 0;
+}
+
+.gameplay-startpost-login .right-cols .play-btn {
+    text-decoration: none;
+    border: 2px solid #5758e8;
+    text-align: center;
+    padding: 0 8px;
+    border-radius: 18px;
+    line-height: 27px;
+    display: inline-block;
+    font-weight: 700;
+    min-width: 90px;
+    color: #000;
+    margin: 4px 0 0;
+    font-size: 11px;
+}
+
+.gameplay-startpost-login .right-cols small {
+    font-size: 13px;
+    color: #5f5f5f;
+    font-weight: 400;
+    width:100%;
+}
+
+.gameplay-startpost-login .right-cols h6 {
+    color: #5758e8;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0;
+    width:100%;
+}
+
+.gameplay-startpost-login .repeater .current-text {
+    font-size: 12px;
+    width: 100%;
+    display: inline-block;
+    margin: 15px 0 0;
+}
+
+.gameplay-startpost-login .repeater .current-text img{
+    width:14px;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card {
+    background: #f6f6f6;
+    border-radius: 15px;
+    padding: 10px;
+    clear: both;
+    display: inline-block;
+    margin: 10px 0 0;
+}
+
+.gameplay-startpost-login .repeater .current-balance-text {
+    overflow: hidden;
+}
+
+.gameplay-startpost-login .repeater .current-balance-text h6 {
+    margin: 0 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+}
+
+.gameplay-startpost-login .repeater .current-balance-text h6 span{
+    color: #5758e8;
+}
+
+.gameplay-startpost-login .repeater .current-balance-text h6 img{
+    width: 14px;
+    margin-right: 4px;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .left-cols{
+    padding-right:10px;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .image-outer {
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 15px;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .image-outer img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .content {
+    float: left;
+    padding: 0 0 0 75px;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .content h5 {
+    margin: 0 0;
+    color: #5758e8;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .content h4 {
+    font-size: 20px;
+    margin: 3px 0 0;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .content h4 img{
+    width: 20px;
+    margin-right: 8px;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card .content a{
+    color: #5f5f5f;
+    font-size: 10px;
+    text-decoration: underline;
+    margin: 0 0;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card h6{
+    font-size: 9px;
+    color: #3e3332;
+    font-weight: 400;
+}
+
+.gameplay-startpost-login .repeater .price-mondey-card h6 span{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #08c41a;
+    margin-right: 3px;
+}
+
+.gameplay-startpost-login .repeater .start-game-btn a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 40px;
+    border-radius: 24px;
+    padding: 0 15px;
+    border: 2px solid #5758e8;
+    display: inline-block;
+    min-width: 150px;
+    margin: 15px auto 0;
+}
+
+.gameplay-startpost-login .repeater .start-game-btn a span{
+    text-align: center;
+    color: rgba(5, 5, 5, 0);
+    background: -webkit-gradient(linear, left top, right top, from(#ffe403), to(#ffe403), color-stop(0.5, #fff));
+    background: -moz-gradient(linear, left top, right top, from(#ffe403), to(#ffe403), color-stop(0.5, #fff));
+    background: gradient(linear, left top, right top, from(#ffe403), to(#ffe403), color-stop(0.5, #fff));
+    -webkit-background-size: 50px 100%;
+    -moz-background-size: 50px 100%;
+    background-size: 50px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #000;
+}
+
+.gameplay-startpost-login .repeater .start-game-btn .btn-small-ele{
+    line-height: 16px;
+    padding: 8px 15px;
+    max-width: 170px;
+    width: 100%;
+}
+
+.gameplay-startpost-login .repeater .start-game-btn a small{
+    display: inline-block;
+    width: 100%;
+    line-height: 16px;
+}
+
+.modal-dialog {
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.modal-content {
+    border-radius: 15px;
+    border: 0;
+}
+
+.rankbreakup-modal .modal-header {
+    position: relative;
+    border-bottom: 0;
+}
+
+.rankbreakup-modal .modal-header h5{
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.rankbreakup-modal .modal-header p{
+    margin: 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: #5f5f5f;
+}
+
+.rankbreakup-modal .modal-header .close {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    padding: 5px;
+    margin: 0 0;
+    opacity: 1;
+    outline: 0;
+}
+
+.rankbreakup-modal .modal-header .close span{
+    text-shadow: none;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.rankbreakup-modal ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+    font-size: 0;
+    width: 100%;
+}
+
+.rankbreakup-modal ul li{
+    background: #f2f2f2;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 3px;
+    padding: 12px 0;
+}
+
+.rankbreakup-modal ul li h6{
+    margin: 0 0;
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.rankbreakup-modal ul li h6 span{
+    /* display: inline-block; */
+    width: 100%;
+    max-width: 20px;
+    margin-left: 4px;
+}
+
+.rank-every-gameplay .repeater .start-game-btn a{
+    text-transform: capitalize;
+}
+
+.rank-every-gameplay .repeater .start-game-btn a span{
+    color: #5758e8;
+    text-transform: uppercase;
+}
+
+.rank-every-gameplay .repeater .start-game-btn small {
+    font-size: 11px;
+    display: inline-block;
+    width: 100%;
+    font-weight: 400;
+}
+
+.rank-every-gameplay .left-cols .content {
+    position: relative;
+    padding: 12px 0 12px 74px;
+    display: inline-block;
+    width: 100%;
+}
+
+.rank-every-gameplay .left-cols .content .image-outer{
+    width: 100%;
+    max-width: 45px;
+    height: 45px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 7px;
+    left: 18px;
+}
+
+.rank-every-gameplay .left-cols .content .image-outer img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.rank-every-gameplay .left-cols .content h4 {
+    font-size: 13px;
+    margin: 0 0 3px;
+}
+
+.rank-every-gameplay .right-cols small {
+    font-size: 11px;
+    margin: 11px 0 0;
+    display: inline-block;
+}
+
+.player-list-table .row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.player-list-table table {
+    margin:0 0;
+}
+
+.player-list-table .table .thead-light th {
+    background-color: #f6f6f6;
+    border-color: #f6f6f6;
+    font-size: 12px;
+    color: #5758e8;
+}
+
+.player-list-table .table td {
+    color: #222121;
+    font-size: 12px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+
+.player-list-table .table td h6 {
+    font-weight: 600;
+    margin: 0 0;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.player-list-table .table td span{
+    font-size: 10px;
+}
+
+.player-list-table .table td span img{
+    width: 9px;
+}
+
+.player-list-table .table tr small {
+    font-size: 8px;
+    color: #222121;
+}
+
+.player-list-table .table tr:last-of-type td{
+    border-bottom:1px solid #dee2e6;
+}
+
+.player-list-table .table .current-rank td,
+.player-list-table .table .current-rank td h6 {
+    color: #5758e8;
+}
+
+.player-list-table .table .current-rank td span {
+    color: #222121;
+    font-weight: 700;
+}
+
+.player-list-table .table .current-rank td{
+    font-weight:700;
+}
+
+.backpage-arrow-name .logo-col {
+    padding-right: 8px;
+}
+
+.backpage-arrow-name .hamburger-logo {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+align-items: center;
+}
+
+.backpage-arrow-name .hamburger-logo .leftarrow img{
+    margin: 0 0 0 0;
+}
+
+.backpage-arrow-name .hamburger-logo img {
+    width: 12px;
+}
+
+.backpage-arrow-name .hamburger-logo h1 {
+    font-size: 15px;
+    margin: 0 0 0 6%;
+    float: left;
+}
+
+.recent-winner-section {
+    position: relative;
+    padding-bottom: 50px!important;
+}
+
+.recent-winner-section .recent-winner-tabs .nav-tabs{
+    text-align: center;
+    display: block;
+    border-bottom: 0;
+}
+
+.recent-winner-section .recent-winner-tabs .nav-tabs .nav-link {
+    display: inline-block;
+    border: 0;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px 6px 0 0;
+    background: #ffe403;
+    color: #5d4946;
+    max-width: 138px;
+    width: 100%;
+    min-height: 48px;
+    vertical-align: top;
+}
+
+.recent-winner-section .tab-content>.active {
+    opacity: 1;
+}
+
+.recent-winner-section .tab-content .winner-list-ul {
+    margin:0;
+    padding: 0 0 0;
+    list-style: none;
+    position: relative
+}
+.recent-winner-section .tab-content .winner-list-ul li {
+    padding: 16px 10px;
+    position: relative;
+    border-bottom: 1px solid #dee2e6;
+}
+.recent-winner-section .tab-content .winner-list-ul .rank{
+    position: absolute;
+    left: 10px;
+    top: 16px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+    width: 25px;
+}
+.recent-winner-section .tab-content .winner-list-ul .name{
+    padding: 0 10px 0 30px;
+    margin: 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    width: calc(100% - 70px);
+    float: left;
+}
+.recent-winner-section .tab-content .winner-list-ul .points img {
+    width: 14px;
+    margin-right:8px;
+}
+.recent-winner-section .tab-content .winner-list-ul .points span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+}
+.recent-winner-section .recent-winner-tabs .nav-tabs #recent-winner-tab {
+    padding-top: 16px;
+}
+
+.recent-winner-section .recent-winner-tabs .nav-tabs .nav-link small{
+    width: 100%;
+    float: left;
+}
+
+.recent-winner-section .recent-winner-tabs .nav-tabs .alltime-winner {
+    color: #fff;
+    background: #313185;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content {
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    margin: -1px auto 0;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list {
+    background-color: #ffe403;
+    border-radius: 12px 12px 0 0;
+    padding: 10px;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -moz-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list::-webkit-scrollbar-track{
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list::-webkit-scrollbar{
+    width: 2px;
+    height: 5px;
+    background-color: transparent;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list::-webkit-scrollbar-thumb{
+    border-radius: 0;
+    background-color: #eee;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list li {
+    display: inline-block;
+    position: relative;
+    vertical-align: text-top;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list .active:after {
+    width: 0px;
+    height: 0px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list li a{
+    display: inline-block;
+    width: 70px;
+    /* max-width: 23%; */
+    height: 70px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 0.4%;
+    border: 2px solid #FFF;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .alltime-winner-games {
+    background-color: #313185;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .alltime-winner-games:after {
+    border-top: 18px solid #313185;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list span{
+    display: inline-block;
+    width: 100%;
+    max-width: 23%;
+    height: 70px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 0.4%;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .games-list span img,
+.recent-winner-section .recent-winner-tabs .tab-content .games-list li a img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table tr:hover {
+    background: #f6f6f6;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table tr:first-of-type td {
+    border-top:0;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content .total-list.text-center {
+    color: #5758e8;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 20px 0 10px;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table {
+    position: relative;
+}
+
+.recent-winner-section .tab-content .winner-list-ul .your-rank {
+    background: #f6f6f6;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    border-radius: 0;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table tr td {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+    vertical-align: middle;
+    padding: 1.15rem .75rem;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table tr .rank {
+    width: 10px;
+    padding-right: 0;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table tr td h6{
+    margin: 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table tr td span {
+    display: inline-block;
+    width: 48px;
+}
+
+.recent-winner-section .recent-winner-tabs .tab-content table tr td img{
+    width: 14px;
+}
+
+.logout-content .success-message {
+    color: #ffe403;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 20px;
+    display: inline-block;
+}
+
+.logout-content .logo {
+    max-width: 110px;
+    width: 100%;
+    margin: 10px auto 0;
+}
+
+.logout-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 30px;
+    margin: 0 0 12px;
+}
+
+.logout-content p {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 0 30px;
+}
+
+.logout-content p img{
+    width: 18px;
+    margin: 0 0 0 4px;
+}
+
+.logout-content a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 0 15px;
+    line-height: 56px;
+    display: inline-block;
+    font-size: 18px;
+    min-width: 280px;
+}
+
+.my-games-not-joined .not-joined-contest{
+    border-radius: 12px;
+}
+
+.my-games-not-joined .not-joined-contest img{
+    width: 90px;
+    margin: 0 auto 20px;
+}
+
+.my-games-not-joined .not-joined-contest h3{
+    color: #000000;
+    font-weight: 600;
+    margin: 0 0 30px;
+    font-size: 20px;
+}
+
+.my-games-not-joined .not-joined-contest a{
+    font-size: 14px;
+    color: #000;
+    border: 2px solid #5758e8;
+    border-radius: 30px;
+    line-height: 54px;
+    display: inline-block;
+    padding: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    width: 100%;
+    max-width: 280px;
+    text-transform: uppercase;
+}
+
+.my-games-not-joined .not-joined-contest a span{
+    text-align: center;
+    color: rgb(255 255 255 / 0%);
+    background: -webkit-gradient(linear, left top, right top, from(#ffe403), to(#ffe403), color-stop(0.5, #fff));
+    background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    -webkit-background-size: 125px 100%;
+    -moz-background-size: 125px 100%;
+    background-size: 30px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #000;
+}
+
+.my-games-not-joined  .ads {
+    border-radius: 12px;
+}
+
+.my-games-section .live-contest-strip h6{
+    margin: 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.my-games-section .live-contest-strip .users-active{
+    margin: 0 0;
+    font-size: 12px;
+    color: #737373;
+    font-weight: 600;
+}
+
+.my-games-section .live-contest-strip .users-active .active-sign{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #66d290;
+    margin: 0 3px 0 0;
+}
+
+.my-games-section .live-contest-strip .top-ten-played p{
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0;
+}
+
+.my-games-section .live-contest-strip .top-ten-played p img{
+    width: 18px;
+    margin: 0 2px 0 0;
+}
+
+.my-games-section .card-box .title-and-times small{
+    font-size: 10px;
+    color: #282828;
+    font-weight: 400;
+    float: right;
+    width: 100%;
+}
+
+.my-games-section .card-box .title-and-times span{
+    display: inline-block;
+    color: #5758e8;
+    font-weight: 700;
+    font-size: 13px;
+    width: 100%;
+}
+
+.my-games-section .card-box .title-and-times .image-outer{
+    position: absolute;
+    top: 0;
+    left: 12px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.my-games-section .card-box .title-and-times .image-outer img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.my-games-section .card-box .title-and-times .content {
+    float: left;
+    width: 100%;
+    padding: 9px 0 9px 30%;
+}
+
+.my-games-section .card-box .title-and-times .content h6{
+    font-weight: 600;
+    color: #5d4946;
+    margin: 0 0 3px;
+    font-size: 14px;
+}
+
+.my-games-section .card-box .title-and-times .content small{
+    font-size: 9px;
+    color: #737373;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    float: left;   
+}
+
+.my-games-section .card-box .title-and-times ul {
+    background: #f8f8f8;
+    margin:6px 0 0;
+    padding:5px 0;
+    list-style: none;
+}
+
+.my-games-section .card-box .title-and-times ul li{
+    float: left;
+    width: 25%;
+    padding: 0 5px;
+    text-align: center;
+    border-right: 1px solid #5758e8;
+}
+
+.my-games-section .card-box .title-and-times ul li:last-child{
+    border-right: 0;
+}
+
+.my-games-section .card-box .title-and-times ul li span{
+    font-size: 11px;
+    color: #737373;
+    font-weight: 600;
+}
+
+.my-games-section .card-box .title-and-times ul li h6{
+    margin: 0 0;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600; 
+}
+
+.my-games-section .card-box .title-and-times ul li h6 img{
+    width: 12px;
+}
+
+.my-games-section .card-box .bottom-content span{
+    color: #fe4b38;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0 0 3px;
+    display: inline-block;
+    width: 100%;
+}
+
+.my-games-section .card-box .bottom-content h6{
+    font-size: 14px;
+    margin: 0 0;
+    font-weight: 700;
+}
+
+.my-games-section .card-box .bottom-content h6 img{
+    width: 15px;
+    margin: 0 3px 0 0;
+}
+
+.my-games-section .card-box .bottom-content a{
+    font-size: 11px;
+    text-decoration: underline;
+    color: #3e3332;
+    font-weight: 400;
+    line-height: 15px;
+    display: inline-block;
+}
+
+.my-games-section .card-box .bottom-content .play-btn{
+    font-size: 11px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0 10px;
+    border: 2px solid #5758e8;
+    border-radius: 24px;
+    line-height: 33px;
+}
+
+.my-games-section .card-box .won-content {
+    position: relative;
+}
+
+.my-games-section .card-box .won-content span{
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.my-games-section .card-box .won-content span img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.my-games-section .card-box .won-content h6{
+    font-size: 11px;
+    color: #fe4b38;
+    font-weight: 600;
+    margin: 0 0;
+}
+
+.my-games-section .card-box .won-content h6 br{
+    display: none;
+}
+
+.my-games-section .card-box .won-content h6 img{
+    width: 11px;
+}
+
+.my-games-section .card-box .won-content h6 b{
+    color: #000;
+}
+
+.my-games-section .card-box .won-content a {
+    text-decoration: underline;
+    color: #3e3332;
+    font-weight: 400;
+    line-height: 15px;
+    display: inline-block;
+    font-size: 10px;
+}
+
+.earning-history-tabs .earning-history-content {
+    border-radius: 12px;
+}
+
+.earning-history-tabs .your-current-balance-text {
+    position: relative;
+    background: #f6f6f6;
+    border-radius: 12px;
+}
+
+.earning-history-tabs .your-current-balance-text h6{
+    color: #000;
+    font-weight: 700;
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.earning-history-tabs .your-current-balance-text h5{
+    font-size: 24px;
+    color: #000;
+    font-weight: 700;
+    margin: 0 0;
+}
+
+.earning-history-tabs .your-current-balance-text h5 img{
+    width: 24px;
+}
+
+.earning-history-tabs .tabs-content .nav-tabs{
+    width: 100%;
+}
+
+.earning-history-tabs .tabs-content .nav-tabs .nav-item {
+    width: 50%;
+    text-align: center;
+}
+
+.earning-history-tabs .tabs-content .nav-tabs .lokmat-nav-item {
+    width: 100%;
+}
+
+.earning-history-tabs .tabs-content .nav-tabs .nav-link {
+    color: #9a9a9a;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: capitalize;
+    border: 0;
+    padding: 10px 8px;
+    border-bottom: 4px solid #d6d6d6;
+}
+
+.earning-history-tabs .tabs-content .nav-tabs .active {
+    color: #5758e8;
+    border-bottom: 4px solid #5758e8;
+}
+
+.earning-history-tabs .tab-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.earning-history-tabs .tab-content ul li{
+    padding: 10px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+.earning-history-tabs .tab-content ul li:last-child{
+    border-bottom: 0;
+}
+
+.earning-history-tabs .tab-content ul li span{
+    display: inline-block;
+    width: 100%;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 0 0;
+}
+
+.earning-history-tabs .tab-content ul li small{
+    width: 100%;
+    font-size: 10px;
+    color: #4a4040;
+    font-weight: 400;
+    float: left;
+}
+
+.earning-history-tabs .tab-content ul li h6{
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 0;
+}
+
+.earning-history-tabs .tab-content ul li h6 img{
+    width: 14px;
+    margin-right: 4px; 
+}
+
+.welcomemodal-modal .modal-body {
+    padding: 35px 15px 15px;
+}
+
+.welcomemodal-modal .close{
+    position: absolute;
+    right: 6px;
+    top: 7px;
+    margin: 0;
+    opacity: 1;
+    outline: 0;
+}
+
+.welcomemodal-modal .close span{
+    font-size: 35px;
+    color: #000;
+}
+
+.welcomemodal-modal h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: #5758e8;
+    margin: 0 0 10px;
+}
+
+.welcomemodal-modal p{
+    margin: 0 0 10px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 400;
+}
+
+.welcomemodal-modal p img{
+    width: 14px;
+    margin-right: 4px;
+}
+
+.welcomemodal-modal span{
+    margin: 0 0 15px;
+    font-size: 12px;
+    color: #5f5f5f;
+    font-weight: 400;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.welcomemodal-modal span img{
+    width: 12px;
+    margin: 0 3px;
+}
+
+.score-screen-before-logo .contest-post-login .left-cols span{
+    margin:0 0;
+}
+
+.score-screen-before-logo .contest-post-login .left-cols .user-active {
+    margin: 10px 0 0;
+}
+
+.my-games-before-login .not-joined-contest h3 {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    margin: 0 0 20px;
+}
+
+.my-games-before-login .not-joined-contest h6 {
+    font-size: 13px;
+    color: #000;
+    font-weight: 600;
+    margin:0 0 15px;
+}
+
+.my-games-before-login .not-joined-contest a {
+    font-size: 15px;
+    font-weight: 600;
+    max-width: 170px;
+    text-transform: uppercase;
+    margin: 10px auto 0;
+}
+
+.my-games-before-login .not-joined-contest img {
+    width: 70px;
+    margin: 0 auto 20px;
+}
+
+.output-page-content {
+    padding: 14px!important;
+}
+
+.output-page-content .featured-image {
+    height: 160px;
+    border-radius: 12px;
+    margin: 0 auto 20px;
+}
+
+.output-page-content .featured-image img{
+    object-fit: cover;
+    height: 100%;
+    width:100%;
+}
+
+.output-page-content h3 {
+    color: #5659e8;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 0 18px;
+}
+
+.output-page-content p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 0 20px;
+    color: #000;
+}
+
+.output-page-content p a{
+    color: #0331c5;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.output-page-content .anchor-style {
+    display: block;
+    width: 100%;
+    text-align: center;
+    max-width: 200px;
+    margin: 30px auto 10px;
+    font-weight: 700;
+    color: #5658e9;
+    border-radius: 10px;
+    border: 1px solid #5658e9;
+    line-height: 46px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.output-page-content .confirm-btn {
+    color: #000;
+    font-weight: 500;
+    max-width: 100%;
+    border-radius: 24px;
+    border-color: #e5e5e5;
+    background: #e5e5e5;
+    font-size: 14px;
+    margin: 0 auto 18px;
+    line-height: 40px;
+}
+
+.contact-us-page p {
+    font-size: 20px;
+}
+
+.contact-us-page p a{
+    color: #5758e8; 
+    font-weight: 500;
+}
+
+.partnerus-page .text-reactout {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 0 10px;
+    color: #5758e8;
+    display: inline-block;
+    width: 100%;
+}
+
+.partnerus-page  p{
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+.contact-us-page .social-icons a{
+    margin: 0 10px;
+}
+
+.contact-us-page .social-icons a img{
+    width: 40px;
+}
+
+.blocked-screen .logo img{
+    width: 70px;
+}
+
+.blocked-screen .content .featured-img {
+    width: 100%;
+    max-width: 230px;
+    margin: 0 0 40px;
+}
+
+.blocked-screen .content h1 {
+    color: #ffd914;
+    font-weight: 700;
+    margin: 0 0 30px;
+}
+
+.blocked-screen .content h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 40px;
+}
+
+.blocked-screen .content p {
+    color: #fff;
+    font-size: 20px;
+}
+
+.privacy-policy-page .policy-featured-img {
+    height: 170px;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+}
+
+.privacy-policy-page .policy-featured-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.privacy-policy-page .tabs-content .nav-tabs .nav-link {
+    border-bottom: 4px solid #fff;
+    font-weight: 700;
+}
+
+.privacy-policy-page .tab-content small {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    display: inline-block;
+    margin: 0 0 12px;
+}
+
+.privacy-policy-page .tab-content p {
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    margin: 6px 0 10px;
+}
+
+.privacy-policy-page .tab-content p a{
+    font-weight: 600;
+    color: #5758e8;
+    text-decoration: none;
+}
+
+.privacy-policy-page .tab-content h6 {
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 20px 0 12px;
+}
+
+.privacy-policy-page .tab-content  .disc-ul {
+    list-style: disc;
+    padding-left: 18px;
+}
+
+.privacy-policy-page .tab-content .alpha-ul {
+    padding-left: 18px;
+    list-style: lower-alpha;
+}
+
+.privacy-policy-page .tab-content .circle-ul {
+    padding-left: 18px;
+    list-style: circle;
+}
+
+.privacy-policy-page .tab-content .roman-ul {
+    padding-left: 25px;
+    list-style: lower-roman;
+}
+
+.privacy-policy-page .tab-content ol{
+    list-style-position: inside;
+}
+
+.privacy-policy-page .tab-content ul li,
+.privacy-policy-page .tab-content ol li{
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+    margin: 0 0 8px;
+    padding: 0;
+    align-items: initial;
+    border-bottom: 0;
+    overflow: initial;
+    display: list-item;
+}
+
+#rules .modal-content {
+    margin: 30px auto;
+}
+
+#rules .tabs-content .nav-tabs .nav-link {
+    font-size: 11px;
+    border-bottom: 3px solid #d6d6d6;
+}
+
+#rules .tabs-content .nav-tabs .active {
+    border-bottom: 3px solid #5758e8;
+}
+
+#rules .modal-header {
+    padding-bottom: 5px;
+}
+
+#rules .modal-header .close {
+    padding: 0.2rem 1rem;
+    top: 13px;
+}
+
+#rules .close span {
+    margin: 0 0 0;
+}
+
+#rules .tab-content ol {
+    text-align: left;
+    padding: 25px 0 25px 15px;
+    margin: 0 0;
+}
+
+#rules .tab-content ol li {
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+    line-height: 17px;
+    margin: 0 0 5px;
+}
+
+
+/*snack bar*/
+#snackbar {
+  visibility: hidden;
+  width: 90%;
+    /* margin-left: -8%; */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 10px;
+    position: fixed;
+    z-index: 1;
+    left: 5%;
+    bottom: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+._only50height {
+    margin:0 auto;
+    height: 50px;
+}
+
+._only75height {
+    margin:0 auto;
+    height: 75px;
+}
+
+.systemlogin-screen .logo{
+    margin: 0 auto 40px;
+}
+
+.systemlogin-screen h1 {
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+
+.systemlogin-screen h3 {
+    font-size: 16px;
+    margin: 0 0 25px;
+}
+
+.systemlogin-screen .username-password-fields {
+    position: relative;
+}
+
+.systemlogin-screen .username-password-fields input{
+    border: 2px solid #aca9ff;
+    border-radius: 24px;
+    line-height: 50px;
+    padding: 0 15px;
+    outline: 0;
+    box-shadow: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 10px;
+    background: transparent;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+
+.systemlogin-screen .username-password-fields input::-webkit-input-placeholder { 
+    color: #fbffff;
+}
+.systemlogin-screen .username-password-fields input::-moz-placeholder { 
+    color: #fbffff;
+}
+.systemlogin-screen .username-password-fields input:-ms-input-placeholder { 
+    color: #fbffff;
+}
+.systemlogin-screen .username-password-fields input:-moz-placeholder { 
+    color: #fbffff;
+}
+
+.systemlogin-screen .username-password-fields input[type="submit"]{
+    color: #363636;
+    background: #fff;
+    font-weight: 700;
+    border-color: #fff;
+    text-transform: uppercase;
+    line-height: 48px;
+    padding: 3px 15px 0;
+}
+
+.systemlogin-screen .username-password-fields #username{
+    background: url('https://fecdn.mglgamez.com/assets/images/username-field-icon.png') no-repeat 15px 50%;
+    background-size: 24px;
+    padding-left: 50px;
+}
+
+.systemlogin-screen .username-password-fields #password{
+    background: url('https://fecdn.mglgamez.com/assets/images/password-field-icon.png') no-repeat 15px 50%;
+    background-size: 24px;
+    padding-left: 50px;
+}
+
+
+.modal-common-style .modal-content {
+    border-radius: 10px;
+}
+
+.modal-common-style .modal-header {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-common-style .close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 24px;
+    opacity: 1;
+    transition: all .2s;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #666;
+    text-shadow: none;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+.modal-common-style .modal-header h5 {
+    color: #000;
+    font-size: 18px;
+}
+
+.welcomepopup-content .modal-header {
+    border: 0;
+    padding-bottom: 5px;
+    padding-top: 24px;
+}
+
+.welcomepopup-content .modal-body {
+    padding-top: 4px;
+}
+
+.welcomepopup-content .modal-header h5 {
+    color: #7e78d2;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.welcomepopup-content .modal-body p {
+    color: #000;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+#player1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+}
+
+.branding_band{
+    width: 100% !important
+}
+
+.allgames_mygames_tabs .cards-group .ads-watch-vbg {
+    background:url('https://fecdn.mglgamez.com/assets/images/ads-strips-bg.jpg') top center;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.allgames_mygames_tabs .cards-group .ads-watch-vbg img {
+    width: 30px;
+}
+
+.allgames_mygames_tabs .cards-group .ads-watch-vbg h6{
+    margin: 0;
+    font-size: 10px;
+    line-height: 12px;
+    color: #000;
+    font-weight: 600;
+}
+
+.allgames_mygames_tabs .cards-group .ads-watch-vbg h6 img{
+    width: 16px;
+    margin: 0;
+}
+
+.allgames_mygames_tabs .cards-group .ads-watch-vbg .video-btn{
+    background: #fff;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px 7px 4px;
+    white-space: nowrap;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid #d7f3c7;
+    line-height: 20px;
+    width: 80px;
+}
+
+/* ======================================================================================================================================== */
+
+.adBG {
+    background-color: #e3e5ff;
+    border: 1px solid #7882ff;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.cusBtnOption {
+    /* background-color: rgb(184 93 245); */
+    background-color: #7882ff;
+    padding: 10px 20px;
+    /* font-size: 18px; */
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 14px rgb(0 0 0 / 40%);
+    color: white!important;
+    border: none;
+}
+
+.cusBtnOption:hover , .playcusBtnOption:hover{
+    text-decoration: none;
+    background-color: #007f96 !important;
+}
+.playcusBtnOption{
+    background-color: #7882ff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    color: white!important;
+}
+
+
+.txtClr{
+    color: #7882ff !important;
+}

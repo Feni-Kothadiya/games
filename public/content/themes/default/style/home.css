@@ -1,0 +1,314 @@
+/* Home screen redesign – categories at top, games grid below */
+
+.home-layout {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 1rem 0;
+  min-height: calc(100svh - 84px);
+  box-sizing: border-box;
+}
+
+/* ----- Categories bar (top) ----- */
+.home-categories {
+  margin: 1rem 0 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.home-categories-inner {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 12px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--taptap-blue) transparent;
+}
+
+.home-categories-inner::-webkit-scrollbar {
+  height: 6px;
+}
+
+.home-categories-inner::-webkit-scrollbar-thumb {
+  background: var(--taptap-blue);
+  border-radius: 3px;
+}
+
+.home-category-card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 80px;
+  max-width: 96px;
+  padding: 12px 8px;
+  background: var(--pure-white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-close);
+  text-decoration: none;
+  color: var(--denim-blue, #002b50);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.2s var(--bezier), box-shadow 0.2s var(--bezier);
+}
+
+.home-category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-mid);
+  color: var(--taptap-blue);
+}
+
+/* Active/selected category tab */
+.home-category-card--active {
+  background: var(--taptap-blue);
+  color: #ffffff;
+  box-shadow: var(--shadow-mid);
+}
+
+.home-category-card--active .home-category-img-wrap {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.home-category-card--active .home-category-name {
+  color: inherit;
+}
+
+.home-category-img-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--grey-7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-category-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-category-name {
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/* ----- Games section ----- */
+.home-games-section {
+  margin-bottom: 1.5rem;
+  padding: 0 12px;
+}
+
+.home-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--denim-blue, #002b50);
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.home-search-inline {
+  margin-bottom: 1.5rem;
+  padding: 1rem 12px 1.25rem;
+  border-radius: 0;
+  background: rgba(112, 122, 243, 0.08);
+  border: none;
+  border-top: 1px solid rgba(112, 122, 243, 0.18);
+  border-bottom: 1px solid rgba(112, 122, 243, 0.18);
+}
+
+.home-search-empty {
+  color: var(--grey-3);
+  font-size: 1rem;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+/* ----- Games grid ----- */
+.home-games-grid {
+  padding: 0 12px;
+  display: grid;
+  grid-gap: 14px;
+  grid-auto-flow: row dense;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(94px, 94px));
+  grid-auto-rows: 94px;
+}
+
+@media (min-width: 375px) {
+  .home-games-grid {
+    grid-template-columns: repeat(4, 94px);
+  }
+}
+
+@media (min-width: 551px) {
+  .home-games-grid {
+    grid-template-columns: repeat(5, 94px);
+  }
+}
+
+@media (min-width: 661px) {
+  .home-games-grid {
+    grid-template-columns: repeat(6, 94px);
+  }
+}
+
+@media (min-width: 768px) {
+  .home-games-grid {
+    grid-template-columns: repeat(7, 94px);
+    grid-gap: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-games-grid {
+    grid-template-columns: repeat(9, 94px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-games-grid {
+    grid-template-columns: repeat(11, 94px);
+  }
+}
+
+/* ----- Game page tweaks ----- */
+.home-layout .game-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0 2rem;
+}
+
+.home-layout .game-iframe-container img#img_thumb {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+@media (min-width: 1400px) {
+  .home-games-grid {
+    grid-template-columns: repeat(13, 94px);
+  }
+}
+
+@media (min-width: 1600px) {
+  .home-games-grid {
+    grid-template-columns: repeat(15, 94px);
+  }
+}
+
+@media (min-width: 1871px) {
+  .home-games-grid {
+    grid-template-columns: repeat(17, 94px);
+  }
+}
+
+/* Game card base */
+.home-game-card,
+.home-game-slot {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--pure-white);
+  box-shadow: var(--shadow-close);
+  transition: transform 0.25s var(--bezier), box-shadow 0.25s var(--bezier);
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-game-card:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-hover);
+}
+
+.home-game-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.home-game-card:hover .home-game-card-overlay {
+  opacity: 1;
+}
+
+.home-game-card-media {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+}
+
+.home-game-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.home-game-card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.home-game-card:hover .home-game-card-title {
+  opacity: 1;
+}
+
+/* Slot sizes (match previous layout logic) */
+.home-game-card--small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.home-game-card--medium {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.home-game-card--large {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.home-game-slot--ad {
+  grid-column: span 2;
+  grid-row: span 1;
+  min-height: 94px;
+  background: var(--grey-7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure cards fill grid cell */
+.home-game-card .home-game-card-media,
+.home-game-card .home-game-card-overlay {
+  border-radius: 14px;
+}
+
+.home-game-card,
+.home-game-slot {
+  min-height: 94px;
+}

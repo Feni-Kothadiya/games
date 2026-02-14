@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  text-align: center;
+}
+
+.game {
+  margin-left: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.puzzle-container {
+  position: relative;
+  border: 2px solid #000;
+  margin-top: 20px;
+}
+
+.tile {
+  position: absolute;
+  border: 1px solid #000;
+  background-size: 300px 300px; /* Change this according to your puzzle image size */
+  transition: top 0.3s, left 0.3s;
+}

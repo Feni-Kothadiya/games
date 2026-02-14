@@ -1,0 +1,91 @@
+<!doctypehtml>
+
+    <html class=no-js>
+    <meta charset=utf-8>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <title>Warship</title>
+    <meta content=Warship name=Title>
+    <meta
+        content="Warship is a HTML5 game where 2 player fires in the adverse grid and tries to search and destroy all of opponent's ship for the win, find the most efficient way to battle by setup your board settings including size, total ships and game mode, with advanced game mode you could firing multiple shots instead of one to beat the game."
+        name=description>
+    <meta
+        content="battleships, ship, strategy, board, guessing, combat, destroy, missiles, classic, sea, army, shooter, defense"
+        name=keywords>
+    <meta content=Warship property=og:title>
+    <meta content=Warship property=og:site_name>
+    <meta content=https://demonisblack.com/code/2024/warship/game/share.jpg property=og:image>
+    <meta content=https://demonisblack.com/code/2024/warship/game/ property=og:url>
+    <meta
+        content="Warship is a HTML5 game where 2 player fires in the adverse grid and tries to search and destroy all of opponent's ship for the win, find the most efficient way to battle by setup your board settings including size, total ships and game mode, with advanced game mode you could firing multiple shots instead of one to beat the game."
+        property=og:description>
+    <meta content=summary name=twitter:card>
+    <meta content=Warship name=twitter:title>
+    <meta
+        content="Warship is a HTML5 game where 2 player fires in the adverse grid and tries to search and destroy all of opponent's ship for the win, find the most efficient way to battle by setup your board settings including size, total ships and game mode, with advanced game mode you could firing multiple shots instead of one to beat the game."
+        name=twitter:description>
+    <meta content=https://demonisblack.com/code/2024/warship/game/share.jpg name=twitter:image>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <script>
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:device-width}")),
+                document.getElementsByTagName("head")[0].appendChild(msViewportStyle)
+        }
+    </script>
+    <link href=icon.ico rel="shortcut icon" type=image/x-icon>
+    <link href=css/normalize.css rel=stylesheet>
+    <link href=css/main.css rel=stylesheet>
+    <script src=js/vendor/modernizr-2.6.2.min.js></script>
+    <div id=mainLoader>
+        <img src=assets/loader.png>
+        <br>
+        <span>0</span>
+    </div>
+    <div id=mainHolder>
+        <div id=notSupportHolder>
+            <div class=notSupport>
+                Your browser isn't supported.<br>Please update your browser in order to run the game.
+            </div>
+        </div>
+        <div id=canvasHolder>
+            <canvas height=768 id=gameCanvas width=1280></canvas>
+        </div>
+    </div>
+    <script src=//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src=js/vendor/detectmobilebrowser.js></script>
+    <script src=js/vendor/createjs.min.js></script>
+    <script src=js/vendor/TweenMax.min.js></script>
+    <script src=js/vendor/proton.min.js></script>
+    <script src=js/init.js></script>
+    <script src=cross/cross.js data-banner=true></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217316241873105"
+        crossorigin="anonymous"></script> -->
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyAJHvyMAl2ftQ7Uh_-mFVdgDU0NQpEZ1S0",
+            authDomain: "taptapgames-24299.firebaseapp.com",
+            projectId: "taptapgames-24299",
+            storageBucket: "taptapgames-24299.appspot.com",
+            messagingSenderId: "364423052887",
+            appId: "1:364423052887:web:7b1704bc7d7c8658996d12",
+            measurementId: "G-Y2Y5N7CH3T"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "m8o848k45i");
+    </script>

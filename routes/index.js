@@ -1,0 +1,13 @@
+const express = require("express");
+const { tokenVerification } = require("../middleware");
+const auth = require("./auth");
+const user = require("./user-type");
+const trending = require("./games");
+const router = express.Router();
+
+// AUTH Routes * /api/auth/*
+router.use("/auth", auth);
+router.use("/user", user);
+router.use("/trending", trending);
+  
+module.exports = router;
