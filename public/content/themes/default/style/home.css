@@ -143,13 +143,13 @@
 
 @media (min-width: 375px) {
   .home-games-grid {
-    grid-template-columns: repeat(4, 94px);
+    grid-template-columns: repeat(3, 94px);
   }
 }
 
 @media (min-width: 551px) {
   .home-games-grid {
-    grid-template-columns: repeat(5, 94px);
+    grid-template-columns: repeat(4, 94px);
   }
 }
 
