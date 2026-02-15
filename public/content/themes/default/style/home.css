@@ -147,6 +147,11 @@
   }
 }
 
+@media (min-width: 450px) {
+  .home-games-grid {
+    grid-template-columns: repeat(4, 94px);
+  }
+}
 @media (min-width: 551px) {
   .home-games-grid {
     grid-template-columns: repeat(4, 94px);
