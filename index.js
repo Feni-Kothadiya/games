@@ -5,34 +5,10 @@ const morgan = require("morgan");
 const cors = require("cors");
 const compression = require("compression");
 var path = require('path');
-// var firebase = require('firebase/app');
 const routes = require('./routes')
 const { all, findOne, topsix, find } = require("./helpers");
 const { cache } = require("./lib");
-// const { getAnalytics, logEvent, isSupported }  = require("firebase/analytics");
 const app = express();
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAJHvyMAl2ftQ7Uh_-mFVdgDU0NQpEZ1S0",
-//   authDomain: "taptapgames-24299.firebaseapp.com",
-//   projectId: "taptapgames-24299",
-//   storageBucket: "taptapgames-24299.appspot.com",
-//   messagingSenderId: "364423052887",
-//   appId: "1:364423052887:web:7b1704bc7d7c8658996d12",
-//   measurementId: "G-Y2Y5N7CH3T"
-// };
-
-// firebase.initializeApp(firebaseConfig);
-
-// isSupported().then((result) => {
-//     if (result) {
-//       fireapp = initializeApp(config);
-//         analytics = getAnalytics(fireapp);
-//     }
-// })
-
-// var firApp = firebase.initializeApp(config);
-// const analytics = firebase.analytics();
 
 var db = mongoose.connection;
 
@@ -94,25 +70,7 @@ app.set('view engine', 'ejs');
 app.get('/', async (req, res) => {
   try {
     var fullUrl = 'https://' + req.get('host') + req.originalUrl;
-    if (req.hostname.includes("online.games")) {
-      res.render('onlinegames', { url: fullUrl });
-    } else if (req.hostname.includes("anime")) {
-      res.render('anime', { url: fullUrl });
-    } else if (req.hostname.includes("1.online.play")) {
-      res.render('subone', { url: fullUrl });
-    } else if (req.hostname.includes("2.online.play")) {
-      res.render('subtwo', { url: fullUrl });
-    } else if (req.hostname.includes("3.online.play")) {
-      res.render('subthree', { url: fullUrl });
-    } else if (req.hostname.includes("4.online.play")) {
-      res.render('subfour', { url: fullUrl });
-    }
-    else if (req.hostname.includes("5.online.play")) {
-      res.render('subfive', { url: fullUrl });
-    }
-    else if (req.hostname.includes("online.play")) {
-      res.render('onlineplay', { url: fullUrl });
-    } else if (req.hostname.includes("play")) {
+    if (req.hostname.includes("play")) {
       const [games, categories] = await Promise.all([
         all("games"),
         all('categories')
@@ -267,6 +225,10 @@ app.use("/aboutus", (req, res) => {
 app.use("/privacy", (req, res) => {
   var fullUrl = 'https://' + req.get('host') + req.originalUrl;
   res.render('privacy', { url: fullUrl });
+});
+app.use("/terms", (req, res) => {
+  var fullUrl = 'https://' + req.get('host') + req.originalUrl;
+  res.render('terms', { url: fullUrl });
 });
 
 app.use("/testads", (req, res) => {
@@ -498,31 +460,26 @@ app.get('/admin/dashboard', (req, res) => {
 app.use("*", async (req, res) => {
   try {
     var fullUrl = 'https://' + req.get('host') + req.originalUrl;
+    // Use cache for 404 page data (most 404s are bots/crawlers)
+    const cacheKey = '404_page_data';
+    const cachedData = await cache.getOrSet(
+      cacheKey,
+      async () => {
+        const [games, categories] = await Promise.all([
+          all("games"),
+          all('categories')
+        ]);
+        return { games, categories };
+      },
+      1800 // Cache 404 page data for 30 minutes
+    );
 
-    if (req.hostname.includes("online.play")) {
-      res.render('subone', { url: fullUrl });
-    } else {
-      // Use cache for 404 page data (most 404s are bots/crawlers)
-      const cacheKey = '404_page_data';
-      const cachedData = await cache.getOrSet(
-        cacheKey,
-        async () => {
-          const [games, categories] = await Promise.all([
-            all("games"),
-            all('categories')
-          ]);
-          return { games, categories };
-        },
-        1800 // Cache 404 page data for 30 minutes
-      );
-
-      res.status(404).render('404', {
-        data: cachedData.games,
-        categories: cachedData.categories,
-        url: fullUrl,
-        category: null
-      });
-    }
+    res.status(404).render('404', {
+      data: cachedData.games,
+      categories: cachedData.categories,
+      url: fullUrl,
+      category: null
+    });
   } catch (err) {
     res.status(500).send('Internal Server Error');
   }

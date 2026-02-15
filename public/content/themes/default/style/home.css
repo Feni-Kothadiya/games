@@ -143,25 +143,25 @@
 
 @media (min-width: 375px) {
   .home-games-grid {
-    grid-template-columns: repeat(4, 94px);
+    grid-template-columns: repeat(5, 94px);
   }
 }
 
 @media (min-width: 551px) {
   .home-games-grid {
-    grid-template-columns: repeat(5, 94px);
+    grid-template-columns: repeat(6, 94px);
   }
 }
 
 @media (min-width: 661px) {
   .home-games-grid {
-    grid-template-columns: repeat(6, 94px);
+    grid-template-columns: repeat(7, 94px);
   }
 }
 
 @media (min-width: 768px) {
   .home-games-grid {
-    grid-template-columns: repeat(7, 94px);
+    grid-template-columns: repeat(8, 94px);
     grid-gap: 16px;
   }
 }
@@ -183,6 +183,37 @@
   width: 100%;
   max-width: 100%;
   margin: 1.5rem 0 2rem;
+}
+
+/* Keep the main game centered so recommendation tiles can render on both sides */
+@media (min-width: 991px) and (max-width: 1210.9px) {
+  .homepage > .game-container {
+    grid-column: 2 / span 7 !important;
+  }
+}
+
+@media (min-width: 1211px) and (max-width: 1320.9px) {
+  .homepage > .game-container {
+    grid-column: 3 / span 7 !important;
+  }
+}
+
+@media (min-width: 1321px) and (max-width: 1540.9px) {
+  .homepage > .game-container {
+    grid-column: 3 / span 8 !important;
+  }
+}
+
+@media (min-width: 1541px) and (max-width: 1870.9px) {
+  .homepage > .game-container {
+    grid-column: 4 / span 8 !important;
+  }
+}
+
+@media (min-width: 1871px) {
+  .homepage > .game-container {
+    grid-column: 5 / span 9 !important;
+  }
 }
 
 .home-layout .game-iframe-container img#img_thumb {
