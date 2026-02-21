@@ -1,0 +1,51 @@
+<% var currentCategory = (typeof category !== 'undefined') ? category : null; %>
+<aside id="site-sidebar" class="app-sidebar" aria-label="Game sidebar navigation">
+    <div class="app-sidebar__panel">
+        <div class="app-sidebar__header">
+            <span class="app-sidebar__eyebrow">Navigation</span>
+            <button type="button" class="app-sidebar__close sidebar-close" aria-label="Close sidebar">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+
+        <a href="/" class="app-sidebar__all-link">Explore All Games</a>
+
+        <% if (typeof categories !== 'undefined' && categories && categories.length) { %>
+            <section class="app-sidebar__section">
+                <h3>Categories</h3>
+                <ul class="app-sidebar__list">
+                    <% categories.forEach(function(item) { %>
+                        <% var activeCategory = currentCategory && (String(currentCategory).toLowerCase() === String(item.category).toLowerCase() || String(currentCategory).toLowerCase() === String(item.category_name).toLowerCase()); %>
+                            <li>
+                                <a href="/category/<%= item.category %>"
+                                    class="app-sidebar__link <%= activeCategory ? 'app-sidebar__link--active' : '' %>">
+                                    <img src="<%= item.image %>" alt="<%= item.category_name %>" width="36" height="36" loading="lazy" decoding="async">
+                                    <span class="app-sidebar__label"><%= item.category_name %></span>
+                                    <span class="app-sidebar__pulse" aria-hidden="true"></span>
+                                </a>
+                            </li>
+                            <% }); %>
+                </ul>
+            </section>
+            <% } %>
+
+                <% if (typeof data !== 'undefined' && data && data.length) { %>
+                    <section class="app-sidebar__section">
+                        <h3>Quick Play</h3>
+                        <ul class="app-sidebar__quick-list">
+                            <% data.slice(0, 10).forEach(function(item) { %>
+                                <li>
+                                    <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="app-sidebar__quick-link">
+                                        <img src="<%= item.thumb %>" alt="<%= item.name %>" width="42" height="42" loading="lazy" decoding="async">
+                                        <span class="app-sidebar__label"><%= item.name %></span>
+                                    </a>
+                                </li>
+                                <% }); %>
+                        </ul>
+                    </section>
+                    <% } %>
+    </div>
+</aside>
+<div class="sidebar-backdrop" aria-hidden="true"></div>

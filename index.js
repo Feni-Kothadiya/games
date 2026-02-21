@@ -70,22 +70,12 @@ app.set('view engine', 'ejs');
 app.get('/', async (req, res) => {
   try {
     var fullUrl = 'https://' + req.get('host') + req.originalUrl;
-    if (req.hostname.includes("play")) {
-      const [games, categories] = await Promise.all([
-        all("games"),
-        all('categories')
-      ]);
+    const [games, categories] = await Promise.all([
+      all("games"),
+      all('categories')
+    ]);
 
-      res.render('submain/play', { data: games, categories: categories, url: fullUrl, category: null });
-    } else {
-
-      const [games, categories] = await Promise.all([
-        all("games"),
-        all('categories')
-      ]);
-
-      res.render('index', { data: games, categories: categories, url: fullUrl, category: null });
-    }
+    res.render('index', { data: games, categories: categories, url: fullUrl, category: null });
   } catch (err) {
     res.status(500).send('Internal Server Error');
   }
@@ -183,11 +173,11 @@ app.use("/play", async (req, res) => {
   const search = "/game" + req.url;
   const game = await findOne("games", { "pagelink": search });
   try {
-    const data = await all("games");
+    const [data, categories] = await Promise.all([all("games"), all("categories")]);
     if (game) {
-      res.render('submain/playgame', { game: game, data: data, isMobile, url: fullUrl });
+      res.render('game', { game: game, data: data, categories: categories, isMobile, url: fullUrl });
     } else {
-      res.render('submain/play', { data: data, url: fullUrl, category: null });
+      res.render('index', { data: data, categories: categories, url: fullUrl, category: null });
     }
   } catch (err) {
     console.error(err);

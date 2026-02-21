@@ -1,13 +1,70 @@
 var timerid;
 
+(function () {
+    var storageKey = "dora_theme";
+    var theme = "dark";
+
+    try {
+        var savedTheme = localStorage.getItem(storageKey);
+        if (savedTheme === "light" || savedTheme === "dark") {
+            theme = savedTheme;
+        }
+    } catch (e) {
+        theme = "dark";
+    }
+
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+
 $(document).ready(function () {
+    if (!$(".app-sidebar").length) {
+        $(".sidebar-toggle").hide();
+    }
+
     $(".back-div").click(function () {
         $("#mobile-gameframe").hide();
-        $(".back-div").attr('style', 'display:none');
-        $("#mobile-gameframe").attr('src', '');
+        $(".back-div").attr("style", "display:none");
+        $("#mobile-gameframe").attr("src", "");
+        setGamePreviewVisible(true);
     });
 
-    // Navbar search: always use top navbar input only (no sidebar overlay)
+    // Sidebar open/close for responsive navigation.
+    $(document).on("click", ".sidebar-toggle", function () {
+        $("body").toggleClass("sidebar-open");
+    });
+
+    $(document).on("click", ".sidebar-close, .sidebar-backdrop", function () {
+        $("body").removeClass("sidebar-open");
+    });
+
+    $(document).on("click", ".app-sidebar a", function () {
+        if (window.matchMedia("(max-width: 1080px)").matches) {
+            $("body").removeClass("sidebar-open");
+        }
+    });
+
+    // Always close sidebar before navigating to a game for cleaner transition.
+    $(document).on("click", ".home-game-card, .PlayBtn", function () {
+        $("body").removeClass("sidebar-open");
+    });
+
+    $(document).on("keydown", function (event) {
+        if (event.key === "Escape") {
+            $("body").removeClass("sidebar-open");
+        }
+    });
+
+    // Theme toggle: dark and light mode.
+    $(document).on("click", ".theme-toggle", function () {
+        var current = document.documentElement.getAttribute("data-theme");
+        var next = current === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", next);
+        try {
+            localStorage.setItem("dora_theme", next);
+        } catch (e) { }
+    });
+
+    // Navbar search: focus on the input whenever search shell is clicked.
     $(document).on("click", ".ic-nav-search", function () {
         var $input = $(this).find(".nav-search-input");
         if ($input.length) {
@@ -15,7 +72,7 @@ $(document).ready(function () {
         }
     });
 
-    // Inline search on home page: filter data within home layout itself
+    // Inline search on home page.
     var homeSearchTimer;
     $(document).on("input", ".nav-search-input", function () {
         if (!$("#home-search-section").length) return;
@@ -29,7 +86,7 @@ $(document).ready(function () {
         }
         homeSearchTimer = setTimeout(function () {
             homeInlineSearch(value);
-        }, 400);
+        }, 350);
     });
 });
 
@@ -81,29 +138,45 @@ const isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS());
     }
 };
+
 function openGamePage(data) {
+    setGamePreviewVisible(false);
 
     if (isMobile.any()) {
         open_fullscreen();
         $("#mobile-gameframe").show();
-        $(".back-div").attr('style', 'display:flex');
-        $("#mobile-gameframe").attr('src', data.href);
-
+        $(".back-div").attr("style", "display:flex");
+        $("#mobile-gameframe").attr("src", data.href);
     } else {
         $("#desktop-gameframe").show();
-        $("#desktop-gameframe").attr('src', data.href);
+        $("#desktop-gameframe").attr("src", data.href);
     }
     return false;
 }
+
+function setGamePreviewVisible(isVisible) {
+    var $playButton = $("#play_game_link");
+    var $thumb = $("#img_thumb");
+    if (!$playButton.length || !$thumb.length) return;
+
+    if (isVisible) {
+        $playButton.show();
+        $thumb.show();
+    } else {
+        $playButton.hide();
+        $thumb.hide();
+    }
+}
+
 function open_fullscreen() {
     let game = document.getElementById("mobile-gameframe");
     if (game.requestFullscreen) {
         game.requestFullscreen();
-    } else if (game.mozRequestFullScreen) { /* Firefox */
+    } else if (game.mozRequestFullScreen) {
         game.mozRequestFullScreen();
-    } else if (game.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    } else if (game.webkitRequestFullscreen) {
         game.webkitRequestFullscreen();
-    } else if (game.msRequestFullscreen) { /* IE/Edge */
+    } else if (game.msRequestFullscreen) {
         game.msRequestFullscreen();
     }
-};
+}

@@ -1,13 +1,18 @@
 <div class="nav-bar nav-bar--dark head-desktop homePageHeaderContainer sticky top-0 z-50">
+    <% var showSidebarToggle = ((typeof categories !== 'undefined' && categories && categories.length) || (typeof data !== 'undefined' && data && data.length)); %>
     <header class="nav-bar__inner">
         <div class="nav-bar__left">
-            <a href="/" class="nav-bar__logo nav-brand" title="Tap Tap Games" aria-label="Tap Tap Games">
-                <span class="nav-brand__mark">
-                    <img src="/public/images/taptap_white.svg" alt="Tap Tap Games" width="28" height="28" loading="eager" decoding="async">
-                </span>
+            <button type="button" class="nav-bar__icon-btn sidebar-toggle" aria-label="Open sidebar" <% if (!showSidebarToggle) { %>style="display:none;"<% } %>>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7H20M4 12H20M4 17H14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <a href="/" class="nav-bar__logo nav-brand" title="Dora Dora Play" aria-label="Dora Dora Play">
+                <span class="nav-brand__mark">DD</span>
                 <span class="nav-brand__copy">
-                    <strong class="nav-brand__title">TapTap Games</strong>
-                    <span class="nav-brand__tag">Instant browser gaming platform</span>
+                    <strong class="nav-brand__title">Dora Dora Play</strong>
+                    <span class="nav-brand__tag">Arcade Portal</span>
                 </span>
             </a>
         </div>
@@ -15,20 +20,30 @@
         <div class="nav-bar__center">
             <label class="nav-bar__search-pill ic-nav-search" for="nav-search-input-desktop">
                 <input type="search" id="nav-search-input-desktop" class="nav-search-input"
-                    placeholder="Search games, genres, and collections" autocomplete="off"
-                    aria-label="Search games, genres, and collections">
+                    placeholder="Search games, categories, and genres" autocomplete="off"
+                    aria-label="Search games, categories, and genres">
                 <span class="nav-bar__search-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.88889 17.7778C7.13084 17.7778 5.41226 17.2565 3.95049 16.2797C2.48872 15.303 1.34941 13.9148 0.67663 12.2905C0.00385139 10.6663 -0.172178 8.87903 0.170801 7.15476C0.513781 5.43048 1.36037 3.84663 2.6035 2.6035C3.84663 1.36037 5.43048 0.513781 7.15476 0.170801C8.87903 -0.172178 10.6663 0.00385139 12.2905 0.67663C13.9148 1.34941 15.303 2.48872 16.2797 3.95049C17.2565 5.41226 17.7778 7.13084 17.7778 8.88889C17.7751 11.2456 16.8378 13.5049 15.1714 15.1714C13.5049 16.8378 11.2456 17.7751 8.88889 17.7778ZM8.88889 2.22223C7.57035 2.22223 6.28142 2.61322 5.18509 3.34576C4.08876 4.0783 3.23428 5.1195 2.7297 6.33767C2.22511 7.55584 2.09309 8.89629 2.35032 10.1895C2.60756 11.4827 3.2425 12.6706 4.17485 13.6029C5.1072 14.5353 6.29508 15.1702 7.58829 15.4275C8.8815 15.6847 10.2219 15.5527 11.4401 15.0481C12.6583 14.5435 13.6995 13.689 14.432 12.5927C15.1646 11.4964 15.5556 10.2074 15.5556 8.88889C15.5538 7.12132 14.8508 5.42666 13.601 4.1768C12.3511 2.92694 10.6565 2.22399 8.88889 2.22223Z" fill="currentColor"/>
-                        <path d="M18.8889 20.0001C18.5942 20 18.3117 19.8829 18.1033 19.6745L13.6589 15.2301C13.4565 15.0205 13.3445 14.7398 13.347 14.4485C13.3496 14.1572 13.4664 13.8785 13.6724 13.6725C13.8784 13.4665 14.1571 13.3496 14.4484 13.3471C14.7398 13.3446 15.0204 13.4565 15.23 13.6589L19.6744 18.1034C19.8298 18.2588 19.9356 18.4567 19.9784 18.6722C20.0213 18.8877 19.9993 19.1111 19.9152 19.3141C19.8311 19.5171 19.6887 19.6906 19.5061 19.8127C19.3234 19.9348 19.1086 20 18.8889 20.0001Z" fill="currentColor"/>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M16 16L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                     </svg>
                 </span>
             </label>
         </div>
 
         <nav class="nav-bar__right" aria-label="Primary">
+            <button type="button" class="nav-bar__icon-btn theme-toggle" aria-label="Toggle theme">
+                <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M13.94 3.5A8.6 8.6 0 1 0 20.5 10a7 7 0 0 1-6.56-6.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M12 2.5V4.5M12 19.5V21.5M21.5 12H19.5M4.5 12H2.5M18.7 5.3L17.3 6.7M6.7 17.3L5.3 18.7M18.7 18.7L17.3 17.3M6.7 6.7L5.3 5.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+                <span class="theme-toggle__label">Theme</span>
+            </button>
             <a href="/" class="nav-bar__link">Games</a>
-            <a href="/aboutus" class="nav-bar__link">Company</a>
+            <a href="/aboutus" class="nav-bar__link">About</a>
             <a href="/terms" class="nav-bar__link">Terms</a>
         </nav>
     </header>

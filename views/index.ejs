@@ -8,166 +8,97 @@
     <link rel="icon" href="/public/images/favicon.ico">
 
     <% if (category) { %>
-        <title>
-            <%= category %> Games - Play Online Games for Free!
-        </title>
-        <% } else { %>
-            <title>Tap Tap Games - Play Online Games for Free!</title>
-            <% } %>
+        <title><%= category %> Games - Dora Dora Play</title>
+    <% } else { %>
+        <title>Dora Dora Play - Premium Browser Games</title>
+    <% } %>
 
-                <meta property="canonical" content=<%=url %> />
-                <meta rel="canonical" content=<%=url %> />
-                <meta data-react-helmet="true" name="keywords" content="Free Online Games,Tap Tap">
-                <meta data-react-helmet="true" name="description"
-                    content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
-                <meta data-react-helmet="true" property="og:title"
-                    content="Tap Tap Games - Play Online Games for Free!">
-                <meta data-react-helmet="true" property="og:url" content="https://taptapgames.fun/">
-                <meta data-react-helmet="true" property="og:description"
-                    content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
-                <meta name="twitter:card" content="summary_large_image">
-                <meta name="twitter:site" content="@Taptapgames.fun">
-                <meta name="twitter:title" content="Tap Tap Games - Play Online for Free!">
-                <meta name="twitter:description"
-                    content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
-                <meta name="twitter:image" content="https://taptapgames.fun/images/taptap_meta.png">
-                <!-- <script async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5217316241873105"
-        crossorigin="anonymous"></script> -->
-                <%- include('partials/head') %>
-
-                    <link rel="stylesheet" type="text/css" href="/public/content/themes/default/style/home.css" />
+    <meta property="canonical" content="<%= url %>" />
+    <meta rel="canonical" content="<%= url %>" />
+    <meta name="keywords" content="free online games, browser games, dora dora play">
+    <meta name="description"
+        content="Premium instant browser games with no downloads. Discover action, puzzle, arcade, and multiplayer games on Dora Dora Play.">
+    <meta property="og:title" content="Dora Dora Play - Premium Browser Games">
+    <meta property="og:url" content="https://taptapgames.fun/">
+    <meta property="og:description"
+        content="Premium instant browser games with no downloads. Play top titles across desktop and mobile.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dora Dora Play - Premium Browser Games">
+    <meta name="twitter:description"
+        content="Premium instant browser games with no downloads. Play top titles across desktop and mobile.">
+    <meta name="twitter:image" content="https://taptapgames.fun/images/taptap_meta.png">
+    <link rel="preload" as="style" href="/public/content/themes/default/style/home.css" />
+    <%- include('partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/public/content/themes/default/style/home.css" />
 </head>
 
 <body id="page-top" class="page-home">
     <span class="search-trans-bg"></span>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BGZ3CVT" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BGZ3CVT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
-    <div class="home-layout">
+    <div class="app-wrapper">
         <%- include('partials/nav') %>
 
-            <section id="home-search-section" class="home-search-inline" aria-label="Search results"
-                style="display: none;">
-                <h2 class="home-section-title">Search results</h2>
-                <div id="home-search-results" class="home-games-grid"></div>
-                <p id="home-search-empty" class="home-search-empty" style="display: none;">No games found. Try a
-                    different search.</p>
-            </section>
+        <div class="app-shell">
+            <%- include('partials/sidebar') %>
 
-            <!-- Default content (categories + games) -->
-            <div id="home-default-content">
-                <!-- Categories at top -->
-                <section class="home-categories" aria-label="Game categories">
-                    <div class="home-categories-inner">
-                        <!-- "All" category tab -->
-                        <a href="/" class="home-category-card <% if (!category) { %>home-category-card--active<% } %>"
-                            title="All games">
-                            <span class="home-category-img-wrap">
-                                <img src="/public/images/all_games.svg" alt="All games" width="56" height="56"
-                                    loading="lazy" decoding="async">
-                            </span>
-                            <span class="home-category-name">All</span>
-                        </a>
+            <main class="app-main">
+                <section id="home-search-section" class="home-search-inline" aria-label="Search results"
+                    style="display: none;">
+                    <h2 class="home-section-title">Search Results</h2>
+                    <div id="home-search-results" class="home-games-grid"></div>
+                    <p id="home-search-empty" class="home-search-empty" style="display: none;">No games found. Try a
+                        different keyword.</p>
+                </section>
+
+                <div id="home-default-content">
+                    <section class="home-categories-rail" aria-label="Category shortcuts">
+                        <a href="/" class="home-category-pill <% if (!category) { %>home-category-pill--active<% } %>">All</a>
                         <% categories.forEach(function(item) { %>
                             <a href="/category/<%= item.category %>"
-                                class="home-category-card <% if (category && (category === item.category || category === item.category_name)) { %>home-category-card--active<% } %>"
-                                title="<%= item.category_name %>">
-                                <span class="home-category-img-wrap">
-                                    <img src="<%= item.image %>" alt="<%= item.category %>" width="56" height="56"
-                                        loading="lazy" decoding="async">
-                                </span>
-                                <span class="home-category-name">
-                                    <%= item.category_name %>
-                                </span>
+                                class="home-category-pill <% if (category && (category === item.category || category === item.category_name)) { %>home-category-pill--active<% } %>">
+                                <%= item.category_name %>
                             </a>
+                        <% }); %>
+                    </section>
+
+                    <section class="home-games-section">
+                        <h2 class="home-section-title">
+                            <% if (category) { %><%= category %> Collection<% } else { %>Featured Collection<% } %>
+                        </h2>
+                        <div class="home-games-grid">
+                            <% data.forEach(function(item) { %>
+                                <% var sizeClass = item.size === 3 ? 'home-game-card--large' : (item.size === 2 ? 'home-game-card--medium' : 'home-game-card--small'); %>
+                                <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card <%= sizeClass %>">
+                                    <span class="home-game-card-overlay"></span>
+                                    <span class="home-game-card-media">
+                                        <img src="<%= item.thumb %>" alt="<%= item.name %>" width="350" height="350" loading="lazy" decoding="async">
+                                    </span>
+                                    <span class="home-game-card-title"><%= item.name %></span>
+                                </a>
                             <% }); %>
-                    </div>
-                </section>
-
-                <!-- Games section -->
-                <section class="home-games-section">
-                    <h2 class="home-section-title">
-                        <% if (category) { %>
-                            <%= category %> Games<% } else { %>Popular Games<% } %>
-                    </h2>
-                    <div class="home-games-grid">
-                        <% var count=2; %>
-                            <% data.forEach(function(item, index) { %>
-                                <% if (index % (10*count)===0 && index !==0 && count < 5 || index===2) { %>
-                                    <% count++; count++; %>
-                                        <!-- <ins class="adsbygoogle home-game-slot home-game-slot--ad"
-                            style="display:block" data-ad-client="ca-pub-5217316241873105"
-                            data-ad-slot="3089636456" data-full-width-responsive="true"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-
-                                        <% } %>
-                                            <% var sizeClass=item.size===3 ? 'home-game-card--large' : (item.size===2
-                                                ? 'home-game-card--medium' : 'home-game-card--small' ); %>
-                                                <a href="<%= item.pagelink.replace(/ /g,'_') %>" lang="en"
-                                                    class="home-game-card <%= sizeClass %>">
-                                                    <span class="home-game-card-overlay"></span>
-                                                    <span class="home-game-card-media">
-                                                        <img src="<%= item.thumb %>" alt="<%= item.pagelink %>"
-                                                            width="350" height="350" title="<%= item.pagelink %>"
-                                                            loading="lazy" decoding="async">
-                                                    </span>
-                                                    <span class="home-game-card-title">
-                                                        <%= item.name %>
-                                                    </span>
-                                                </a>
-                                                <% }); %>
-                    </div>
-                </section>
-            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
     </div>
 
-    <!-- <ins class="adsbygoogle" style="display:block;margin-bottom: 20px;text-align: center;"
-        data-ad-client="ca-pub-5217316241873105" data-ad-slot="3089636456" data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-
-    <article class="bottom_info container">
+    <article class="bottom_info container home-info-card">
         <% if (category) { %>
-            <h1>
-                <%= category %> Games
-            </h1>
-            <% } else { %>
-                <h1>Online Games for Free</h1>
-                <% } %>
-                    <p>Tap Tap Fun Games has the best free online games selection and offers the most fun experience to
-                        play. We
-                        offer instant play to all our games without downloads, login, popups or other distractions. Our
-                        games are
-                        playable on desktop, tablet and mobile so you can enjoy them at home or anywhere. Every month
-                        over 100
-                        million gamers from all over the world play their favorite games on Tap Tap Games.
-                        Dive into the Digital Realm: Your Ultimate Online Gaming Escape!</p>
-                    <h2>Our game selection</h2>
-                    <p>We release fun New Games on our platform on a daily basis. Our most Popular Games include hits
-                        like Subway
-                        Surfers, Temple Run 2, Stickman Hook and Rodeo Stampede, Candy Crush. These games are playable
-                        on Tap Tap
-                        Games. We also have online classics like Moto X3M, Venge.io, Dino Game, Smash Karts, 2048,
-                        Penalty Shooters
-                        2 and Bad Ice-Cream to play for free. In total we offer more than 1000 game titles.</p>
-                    <h2>Start playing</h2>
-                    <p>Unsure what game to play? Start your game discovery on our homepage or pick a game from any of
-                        these popular
-                        categories:</p>
-                    <ul>
-                        <li>Brain Games</li>
-                        <li>.io Games</li>
-                        <li>2 Player Games</li>
-                        <li>Car Games</li>
-                        <li>Shooting Games</li>
-                        <li>Puzzle Games</li>
-                    </ul>
-                    <h2>What is Tap Tap Games?</h2>
-                    <p>Tap Tap Games is based in US and has a team of 20 people working on our gaming platform. Our goal
-                        is to
-                        create the ultimate online playground.</p>
+            <h2><%= category %> Games</h2>
+        <% } else { %>
+            <h2>About Dora Dora Play</h2>
+        <% } %>
+        <p>Dora Dora Play is a modern browser gaming destination focused on reliable performance, curated quality, and
+            clean user experience across desktop and mobile devices.</p>
+        <p>Explore action, arcade, puzzle, driving, multiplayer, and strategy titles without install friction. New game
+            drops and category updates are published regularly.</p>
     </article>
+
     <%- include('partials/footer') %>
 </body>
 
