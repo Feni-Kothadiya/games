@@ -264,6 +264,7 @@ body.page-game {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(94px, 1fr));
   grid-auto-rows: 94px;
+  grid-auto-flow: dense;
   gap: 14px;
 }
 
@@ -295,13 +296,13 @@ body.page-game {
 }
 
 .home-game-card--medium {
-  grid-column: span 2;
-  grid-row: span 2;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .home-game-card--large {
-  grid-column: span 3;
-  grid-row: span 3;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .home-game-card-media,
@@ -929,17 +930,18 @@ body.page-game.sidebar-open .sidebar-backdrop {
   .home-games-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: minmax(90px, 1fr);
+    grid-auto-flow: dense;
     gap: 10px;
   }
 
   .home-game-card--medium {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: span 1;
+    grid-row: span 1;
   }
 
   .home-game-card--large {
-    grid-column: span 3;
-    grid-row: span 3;
+    grid-column: span 1;
+    grid-row: span 1;
   }
 
   .home-info-card h2 {

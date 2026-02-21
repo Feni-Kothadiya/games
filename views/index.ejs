@@ -70,7 +70,8 @@
                             <% if (category) { %><%= category %> Collection<% } else { %>Featured Collection<% } %>
                         </h2>
                         <div class="home-games-grid">
-                            <% data.forEach(function(item) { %>
+                            <% var randomGames = (data || []).slice().sort(function() { return Math.random() - 0.5; }); %>
+                            <% randomGames.forEach(function(item) { %>
                                 <% var sizeClass = item.size === 3 ? 'home-game-card--large' : (item.size === 2 ? 'home-game-card--medium' : 'home-game-card--small'); %>
                                 <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card <%= sizeClass %>">
                                     <span class="home-game-card-overlay"></span>
