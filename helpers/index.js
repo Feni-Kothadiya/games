@@ -9,7 +9,12 @@ const all = async (modelDb, selectFields = null) => {
   return await cache.getOrSet(
     cacheKey,
     async () => {
-      const query = Models[modelDb].find().sort({"position": 1}).limit(150).lean();
+      const query = Models[modelDb].find().sort({ "position": 1 }).lean();
+
+      // Show more games on home screen while keeping non-game collections small.
+      if (modelDb === "games") {
+        query.limit(250);
+      }
       
       // Only select specific fields if provided (reduces data transfer)
       if (selectFields) {

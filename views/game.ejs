@@ -75,8 +75,7 @@
                 <section class="home-games-section">
                     <h2 class="home-section-title">Recommended Games</h2>
                     <div class="home-games-grid">
-                        <% var randomGames = (data || []).slice().sort(function() { return Math.random() - 0.5; }); %>
-                        <% randomGames.forEach(function(item) { %>
+                        <% data.forEach(function(item) { %>
                             <% if (item.pagelink !== game.pagelink) { %>
                                 <% var sizeClass = item.size === 3 ? 'home-game-card--large' : (item.size === 2 ? 'home-game-card--medium' : 'home-game-card--small'); %>
                                 <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card <%= sizeClass %>">
