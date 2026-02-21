@@ -71,7 +71,8 @@
                         </h2>
                         <div class="home-games-grid">
                             <% data.forEach(function(item) { %>
-                                <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card home-game-card--small">
+                                <% var sizeClass = item.size === 3 ? 'home-game-card--large' : (item.size === 2 ? 'home-game-card--medium' : 'home-game-card--small'); %>
+                                <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card <%= sizeClass %>">
                                     <span class="home-game-card-overlay"></span>
                                     <span class="home-game-card-media">
                                         <img src="<%= item.thumb %>" alt="<%= item.name %>" width="350" height="350" loading="lazy" decoding="async">
