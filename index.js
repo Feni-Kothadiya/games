@@ -46,21 +46,27 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // 5. Static files with proper caching
-app.use('/public', express.static('public', {
+const staticOptions = {
   maxAge: '1d', // Cache for 1 day
   etag: true,
   lastModified: true,
-  setHeaders: (res, path) => {
+  setHeaders: (res, filePath) => {
     // Cache game assets and images longer
-    if (path.includes('/games/') || path.includes('/thumbs/') || path.includes('/catthumb/')) {
+    if (filePath.includes('/games/') || filePath.includes('/thumbs/') || filePath.includes('/catthumb/')) {
       res.setHeader('Cache-Control', 'public, max-age=604800'); // 7 days
     }
     // Cache CSS/JS files
-    if (path.endsWith('.css') || path.endsWith('.js')) {
+    if (filePath.endsWith('.css') || filePath.endsWith('.js')) {
       res.setHeader('Cache-Control', 'public, max-age=86400'); // 1 day
     }
   }
-}));
+};
+
+// Use absolute path so static works on Vercel/Linux too.
+const publicDir = path.join(__dirname, 'public');
+app.use('/public', express.static(publicDir, staticOptions));
+// Also expose static files from root path for platform compatibility.
+app.use(express.static(publicDir, staticOptions));
 
 // Remove duplicate static middleware (was at line 116)
 // app.use(express.static(path.join(__dirname, 'public'))); // REMOVED - duplicate
@@ -475,6 +481,11 @@ app.use("*", async (req, res) => {
   }
 });
 
-let PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
+// Vercel uses serverless handler export, not app.listen().
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
+}
+
+module.exports = app;
