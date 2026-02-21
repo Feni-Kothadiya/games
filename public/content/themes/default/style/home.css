@@ -298,7 +298,7 @@ body.page-game {
 
 .home-game-card--medium {
   grid-column: span 2;
-  grid-row: span 1;
+  grid-row: span 2;
 }
 
 .home-game-card--large {
@@ -937,7 +937,7 @@ body.page-game.sidebar-open .sidebar-backdrop {
 
   .home-game-card--medium {
     grid-column: span 2;
-    grid-row: span 1;
+    grid-row: span 2;
   }
 
   .home-game-card--large {
