@@ -38,57 +38,104 @@
         <%- include('partials/nav') %>
 
         <div class="app-shell">
-            <%- include('partials/sidebar') %>
-
             <main class="app-main">
-                <section class="player-hero">
-                    <div class="player-hero__head">
-                        <p class="player-hero__eyebrow">Now Playing</p>
-                        <h1><%= game.name %></h1>
-                    </div>
+                <% var gameCrumbs = [{ label: 'Home', href: '/' }]; %>
+                <% if (game && game.category) { gameCrumbs.push({ label: game.category, href: '/category/' + game.category }); } %>
+                <% if (game && game.name) { gameCrumbs.push({ label: game.name }); } %>
+                <% var relatedGames = Array.isArray(data) ? data.filter(function(item) { return item && item.pagelink !== game.pagelink; }) : []; %>
+                <% var leftRailGames = relatedGames.slice(0, 12); %>
+                <% var rightRailGames = relatedGames.slice(12, 24); %>
+                <% var bottomGames = relatedGames.length > 24 ? relatedGames.slice(24) : relatedGames; %>
+                <%- include('partials/breadcrumb', { crumbs: gameCrumbs }) %>
 
-                    <div class="player-stage game-container">
-                        <div class="game-iframe-container">
-                            <img id="img_thumb" src="<%= game.banner %>" alt="<%= game.name %>">
-                            <a id="play_game_link" onclick="return openGamePage(this);" href="<%= game.gamelink %>"
-                                class="PlayBtn">Play Game</a>
-                            <iframe id="desktop-gameframe" class="gameframe"
-                                allow="fullscreen;autoplay; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope"
-                                scrolling="no"></iframe>
-                        </div>
-
-                        <div class="back-div" style="--mobileNavDragY: 24px;">
-                            <div class="back-icons-div">
-                                <svg width="23" height="23" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M37.8792 26.0001C37.8792 24.8783 36.9699 23.9689 35.848 23.9689H21.1442L25.3526 19.8646C26.1557 19.0814 26.1718 17.7954 25.3886 16.9922C24.6052 16.1891 23.3192 16.1729 22.5162 16.9563L14.7338 24.5459C14.3418 24.9282 14.1207 25.4526 14.1207 26.0001C14.1207 26.5476 14.3418 27.072 14.7338 27.4543L22.5162 35.0439C22.9113 35.4292 23.4229 35.621 23.9342 35.621C24.4626 35.621 24.9906 35.4161 25.3886 35.008C26.1718 34.2048 26.1557 32.9189 25.3526 32.1356L21.1442 28.0314H35.848C36.9699 28.0314 37.8792 27.122 37.8792 26.0001Z"
-                                        fill="white" />
-                                    <path
-                                        d="M44.3848 7.61516C39.474 2.70451 32.9448 0 26 0C19.0552 0 12.526 2.70451 7.61516 7.61516C2.70451 12.526 0 19.0552 0 26C0 32.9448 2.70451 39.474 7.61516 44.3847C12.526 49.2955 19.0552 52 26 52C31.1384 52 36.1076 50.503 40.3707 47.6707C41.3051 47.0499 41.5594 45.7892 40.9385 44.8548C40.3179 43.9204 39.057 43.666 38.1226 44.2869C34.5279 46.6751 30.3359 47.9375 26 47.9375C13.9036 47.9375 4.0625 38.0964 4.0625 26C4.0625 13.9036 13.9036 4.0625 26 4.0625C38.0964 4.0625 47.9375 13.9036 47.9375 26C47.9375 30.1254 46.7867 34.1443 44.6095 37.6224C44.0142 38.5733 44.3026 39.8267 45.2535 40.4219C46.2038 41.0169 47.4576 40.7288 48.0529 39.7779C50.6352 35.6528 52 30.8885 52 26C52 19.0552 49.2955 12.526 44.3848 7.61516Z"
-                                        fill="white" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+                <section id="game-search-section" class="home-search-inline" aria-label="Search results"
+                    style="display: none;">
+                    <h2 class="home-section-title">Search Results</h2>
+                    <div id="game-search-results" class="home-games-grid"></div>
+                    <p id="game-search-empty" class="home-search-empty" style="display: none;">No games found. Try a
+                        different keyword.</p>
                 </section>
 
-                <section class="home-games-section">
-                    <h2 class="home-section-title">Recommended Games</h2>
-                    <div class="home-games-grid">
-                        <% data.forEach(function(item) { %>
-                            <% if (item.pagelink !== game.pagelink) { %>
+                <div id="game-default-content">
+                    <section class="game-arcade-layout">
+                        <aside class="game-side-rail game-side-rail--left" aria-label="Quick picks">
+                            <div class="game-side-rail__grid">
+                                <% leftRailGames.forEach(function(item) { %>
+                                    <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="game-side-thumb game-side-thumb--grid" title="<%= item.name %>">
+                                        <img src="<%= item.thumb %>" alt="<%= item.name %>" width="112" height="112" loading="lazy" decoding="async">
+                                    </a>
+                                <% }); %>
+                            </div>
+                        </aside>
+
+                        <section class="game-player-shell">
+                            <div class="player-stage game-container game-player-stage">
+                                <div class="game-iframe-container">
+                                    <img id="img_thumb" src="<%= game.banner %>" alt="<%= game.name %>">
+                                    <a id="play_game_link" onclick="return openGamePage(this);" href="<%= game.gamelink %>"
+                                        class="PlayBtn">Play Game</a>
+                                    <iframe id="desktop-gameframe" class="gameframe"
+                                        allow="fullscreen;autoplay; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope"
+                                        scrolling="no"></iframe>
+                                </div>
+
+                                <div class="back-div" style="--mobileNavDragY: 24px;">
+                                    <div class="back-icons-div">
+                                        <svg width="23" height="23" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M37.8792 26.0001C37.8792 24.8783 36.9699 23.9689 35.848 23.9689H21.1442L25.3526 19.8646C26.1557 19.0814 26.1718 17.7954 25.3886 16.9922C24.6052 16.1891 23.3192 16.1729 22.5162 16.9563L14.7338 24.5459C14.3418 24.9282 14.1207 25.4526 14.1207 26.0001C14.1207 26.5476 14.3418 27.072 14.7338 27.4543L22.5162 35.0439C22.9113 35.4292 23.4229 35.621 23.9342 35.621C24.4626 35.621 24.9906 35.4161 25.3886 35.008C26.1718 34.2048 26.1557 32.9189 25.3526 32.1356L21.1442 28.0314H35.848C36.9699 28.0314 37.8792 27.122 37.8792 26.0001Z"
+                                                fill="white" />
+                                            <path
+                                                d="M44.3848 7.61516C39.474 2.70451 32.9448 0 26 0C19.0552 0 12.526 2.70451 7.61516 7.61516C2.70451 12.526 0 19.0552 0 26C0 32.9448 2.70451 39.474 7.61516 44.3847C12.526 49.2955 19.0552 52 26 52C31.1384 52 36.1076 50.503 40.3707 47.6707C41.3051 47.0499 41.5594 45.7892 40.9385 44.8548C40.3179 43.9204 39.057 43.666 38.1226 44.2869C34.5279 46.6751 30.3359 47.9375 26 47.9375C13.9036 47.9375 4.0625 38.0964 4.0625 26C4.0625 13.9036 13.9036 4.0625 26 4.0625C38.0964 4.0625 47.9375 13.9036 47.9375 26C47.9375 30.1254 46.7867 34.1443 44.6095 37.6224C44.0142 38.5733 44.3026 39.8267 45.2535 40.4219C46.2038 41.0169 47.4576 40.7288 48.0529 39.7779C50.6352 35.6528 52 30.8885 52 26C52 19.0552 49.2955 12.526 44.3848 7.61516Z"
+                                                fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="game-player-meta">
+                                <div class="game-player-meta__title">
+                                    <img src="<%= game.thumb || game.banner %>" alt="<%= game.name %>" width="56" height="56">
+                                    <div>
+                                        <strong><%= game.name %></strong>
+                                        <span><%= game.category || 'Arcade Game' %></span>
+                                    </div>
+                                </div>
+                                <div class="game-player-meta__actions">
+                                    <a href="/" class="game-player-meta__action">Browse</a>
+                                    <% if (game.category) { %>
+                                        <a href="/category/<%= encodeURIComponent(game.category) %>" class="game-player-meta__action">Category</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </section>
+
+                        <aside class="game-side-rail game-side-rail--right" aria-label="More games">
+                            <div class="game-side-rail__grid">
+                                <% rightRailGames.forEach(function(item) { %>
+                                    <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="game-side-thumb game-side-thumb--grid" title="<%= item.name %>">
+                                        <img src="<%= item.thumb %>" alt="<%= item.name %>" width="112" height="112" loading="lazy" decoding="async">
+                                    </a>
+                                <% }); %>
+                            </div>
+                        </aside>
+                    </section>
+
+                    <section class="game-bottom-grid-wrap" aria-label="All games">
+                        <div class="home-games-grid game-bottom-grid">
+                            <% bottomGames.forEach(function(item) { %>
                                 <% var sizeClass = item.size === 3 ? 'home-game-card--large' : (item.size === 2 ? 'home-game-card--medium' : 'home-game-card--small'); %>
-                                <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card <%= sizeClass %>">
+                                <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card game-bottom-card <%= sizeClass %>" title="<%= item.name %>">
                                     <span class="home-game-card-overlay"></span>
                                     <span class="home-game-card-media">
                                         <img src="<%= item.thumb %>" alt="<%= item.name %>" width="350" height="350" loading="lazy" decoding="async">
                                     </span>
                                     <span class="home-game-card-title"><%= item.name %></span>
                                 </a>
-                            <% } %>
-                        <% }); %>
-                    </div>
-                </section>
+                            <% }); %>
+                        </div>
+                    </section>
+                </div>
             </main>
         </div>
     </div>

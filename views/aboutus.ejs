@@ -15,6 +15,10 @@
 
     <main class="legal-main">
         <div class="legal-shell">
+            <%- include('partials/breadcrumb', {
+                crumbs: [{ label: 'Home', href: '/' }, { label: 'About Us' }]
+            }) %>
+
             <header class="legal-hero">
                 <h1>About Dora Dora Play</h1>
                 <p>We build a fast, reliable browser gaming experience that is easy to access from any modern device.</p>

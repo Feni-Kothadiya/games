@@ -72,30 +72,70 @@ $(document).ready(function () {
         }
     });
 
-    // Inline search on home page.
-    var homeSearchTimer;
+    // Inline search on home and game pages.
+    var inlineSearchTimer;
     $(document).on("input", ".nav-search-input", function () {
-        if (!$("#home-search-section").length) return;
+        var target = getSearchTarget();
+        if (!target) return;
+
         var value = $(this).val().trim();
-        clearTimeout(homeSearchTimer);
+        clearTimeout(inlineSearchTimer);
         if (value === "") {
-            $("#home-search-section").hide();
-            $("#home-search-results").empty();
-            $("#home-search-empty").hide();
+            resetSearchTarget(target);
             return;
         }
-        homeSearchTimer = setTimeout(function () {
-            homeInlineSearch(value);
+        inlineSearchTimer = setTimeout(function () {
+            inlineSearch(value, target);
         }, 350);
     });
 });
 
-function homeInlineSearch(keyword) {
+function getSearchTarget() {
+    if ($("#home-search-section").length) {
+        return {
+            section: "#home-search-section",
+            results: "#home-search-results",
+            empty: "#home-search-empty",
+            defaultContent: "#home-default-content",
+            hideDefaultOnSearch: false
+        };
+    }
+
+    if ($("#game-search-section").length) {
+        return {
+            section: "#game-search-section",
+            results: "#game-search-results",
+            empty: "#game-search-empty",
+            defaultContent: "#game-default-content",
+            hideDefaultOnSearch: true
+        };
+    }
+
+    return null;
+}
+
+function resetSearchTarget(target) {
+    $(target.section).hide();
+    $(target.results).empty();
+    $(target.empty).hide();
+    if (target.defaultContent) {
+        $(target.defaultContent).show();
+    }
+}
+
+function inlineSearch(keyword, target) {
     if (keyword.length < 2) return;
-    $("#home-search-section").show();
-    $("#home-default-content").show();
-    $("#home-search-results").html("");
-    $("#home-search-empty").hide();
+    $(target.section).show();
+    $(target.results).html("");
+    $(target.empty).hide();
+
+    if (target.defaultContent) {
+        if (target.hideDefaultOnSearch) {
+            $(target.defaultContent).hide();
+        } else {
+            $(target.defaultContent).show();
+        }
+    }
 
     fetch("/api/search", {
         method: "POST",
@@ -105,16 +145,16 @@ function homeInlineSearch(keyword) {
         .then(function (response) { return response.text(); })
         .then(function (html) {
             if (html && html.trim() !== "") {
-                $("#home-search-results").html(html);
-                $("#home-search-empty").hide();
+                $(target.results).html(html);
+                $(target.empty).hide();
             } else {
-                $("#home-search-results").empty();
-                $("#home-search-empty").show();
+                $(target.results).empty();
+                $(target.empty).show();
             }
         })
         .catch(function () {
-            $("#home-search-results").empty();
-            $("#home-search-empty").show();
+            $(target.results).empty();
+            $(target.empty).show();
         });
 }
 

@@ -46,6 +46,12 @@
             <%- include('partials/sidebar') %>
 
             <main class="app-main">
+                <%- include('partials/breadcrumb', {
+                    crumbs: category
+                        ? [{ label: 'Home', href: '/' }, { label: category }]
+                        : [{ label: 'Home' }]
+                }) %>
+
                 <section id="home-search-section" class="home-search-inline" aria-label="Search results"
                     style="display: none;">
                     <h2 class="home-section-title">Search Results</h2>

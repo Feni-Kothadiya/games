@@ -1,0 +1,16 @@
+<% if (Array.isArray(crumbs) && crumbs.length) { %>
+<nav class="site-breadcrumb" aria-label="Breadcrumb">
+    <ol class="site-breadcrumb__list">
+        <% crumbs.forEach(function(item, index) { %>
+            <% var isCurrent = index === crumbs.length - 1; %>
+            <li class="site-breadcrumb__item <%= isCurrent ? 'is-current' : '' %>">
+                <% if (item.href && !isCurrent) { %>
+                    <a href="<%= item.href %>"><%= item.label %></a>
+                <% } else { %>
+                    <span><%= item.label %></span>
+                <% } %>
+            </li>
+        <% }); %>
+    </ol>
+</nav>
+<% } %>

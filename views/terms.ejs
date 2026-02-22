@@ -16,6 +16,10 @@
 
     <main class="legal-main">
         <div class="legal-shell">
+            <%- include('partials/breadcrumb', {
+                crumbs: [{ label: 'Home', href: '/' }, { label: 'Terms of Use' }]
+            }) %>
+
             <header class="legal-hero">
                 <h1>Terms of Use</h1>
                 <p>These terms govern your access to and use of the Dora Dora Play website and services.</p>
