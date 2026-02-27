@@ -125,8 +125,6 @@
 }
 
 .nav-brand__image {
-  width: clamp(120px, 15vw, 168px) !important;
-  height: clamp(36px, 4.6vw, 50px) !important;
   max-width: none !important;
   border-radius: 10px;
   object-fit: cover;
