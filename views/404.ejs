@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="manifest" href="/public/manifest.json">
-    <link rel="icon" href="/public/images/favicon.ico">
+    <link rel="icon" href="/public/images/doradora-games-logo.ico">
 
     <% if (category) { %>
         <title>
@@ -52,80 +52,86 @@
             <div class="homepage-root">
                 <div class="homepage">
                     <%- include('partials/nav') %>
-                        <%- include('partials/breadcrumb', {
-                            crumbs: [{ label: 'Home', href: '/' }, { label: 'Not Found' }]
-                        }) %>
-                        <% var count=2; %>
-                            <% data.forEach(function(item,index) { %>
-                                <% if(index % (10*count)===0 && index!=0 && count<5 || index===2){ %>
-                                    <% count++ %>
+                        <%- include('partials/breadcrumb', { crumbs: [{ label: 'Home' , href: '/' }, {
+                            label: 'Not Found' }] }) %>
+                            <% var count=2; %>
+                                <% data.forEach(function(item,index) { %>
+                                    <% if(index % (10*count)===0 && index!=0 && count<5 || index===2){ %>
                                         <% count++ %>
-                                            <ins class="adsbygoogle layout3_3 aspect-square hover:-translate-y group relative aspect-square h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item span-2 item-grid gameslink"
-                                                style="display:block" data-ad-client="ca-pub-5217316241873105"
-                                                data-ad-slot="3089636456" data-full-width-responsive="true"></ins>
-                                            <script>
-                                                (adsbygoogle = window.adsbygoogle || []).push({});
-                                            </script>
-                                            <% } %>
-                                                <% switch (item.size) { case 3 : %>
-                                                    <a href=<%=item.pagelink.replace(/ /g,'_') %> lang="en"
-                                                        class="layout3_3 aspect-square hover:-translate-y group relative
-                                                        aspect-square h-full min-h-[94px] w-full cursor-pointer
-                                                        rounded-xl
-                                                        text-center font-medium tracking-wide transition-transform
-                                                        delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
-                                                        <% break; case 2 : %>
-                                                            <a href=<%=item.pagelink.replace(/ /g,'_') %> lang="en"
-                                                                class="layout2_2 aspect-square hover:-translate-y group
-                                                                relative
-                                                                aspect-square h-full min-h-[94px] w-full cursor-pointer
-                                                                rounded-xl
-                                                                text-center font-medium tracking-wide
-                                                                transition-transform delay-100 duration-300 ease-in-expo
-                                                                hover:scale-[1.04]">
-                                                                <% break; case 1 : %>
-                                                                    <a href=<%=item.pagelink.replace(/ /g,'_') %>
-                                                                        lang="en"
-                                                                        class="hover:-translate-y group relative
-                                                                        aspect-square
-                                                                        h-full min-h-[94px] w-full cursor-pointer
-                                                                        rounded-xl
-                                                                        text-center font-medium tracking-wide
-                                                                        transition-transform delay-100 duration-300
-                                                                        ease-in-expo hover:scale-[1.04]">
-                                                                        <% break; } %>
-                                                                            <span
-                                                                                class="pointer-events-none absolute inset-0 z-20 rounded-xl bg-gradient-to-t from-[#000000] to-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
-                                                                            <div
-                                                                                class="relative aspect-square h-full w-full rounded-xl">
-                                                                                <img src=<%=item.thumb %> alt=<%=
-                                                                                    item.pagelink %> width="350"
-                                                                                    height="350" title=<%= item.pagelink
-                                                                                        %> content=<%= item.pagelink %>
-                                                                                            class="h-auto w-auto
-                                                                                            rounded-xl">
-                                                                            </div>
-                                                                            <div
-                                                                                class="absolute bottom-0 left-0 right-0 z-30 p-[6px] text-center text-sm font-semibold text-white antialiased opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                                                                                <%= item.name %>
-                                                                            </div>
-                                                                    </a>
-                                                                    <% }); %>
+                                            <% count++ %>
+                                                <ins class="adsbygoogle layout3_3 aspect-square hover:-translate-y group relative aspect-square h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item span-2 item-grid gameslink"
+                                                    style="display:block" data-ad-client="ca-pub-5217316241873105"
+                                                    data-ad-slot="3089636456" data-full-width-responsive="true"></ins>
+                                                <script>
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                </script>
+                                                <% } %>
+                                                    <% switch (item.size) { case 3 : %>
+                                                        <a href=<%=item.pagelink.replace(/ /g,'_') %> lang="en"
+                                                            class="layout3_3 aspect-square hover:-translate-y group
+                                                            relative
+                                                            aspect-square h-full min-h-[94px] w-full cursor-pointer
+                                                            rounded-xl
+                                                            text-center font-medium tracking-wide transition-transform
+                                                            delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
+                                                            <% break; case 2 : %>
+                                                                <a href=<%=item.pagelink.replace(/ /g,'_') %> lang="en"
+                                                                    class="layout2_2 aspect-square hover:-translate-y
+                                                                    group
+                                                                    relative
+                                                                    aspect-square h-full min-h-[94px] w-full
+                                                                    cursor-pointer
+                                                                    rounded-xl
+                                                                    text-center font-medium tracking-wide
+                                                                    transition-transform delay-100 duration-300
+                                                                    ease-in-expo
+                                                                    hover:scale-[1.04]">
+                                                                    <% break; case 1 : %>
+                                                                        <a href=<%=item.pagelink.replace(/ /g,'_') %>
+                                                                            lang="en"
+                                                                            class="hover:-translate-y group relative
+                                                                            aspect-square
+                                                                            h-full min-h-[94px] w-full cursor-pointer
+                                                                            rounded-xl
+                                                                            text-center font-medium tracking-wide
+                                                                            transition-transform delay-100 duration-300
+                                                                            ease-in-expo hover:scale-[1.04]">
+                                                                            <% break; } %>
+                                                                                <span
+                                                                                    class="pointer-events-none absolute inset-0 z-20 rounded-xl bg-gradient-to-t from-[#000000] to-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
+                                                                                <div
+                                                                                    class="relative aspect-square h-full w-full rounded-xl">
+                                                                                    <img src=<%=item.thumb %> alt=<%=
+                                                                                        item.pagelink %> width="350"
+                                                                                        height="350" title=<%=
+                                                                                            item.pagelink %> content=<%=
+                                                                                                item.pagelink %>
+                                                                                                class="h-auto w-auto
+                                                                                                rounded-xl">
+                                                                                </div>
+                                                                                <div
+                                                                                    class="absolute bottom-0 left-0 right-0 z-30 p-[6px] text-center text-sm font-semibold text-white antialiased opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                                                                                    <%= item.name %>
+                                                                                </div>
+                                                                        </a>
+                                                                        <% }); %>
 
 
-                                                                        <% categories.forEach(function(item,index) { %>
-                                                                            <a href="/category/<%= item.category %>"
-                                                                                class="rounded-xl bg-white layout1_2 hover:-translate-y group flex relative h-full min-h-[94px] w-full cursor-pointer text-center font-medium tracking-wide transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
-                                                                                <img src=<%=item.image %>
-                                                                                alt=<%= item.category %> loading="lazy"
-                                                                                    decoding="async" width="94"
-                                                                                    height="94"
-                                                                                    class="cat-img">
-                                                                                    <span class="cat-name">
-                                                                                        <%= item.category_name %>
-                                                                                    </span>
-                                                                            </a>
-                                                                            <% }); %>
+                                                                            <% categories.forEach(function(item,index) {
+                                                                                %>
+                                                                                <a href="/category/<%= item.category %>"
+                                                                                    class="rounded-xl bg-white layout1_2 hover:-translate-y group flex relative h-full min-h-[94px] w-full cursor-pointer text-center font-medium tracking-wide transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
+                                                                                    <img src=<%=item.image %>
+                                                                                    alt=<%= item.category %>
+                                                                                        loading="lazy"
+                                                                                        decoding="async" width="94"
+                                                                                        height="94"
+                                                                                        class="cat-img">
+                                                                                        <span class="cat-name">
+                                                                                            <%= item.category_name %>
+                                                                                        </span>
+                                                                                </a>
+                                                                                <% }); %>
 
 
                 </div>

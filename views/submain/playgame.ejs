@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="icon" href="/public/images/favicon.ico">
+    <link rel="icon" href="/public/images/doradora-games-logo.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>
         <%= game.title %>
@@ -25,48 +25,48 @@
         content="#1 Website for playing free online games on your mobile, tablet or computer. No login, no downloads. Play now!">
     <meta name="twitter:image" content="https://taptapgames.fun/images/taptap_meta.png">
     <%- include('../partials/head') %>
-    <%- include('topadsscript') %>
-    <% if(isMobile){ %>
-        <script>
-            googletag.cmd.push(() => {
-                googletag
-                .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid',[300, 100], [300, 250], [300, 50], [300, 31], [300, 75]], 'fix-1')
-                .addService(googletag.pubads());
+        <%- include('topadsscript') %>
+            <% if(isMobile){ %>
+                <script>
+                    googletag.cmd.push(() => {
+                        googletag
+                            .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid', [300, 100], [300, 250], [300, 50], [300, 31], [300, 75]], 'fix-1')
+                            .addService(googletag.pubads());
 
-                googletag.pubads().collapseEmptyDivs();
-                googletag.enableServices();
-            });
-        </script>
-    <% } %>
-    <% if(!isMobile){ %>
-        <script>
-            googletag.cmd.push(() => {
-                googletag
-                .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid'], 'fix-1')
-                .addService(googletag.pubads());
+                        googletag.pubads().collapseEmptyDivs();
+                        googletag.enableServices();
+                    });
+                </script>
+                <% } %>
+                    <% if(!isMobile){ %>
+                        <script>
+                            googletag.cmd.push(() => {
+                                googletag
+                                    .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid'], 'fix-1')
+                                    .addService(googletag.pubads());
 
-                googletag
-                    .defineSlot('/23149964868/taptapgames_ad1_top_728x90', [[300, 100], [300, 50], [300, 31], [300, 75]], 'fix-2')
-                    .addService(googletag.pubads());
+                                googletag
+                                    .defineSlot('/23149964868/taptapgames_ad1_top_728x90', [[300, 100], [300, 50], [300, 31], [300, 75]], 'fix-2')
+                                    .addService(googletag.pubads());
 
-                googletag.pubads().collapseEmptyDivs();
-                googletag.enableServices();
-            });
-        </script>
-    <% } %>
+                                googletag.pubads().collapseEmptyDivs();
+                                googletag.enableServices();
+                            });
+                        </script>
+                        <% } %>
 
-    <script>
-        googletag.cmd.push(() => {
+                            <script>
+                                googletag.cmd.push(() => {
 
-                googletag
-                    .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid',[300, 100], [300, 250], [300, 50], [300, 31], [300, 75]], "gpt-ad-5")
-                    .addService(googletag.pubads());
+                                    googletag
+                                        .defineSlot('/23149964868/taptapgames_ad1_top_728x90', ['fluid', [300, 100], [300, 250], [300, 50], [300, 31], [300, 75]], "gpt-ad-5")
+                                        .addService(googletag.pubads());
 
-                googletag.pubads().collapseEmptyDivs();
-                googletag.enableServices();
-        });
- 
-</script>
+                                    googletag.pubads().collapseEmptyDivs();
+                                    googletag.enableServices();
+                                });
+
+                            </script>
 
 </head>
 
@@ -110,7 +110,7 @@
                         </div>
                         <% var count=3; %>
 
-                            
+
 
                             <div id='fix-1'
                                 class="center-ads layout5_5_responsive hover:-translate-y group relative  h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item item-grid gameslink"
@@ -126,7 +126,7 @@
                             <% data.forEach(function(item,index) { %>
                                 <% if (!isMobile && index==1) { %>
 
-                                  
+
 
                                     <div id='fix-2'
                                         class="layout7_7_responsive center-ads  hover:-translate-y group relative h-full min-h-[94px] w-full cursor-pointer rounded-xl bg-white text-center font-medium tracking-wide shadow-gamecard transition-transform delay-100 duration-300 ease-in-expo hover:scale-[1.04] grid-item item-grid gameslink"
@@ -151,7 +151,8 @@
 
                                                     <% } %>
                                                         <% switch (item.size) { case 3 : %>
-                                                            <a href=<%=item.pagelink.replace(/ /g,'_').replace('game/','play/') %> lang="en"
+                                                            <a href=<%=item.pagelink.replace(/
+                                                                /g,'_').replace('game/','play/') %> lang="en"
                                                                 class="layout3_3 aspect-square hover:-translate-y group
                                                                 relative
                                                                 aspect-square h-full min-h-[94px] w-full cursor-pointer
@@ -160,7 +161,8 @@
                                                                 transition-transform
                                                                 delay-100 duration-300 ease-in-expo hover:scale-[1.04]">
                                                                 <% break; case 2 : %>
-                                                                    <a href=<%=item.pagelink.replace(/ /g,'_').replace('game/','play/') %> lang="en"
+                                                                    <a href=<%=item.pagelink.replace(/
+                                                                        /g,'_').replace('game/','play/') %> lang="en"
                                                                         class="layout2_2 aspect-square
                                                                         hover:-translate-y group
                                                                         relative
@@ -171,7 +173,8 @@
                                                                         ease-in-expo
                                                                         hover:scale-[1.04]">
                                                                         <% break; case 1 : %>
-                                                                            <a href=<%=item.pagelink.replace(/ /g,'_').replace('game/','play/') %>
+                                                                            <a href=<%=item.pagelink.replace(/
+                                                                                /g,'_').replace('game/','play/') %>
                                                                                 lang="en"
                                                                                 class="hover:-translate-y group relative
                                                                                 aspect-square
@@ -217,7 +220,7 @@
             googletag.display("div-gpt-ad-1717150728562-0");
         });
     </script>
-    
+
     <article class="bottom_info container">
         <h1>
             <%= game.name %>

@@ -5,31 +5,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="manifest" href="/public/manifest.json">
-    <link rel="icon" href="/public/images/favicon.ico">
+    <link rel="icon" href="/public/images/doradora-games-logo.ico">
 
     <% if (category) { %>
-        <title><%= category %> Games - Dora Dora Play</title>
-    <% } else { %>
-        <title>Dora Dora Play - Premium Browser Games</title>
-    <% } %>
+        <title>
+            <%= category %> Games - Dora Dora Play
+        </title>
+        <% } else { %>
+            <title>Dora Dora Play - Premium Browser Games</title>
+            <% } %>
 
-    <meta property="canonical" content="<%= url %>" />
-    <meta rel="canonical" content="<%= url %>" />
-    <meta name="keywords" content="free online games, browser games, dora dora play">
-    <meta name="description"
-        content="Premium instant browser games with no downloads. Discover action, puzzle, arcade, and multiplayer games on Dora Dora Play.">
-    <meta property="og:title" content="Dora Dora Play - Premium Browser Games">
-    <meta property="og:url" content="https://taptapgames.fun/">
-    <meta property="og:description"
-        content="Premium instant browser games with no downloads. Play top titles across desktop and mobile.">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dora Dora Play - Premium Browser Games">
-    <meta name="twitter:description"
-        content="Premium instant browser games with no downloads. Play top titles across desktop and mobile.">
-    <meta name="twitter:image" content="https://taptapgames.fun/images/taptap_meta.png">
-    <link rel="preload" as="style" href="/public/content/themes/default/style/home.css" />
-    <%- include('partials/head') %>
-    <link rel="stylesheet" type="text/css" href="/public/content/themes/default/style/home.css" />
+                <meta property="canonical" content="<%= url %>" />
+                <meta rel="canonical" content="<%= url %>" />
+                <meta name="keywords" content="free online games, browser games, dora dora play">
+                <meta name="description"
+                    content="Premium instant browser games with no downloads. Discover action, puzzle, arcade, and multiplayer games on Dora Dora Play.">
+                <meta property="og:title" content="Dora Dora Play - Premium Browser Games">
+                <meta property="og:url" content="https://taptapgames.fun/">
+                <meta property="og:description"
+                    content="Premium instant browser games with no downloads. Play top titles across desktop and mobile.">
+                <meta name="twitter:card" content="summary_large_image">
+                <meta name="twitter:title" content="Dora Dora Play - Premium Browser Games">
+                <meta name="twitter:description"
+                    content="Premium instant browser games with no downloads. Play top titles across desktop and mobile.">
+                <meta name="twitter:image" content="https://taptapgames.fun/images/taptap_meta.png">
+                <link rel="preload" as="style" href="/public/content/themes/default/style/home.css" />
+                <%- include('partials/head') %>
+                    <link rel="stylesheet" type="text/css" href="/public/content/themes/default/style/home.css" />
 </head>
 
 <body id="page-top" class="page-home">
@@ -42,308 +44,367 @@
     <div class="app-wrapper">
         <%- include('partials/nav') %>
 
-        <div class="app-shell">
-            <%- include('partials/sidebar') %>
+            <div class="app-shell">
+                <%- include('partials/sidebar') %>
 
-            <main class="app-main">
-                <%- include('partials/breadcrumb', {
-                    crumbs: category
-                        ? [{ label: 'Home', href: '/' }, { label: category }]
-                        : [{ label: 'Home' }]
-                }) %>
+                    <main class="app-main">
+                        <%- include('partials/breadcrumb', { crumbs: category ? [{ label: 'Home' , href: '/' }, { label:
+                            category }] : [{ label: 'Home' }] }) %>
 
-                <section id="home-search-section" class="home-search-inline" aria-label="Search results"
-                    style="display: none;">
-                    <h2 class="home-section-title">Search Results</h2>
-                    <div id="home-search-results" class="home-games-grid"></div>
-                    <p id="home-search-empty" class="home-search-empty" style="display: none;">No games found. Try a
-                        different keyword.</p>
-                </section>
+                            <section id="home-search-section" class="home-search-inline" aria-label="Search results"
+                                style="display: none;">
+                                <h2 class="home-section-title">Search Results</h2>
+                                <div id="home-search-results" class="home-games-grid"></div>
+                                <p id="home-search-empty" class="home-search-empty" style="display: none;">No games
+                                    found. Try a
+                                    different keyword.</p>
+                            </section>
 
-                <div id="home-default-content">
-                    <section class="home-categories-rail" aria-label="Category shortcuts">
-                        <a href="/" class="home-category-pill <% if (!category) { %>home-category-pill--active<% } %>">All</a>
-                        <% categories.forEach(function(item) { %>
-                            <a href="/category/<%= item.category %>"
-                                class="home-category-pill <% if (category && (category === item.category || category === item.category_name)) { %>home-category-pill--active<% } %>">
-                                <%= item.category_name %>
-                            </a>
-                        <% }); %>
-                    </section>
+                            <div id="home-default-content">
+                                <section class="home-categories-rail" aria-label="Category shortcuts">
+                                    <a href="/"
+                                        class="home-category-pill <% if (!category) { %>home-category-pill--active<% } %>">All</a>
+                                    <% categories.forEach(function(item) { %>
+                                        <a href="/category/<%= item.category %>"
+                                            class="home-category-pill <% if (category && (category === item.category || category === item.category_name)) { %>home-category-pill--active<% } %>">
+                                            <%= item.category_name %>
+                                        </a>
+                                        <% }); %>
+                                </section>
 
-                    <section class="home-games-section">
-                        <h2 class="home-section-title">
-                            <% if (category) { %><%= category %> Collection<% } else { %>Featured Collection<% } %>
-                        </h2>
-                        <div class="home-games-grid">
-                            <% data.forEach(function(item) { %>
-                                <% var sizeClass = item.size === 3 ? 'home-game-card--large' : (item.size === 2 ? 'home-game-card--medium' : 'home-game-card--small'); %>
-                                <a href="<%= item.pagelink.replace(/ /g,'_') %>" class="home-game-card <%= sizeClass %>">
-                                    <span class="home-game-card-overlay"></span>
-                                    <span class="home-game-card-media">
-                                        <img src="<%= item.thumb %>" alt="<%= item.name %>" width="350" height="350" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="home-game-card-title"><%= item.name %></span>
-                                </a>
-                            <% }); %>
-                        </div>
-                    </section>
-                </div>
-            </main>
-        </div>
+                                <section class="home-games-section">
+                                    <h2 class="home-section-title">
+                                        <% if (category) { %>
+                                            <%= category %> Collection<% } else { %>Featured Collection<% } %>
+                                    </h2>
+                                    <div class="home-games-grid">
+                                        <% data.forEach(function(item) { %>
+                                            <% var sizeClass=item.size===3 ? 'home-game-card--large' : (item.size===2
+                                                ? 'home-game-card--medium' : 'home-game-card--small' ); %>
+                                                <a href="<%= item.pagelink.replace(/ /g,'_') %>"
+                                                    class="home-game-card <%= sizeClass %>">
+                                                    <span class="home-game-card-overlay"></span>
+                                                    <span class="home-game-card-media">
+                                                        <img src="<%= item.thumb %>" alt="<%= item.name %>" width="350"
+                                                            height="350" loading="lazy" decoding="async">
+                                                    </span>
+                                                    <span class="home-game-card-title">
+                                                        <%= item.name %>
+                                                    </span>
+                                                </a>
+                                                <% }); %>
+                                    </div>
+                                </section>
+                            </div>
+                    </main>
+            </div>
     </div>
 
     <article class="bottom_info container home-info-card home-about">
         <% if (category) { %>
-            <%
-                var categorySlug = (data && data.length && data[0].category)
-                    ? data[0].category
-                    : (category || '').toLowerCase().replace(/\s+/g, '-');
-                var categoryLabel = (category || categorySlug || 'Games')
-                    .replace(/-/g, ' ')
-                    .replace(/\b\w/g, function(ch) { return ch.toUpperCase(); });
-                var categoryGames = Array.isArray(data) ? data.slice(0, 16) : [];
-            %>
-            <h2><%= categoryLabel %> Games</h2>
-            <p>Play the best <%= categoryLabel %> games online for free with instant browser access, smooth loading, and
-                no download requirements. This category is curated for quick sessions and repeat play across desktop,
-                tablet, and mobile devices.</p>
+            <% var categorySlug=(data && data.length && data[0].category) ? data[0].category : (category || ''
+                ).toLowerCase().replace(/\s+/g, '-' ); var categoryLabel=(category || categorySlug || 'Games' )
+                .replace(/-/g, ' ' ) .replace(/\b\w/g, function(ch) { return ch.toUpperCase(); }); var
+                categoryGames=Array.isArray(data) ? data.slice(0, 16) : []; %>
+                <h2>
+                    <%= categoryLabel %> Games
+                </h2>
+                <p>Play the best <%= categoryLabel %> games online for free with instant browser access, smooth loading,
+                        and
+                        no download requirements. This category is curated for quick sessions and repeat play across
+                        desktop,
+                        tablet, and mobile devices.</p>
 
-            <h3>Why Play <%= categoryLabel %> Games?</h3>
-            <p><%= categoryLabel %> games combine quick action, easy access, and replay value, making them perfect for
-                short breaks and longer sessions. You can jump in instantly, explore different mechanics, and discover
-                new favorites without installing anything.</p>
+                <h3>Why Play <%= categoryLabel %> Games?</h3>
+                <p>
+                    <%= categoryLabel %> games combine quick action, easy access, and replay value, making them perfect
+                        for
+                        short breaks and longer sessions. You can jump in instantly, explore different mechanics, and
+                        discover
+                        new favorites without installing anything.
+                </p>
 
-            <h3>Top <%= categoryLabel %> Games on Dora Dora Game</h3>
-            <% if (categoryGames.length) { %>
-                <ul class="seo-game-links">
-                    <% categoryGames.forEach(function(item) { %>
-                        <li><a href="<%= item.pagelink.replace(/ /g,'_') %>"><%= item.name %></a></li>
-                    <% }); %>
-                </ul>
-            <% } else { %>
-                <p>No games are available in this category right now. Please check back soon.</p>
-            <% } %>
+                <h3>Top <%= categoryLabel %> Games on Dora Dora Game</h3>
+                <% if (categoryGames.length) { %>
+                    <ul class="seo-game-links">
+                        <% categoryGames.forEach(function(item) { %>
+                            <li><a href="<%= item.pagelink.replace(/ /g,'_') %>">
+                                    <%= item.name %>
+                                </a></li>
+                            <% }); %>
+                    </ul>
+                    <% } else { %>
+                        <p>No games are available in this category right now. Please check back soon.</p>
+                        <% } %>
 
-            <h3>Explore More Categories</h3>
-            <p class="seo-tags">
-                <% categories.forEach(function(item) { %>
-                    <a class="seo-tag-link" href="/category/<%= encodeURIComponent(item.category) %>"><%= item.category_name %></a>
-                <% }); %>
-            </p>
+                            <h3>Explore More Categories</h3>
+                            <p class="seo-tags">
+                                <% categories.forEach(function(item) { %>
+                                    <a class="seo-tag-link" href="/category/<%= encodeURIComponent(item.category) %>">
+                                        <%= item.category_name %>
+                                    </a>
+                                    <% }); %>
+                            </p>
 
-            <h3><%= categoryLabel %> Games FAQ</h3>
-            <div class="home-faq-panel">
-                <details class="home-faq-item">
-                    <summary>Are all <%= categoryLabel %> games free to play?</summary>
-                    <div class="home-faq-answer">
-                        <p>Yes. You can play all listed games in this category for free in your browser.</p>
-                    </div>
-                </details>
-                <details class="home-faq-item">
-                    <summary>Can I play <%= categoryLabel %> games on mobile?</summary>
-                    <div class="home-faq-answer">
-                        <p>Yes. Most games are optimized for Android and iOS devices as well as desktop.</p>
-                    </div>
-                </details>
-                <details class="home-faq-item">
-                    <summary>How do I find more games like these?</summary>
-                    <div class="home-faq-answer">
-                        <p>Use the search bar, browse more categories, or open any game page to see similar game links.</p>
-                    </div>
-                </details>
-            </div>
-        <% } else { %>
-            <h2>Welcome to Dora Dora Game</h2>
-            <p>Welcome to Dora Dora Game, your online destination for fast, fun, and free browser games. Inspired by smooth,
-                player-first platforms, our mission is simple: bring you top online games that you can play instantly with no
-                downloads, signups, or installation.</p>
-            <p>Whether you want to relax with puzzle games, speed through racing challenges, or compete in action games,
-                Dora Dora Game delivers entertainment for every age group. With a growing game library and mobile-friendly
-                design, you can play anytime, anywhere.</p>
+                            <h3>
+                                <%= categoryLabel %> Games FAQ
+                            </h3>
+                            <div class="home-faq-panel">
+                                <details class="home-faq-item">
+                                    <summary>Are all <%= categoryLabel %> games free to play?</summary>
+                                    <div class="home-faq-answer">
+                                        <p>Yes. You can play all listed games in this category for free in your browser.
+                                        </p>
+                                    </div>
+                                </details>
+                                <details class="home-faq-item">
+                                    <summary>Can I play <%= categoryLabel %> games on mobile?</summary>
+                                    <div class="home-faq-answer">
+                                        <p>Yes. Most games are optimized for Android and iOS devices as well as desktop.
+                                        </p>
+                                    </div>
+                                </details>
+                                <details class="home-faq-item">
+                                    <summary>How do I find more games like these?</summary>
+                                    <div class="home-faq-answer">
+                                        <p>Use the search bar, browse more categories, or open any game page to see
+                                            similar game links.</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <% } else { %>
+                                <h2>Welcome to Dora Dora Game</h2>
+                                <p>Welcome to Dora Dora Game, your online destination for fast, fun, and free browser
+                                    games. Inspired by smooth,
+                                    player-first platforms, our mission is simple: bring you top online games that you
+                                    can play instantly with no
+                                    downloads, signups, or installation.</p>
+                                <p>Whether you want to relax with puzzle games, speed through racing challenges, or
+                                    compete in action games,
+                                    Dora Dora Game delivers entertainment for every age group. With a growing game
+                                    library and mobile-friendly
+                                    design, you can play anytime, anywhere.</p>
 
-            <details class="home-readmore">
-                <summary class="home-readmore-btn">
-                    <span class="home-readmore__label-open">Read more</span>
-                    <span class="home-readmore__label-close">Read less</span>
-                </summary>
-                <div class="home-readmore-content">
-                    <h3>Why Play on Dora Dora Game?</h3>
-                    <ol class="home-about-list">
-                        <li>
-                            <strong>Huge Collection of Free Online Games</strong>
-                            <p>Our library includes hundreds of engaging games across major genres. From action shooters to
-                                family-friendly picks, Dora Dora Game is built as a one-stop hub for free online entertainment.</p>
-                        </li>
-                        <li>
-                            <strong>Instant Play, No Downloads Needed</strong>
-                            <p>All games run directly in your browser. No apps, no updates, and no waiting. Just click and play
-                                during a quick break or a longer gaming session.</p>
-                        </li>
-                        <li>
-                            <strong>Safe and Family-Friendly</strong>
-                            <p>We keep the platform clean, secure, and enjoyable for all ages so parents can feel confident when
-                                younger players explore games.</p>
-                        </li>
-                        <li>
-                            <strong>Mobile-Friendly Gaming</strong>
-                            <p>Games are optimized for desktop, tablet, and mobile, so performance stays smooth on Android, iOS,
-                                and PC.</p>
-                        </li>
-                        <li>
-                            <strong>Fast Loading and Smooth Performance</strong>
-                            <p>Our site architecture is designed for speed, helping games load quickly and run steadily, including
-                                on older devices.</p>
-                        </li>
-                    </ol>
+                                <details class="home-readmore">
+                                    <summary class="home-readmore-btn">
+                                        <span class="home-readmore__label-open">Read more</span>
+                                        <span class="home-readmore__label-close">Read less</span>
+                                    </summary>
+                                    <div class="home-readmore-content">
+                                        <h3>Why Play on Dora Dora Game?</h3>
+                                        <ol class="home-about-list">
+                                            <li>
+                                                <strong>Huge Collection of Free Online Games</strong>
+                                                <p>Our library includes hundreds of engaging games across major genres.
+                                                    From action shooters to
+                                                    family-friendly picks, Dora Dora Game is built as a one-stop hub for
+                                                    free online entertainment.</p>
+                                            </li>
+                                            <li>
+                                                <strong>Instant Play, No Downloads Needed</strong>
+                                                <p>All games run directly in your browser. No apps, no updates, and no
+                                                    waiting. Just click and play
+                                                    during a quick break or a longer gaming session.</p>
+                                            </li>
+                                            <li>
+                                                <strong>Safe and Family-Friendly</strong>
+                                                <p>We keep the platform clean, secure, and enjoyable for all ages so
+                                                    parents can feel confident when
+                                                    younger players explore games.</p>
+                                            </li>
+                                            <li>
+                                                <strong>Mobile-Friendly Gaming</strong>
+                                                <p>Games are optimized for desktop, tablet, and mobile, so performance
+                                                    stays smooth on Android, iOS,
+                                                    and PC.</p>
+                                            </li>
+                                            <li>
+                                                <strong>Fast Loading and Smooth Performance</strong>
+                                                <p>Our site architecture is designed for speed, helping games load
+                                                    quickly and run steadily, including
+                                                    on older devices.</p>
+                                            </li>
+                                        </ol>
 
-                    <h3>Explore Game Categories on Dora Dora Game</h3>
-                    <p>Browse the main categories below:</p>
-                    <div class="home-about-category-grid">
-                        <a href="/category/action-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Action Games</span>
-                            <span>Fast-paced battles, missions, survival challenges, and nonstop combat gameplay.</span>
-                        </a>
-                        <a href="/category/puzzle-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Puzzle and Brain Games</span>
-                            <span>Logic challenges, matching games, and brain teasers for focused, relaxing play.</span>
-                        </a>
-                        <a href="/category/racing-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Racing Games</span>
-                            <span>High-speed tracks, drifting challenges, and competitive race gameplay.</span>
-                        </a>
-                        <a href="/category/sports-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Sports Games</span>
-                            <span>Football, basketball, tennis, cricket, and other interactive sports titles.</span>
-                        </a>
-                        <a href="/category/arcade-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Arcade and Classic Games</span>
-                            <span>Simple controls, quick sessions, and classic arcade-style fun.</span>
-                        </a>
-                        <a href="/category/adventure-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Adventure Games</span>
-                            <span>Explore worlds, complete quests, and enjoy story-driven gameplay.</span>
-                        </a>
-                        <a href="/category/multiplayer-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Multiplayer Games</span>
-                            <span>Team up with friends or challenge players worldwide in live matches.</span>
-                        </a>
-                        <a href="/category/kids-games" class="home-about-category-card">
-                            <span class="home-about-category-title">Kids Games</span>
-                            <span>Simple, colorful, age-friendly games with easy controls for younger players.</span>
-                        </a>
-                    </div>
+                                        <h3>Explore Game Categories on Dora Dora Game</h3>
+                                        <p>Browse the main categories below:</p>
+                                        <div class="home-about-category-grid">
+                                            <a href="/category/action-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Action Games</span>
+                                                <span>Fast-paced battles, missions, survival challenges, and nonstop
+                                                    combat gameplay.</span>
+                                            </a>
+                                            <a href="/category/puzzle-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Puzzle and Brain Games</span>
+                                                <span>Logic challenges, matching games, and brain teasers for focused,
+                                                    relaxing play.</span>
+                                            </a>
+                                            <a href="/category/racing-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Racing Games</span>
+                                                <span>High-speed tracks, drifting challenges, and competitive race
+                                                    gameplay.</span>
+                                            </a>
+                                            <a href="/category/sports-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Sports Games</span>
+                                                <span>Football, basketball, tennis, cricket, and other interactive
+                                                    sports titles.</span>
+                                            </a>
+                                            <a href="/category/arcade-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Arcade and Classic Games</span>
+                                                <span>Simple controls, quick sessions, and classic arcade-style
+                                                    fun.</span>
+                                            </a>
+                                            <a href="/category/adventure-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Adventure Games</span>
+                                                <span>Explore worlds, complete quests, and enjoy story-driven
+                                                    gameplay.</span>
+                                            </a>
+                                            <a href="/category/multiplayer-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Multiplayer Games</span>
+                                                <span>Team up with friends or challenge players worldwide in live
+                                                    matches.</span>
+                                            </a>
+                                            <a href="/category/kids-games" class="home-about-category-card">
+                                                <span class="home-about-category-title">Kids Games</span>
+                                                <span>Simple, colorful, age-friendly games with easy controls for
+                                                    younger players.</span>
+                                            </a>
+                                        </div>
 
-                    <h3>New Games Added Every Week</h3>
-                    <p>We publish fresh content weekly, including trending releases and exciting new titles. Visit the
-                        <a href="/new-games">New Games</a> section to check the latest additions.</p>
+                                        <h3>New Games Added Every Week</h3>
+                                        <p>We publish fresh content weekly, including trending releases and exciting new
+                                            titles. Visit the
+                                            <a href="/new-games">New Games</a> section to check the latest additions.
+                                        </p>
 
-                    <h3>Trending Games Section</h3>
-                    <p>Not sure what to play next? Open <a href="/trending-games">Trending Games</a> to see what players are enjoying
-                        right now, selected from popularity and community interest.</p>
+                                        <h3>Trending Games Section</h3>
+                                        <p>Not sure what to play next? Open <a href="/trending-games">Trending Games</a>
+                                            to see what players are enjoying
+                                            right now, selected from popularity and community interest.</p>
 
-                    <h3>Easy Navigation and Player-Friendly Layout</h3>
-                    <p>Dora Dora Game is built for simple navigation. Featured games, top categories, and recommended picks are easy
-                        to access from the homepage, and search helps you find games instantly by name or keyword.</p>
+                                        <h3>Easy Navigation and Player-Friendly Layout</h3>
+                                        <p>Dora Dora Game is built for simple navigation. Featured games, top
+                                            categories, and recommended picks are easy
+                                            to access from the homepage, and search helps you find games instantly by
+                                            name or keyword.</p>
 
-                    <h3>Our Mission at Dora Dora Game</h3>
-                    <p>Our mission is to make fun accessible to everyone. Games should be easy to find, easy to play, and free for
-                        all players. As we grow, we continue improving performance, design quality, and genre variety.</p>
+                                        <h3>Our Mission at Dora Dora Game</h3>
+                                        <p>Our mission is to make fun accessible to everyone. Games should be easy to
+                                            find, easy to play, and free for
+                                            all players. As we grow, we continue improving performance, design quality,
+                                            and genre variety.</p>
 
-                    <h3>Start Playing Now</h3>
-                    <p>Explore categories, pick a game, and play instantly. No downloads, no limits, just gaming fun.</p>
-                    <p>Dora Dora Game is here to deliver endless entertainment anytime, anywhere.</p>
+                                        <h3>Start Playing Now</h3>
+                                        <p>Explore categories, pick a game, and play instantly. No downloads, no limits,
+                                            just gaming fun.</p>
+                                        <p>Dora Dora Game is here to deliver endless entertainment anytime, anywhere.
+                                        </p>
 
-                    <h3>People also ask</h3>
-                    <div class="home-faq-panel">
-                        <details class="home-faq-item">
-                            <summary>What is Dora Dora Game?</summary>
-                            <div class="home-faq-answer">
-                                <p>Dora Dora Game is an online gaming platform where you can play hundreds of free browser-based
-                                    games instantly. No downloads, apps, or signups are required. Simply click a game and start
-                                    playing on any device.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>Are the games on Dora Dora Game free to play?</summary>
-                            <div class="home-faq-answer">
-                                <p>Yes. Every game on Dora Dora Game is completely free. You can play as many games as you want
-                                    without paying anything or creating an account.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>Do I need to download or install anything?</summary>
-                            <div class="home-faq-answer">
-                                <p>No. All games run directly in your browser. There are no downloads, installations, or updates
-                                    needed. Just open a game and start playing instantly.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>Is Dora Dora Game safe for kids?</summary>
-                            <div class="home-faq-answer">
-                                <p>Yes. We keep the platform clean, safe, and family-friendly. Parents can allow children to play
-                                    freely, especially in the Kids Games category with age-appropriate titles.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>What devices can I use to play games?</summary>
-                            <div class="home-faq-answer">
-                                <p>Dora Dora Game works on desktop computers, laptops, tablets, and smartphones (Android and iOS).
-                                    The website is optimized for all screen sizes.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>Do you add new games regularly?</summary>
-                            <div class="home-faq-answer">
-                                <p>Yes. The game library is updated weekly. You can visit the <a href="/new-games">New Games</a>
-                                    page to discover the latest titles.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>What types of games can I find here?</summary>
-                            <div class="home-faq-answer">
-                                <p>We offer action, puzzle, racing, sports, adventure, arcade, multiplayer, and kids games. You
-                                    can explore all categories directly from the homepage.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>How do I find a specific game?</summary>
-                            <div class="home-faq-answer">
-                                <p>Use the search bar at the top of the website to find games by title or keyword. You can also
-                                    browse categories if you want to discover new options.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>Do I need an account to save progress?</summary>
-                            <div class="home-faq-answer">
-                                <p>Most games save progress automatically in your browser. You do not need an account, though some
-                                    games may use cookies to store local game data.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>What should I do if a game is not loading?</summary>
-                            <div class="home-faq-answer">
-                                <p>If a game does not load, refresh the page, try another browser, clear browser cache, and check
-                                    your internet connection. If the issue continues, contact support.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>Can I suggest a game to add to Dora Dora Game?</summary>
-                            <div class="home-faq-answer">
-                                <p>Yes. We welcome player suggestions. Use the contact or support page to submit recommendations.</p>
-                            </div>
-                        </details>
-                        <details class="home-faq-item">
-                            <summary>Is Dora Dora Game free to use forever?</summary>
-                            <div class="home-faq-answer">
-                                <p>Yes. Dora Dora Game is and will remain free to use. Our goal is to provide unlimited online
-                                    gaming access for everyone without subscription fees.</p>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-            </details>
-        <% } %>
+                                        <h3>People also ask</h3>
+                                        <div class="home-faq-panel">
+                                            <details class="home-faq-item">
+                                                <summary>What is Dora Dora Game?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Dora Dora Game is an online gaming platform where you can play
+                                                        hundreds of free browser-based
+                                                        games instantly. No downloads, apps, or signups are required.
+                                                        Simply click a game and start
+                                                        playing on any device.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>Are the games on Dora Dora Game free to play?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Yes. Every game on Dora Dora Game is completely free. You can
+                                                        play as many games as you want
+                                                        without paying anything or creating an account.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>Do I need to download or install anything?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>No. All games run directly in your browser. There are no
+                                                        downloads, installations, or updates
+                                                        needed. Just open a game and start playing instantly.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>Is Dora Dora Game safe for kids?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Yes. We keep the platform clean, safe, and family-friendly.
+                                                        Parents can allow children to play
+                                                        freely, especially in the Kids Games category with
+                                                        age-appropriate titles.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>What devices can I use to play games?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Dora Dora Game works on desktop computers, laptops, tablets, and
+                                                        smartphones (Android and iOS).
+                                                        The website is optimized for all screen sizes.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>Do you add new games regularly?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Yes. The game library is updated weekly. You can visit the <a
+                                                            href="/new-games">New Games</a>
+                                                        page to discover the latest titles.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>What types of games can I find here?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>We offer action, puzzle, racing, sports, adventure, arcade,
+                                                        multiplayer, and kids games. You
+                                                        can explore all categories directly from the homepage.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>How do I find a specific game?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Use the search bar at the top of the website to find games by
+                                                        title or keyword. You can also
+                                                        browse categories if you want to discover new options.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>Do I need an account to save progress?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Most games save progress automatically in your browser. You do
+                                                        not need an account, though some
+                                                        games may use cookies to store local game data.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>What should I do if a game is not loading?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>If a game does not load, refresh the page, try another browser,
+                                                        clear browser cache, and check
+                                                        your internet connection. If the issue continues, contact
+                                                        support.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>Can I suggest a game to add to Dora Dora Game?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Yes. We welcome player suggestions. Use the contact or support
+                                                        page to submit recommendations.</p>
+                                                </div>
+                                            </details>
+                                            <details class="home-faq-item">
+                                                <summary>Is Dora Dora Game free to use forever?</summary>
+                                                <div class="home-faq-answer">
+                                                    <p>Yes. Dora Dora Game is and will remain free to use. Our goal is
+                                                        to provide unlimited online
+                                                        gaming access for everyone without subscription fees.</p>
+                                                </div>
+                                            </details>
+                                        </div>
+                                    </div>
+                                </details>
+                                <% } %>
     </article>
 
     <%- include('partials/footer') %>
