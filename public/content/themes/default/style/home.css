@@ -971,8 +971,8 @@ body.page-game .sidebar-toggle {
 }
 
 .game-bottom-grid {
-  grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
-  grid-auto-rows: 58px;
+  grid-template-columns: repeat(auto-fill, minmax(98px, 1fr));
+  grid-auto-rows: 98px;
   grid-auto-flow: row dense;
   gap: 8px;
 }
@@ -982,7 +982,7 @@ body.page-game .sidebar-toggle {
 }
 
 .game-bottom-card .home-game-card-title {
-  font-size: 10px;
+  font-size: 11px;
   padding: 6px;
 }
 
@@ -1107,8 +1107,8 @@ body.page-game .sidebar-toggle {
   }
 
   .game-bottom-grid {
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-    grid-auto-rows: 64px;
+    grid-template-columns: repeat(auto-fill, minmax(98px, 1fr));
+    grid-auto-rows: 98px;
   }
 }
 
@@ -1146,8 +1146,8 @@ body.page-game .sidebar-toggle {
   }
 
   .game-bottom-grid {
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-    grid-auto-rows: 70px;
+    grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+    grid-auto-rows: 82px;
   }
 
   .player-stage.game-container {
@@ -1235,6 +1235,370 @@ body.page-game .sidebar-toggle {
   color: var(--ui-text-muted);
 }
 
+.home-about {
+  padding: clamp(14px, 2vw, 24px);
+}
+
+.seo-content {
+  padding: clamp(14px, 2vw, 24px);
+}
+
+.seo-title {
+  margin: 0 0 10px;
+  color: var(--ui-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: clamp(24px, 2.7vw, 32px);
+  line-height: 1.15;
+}
+
+.seo-short {
+  margin-bottom: 12px;
+  color: var(--ui-text-muted);
+  line-height: 1.72;
+}
+
+.seo-list {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  color: var(--ui-text-muted);
+}
+
+.seo-tags {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.seo-tag-link {
+  border-radius: 999px;
+  border: 1px solid rgba(144, 209, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ui-text);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 7px 11px;
+}
+
+.seo-tag-link:hover {
+  text-decoration: none;
+  border-color: rgba(130, 205, 255, 0.64);
+}
+
+.seo-game-links {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 6px 16px;
+}
+
+.seo-game-links a {
+  color: #8fcdff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.seo-game-links a:hover {
+  text-decoration: underline;
+}
+
+.home-about h2,
+.home-about h3 {
+  color: var(--ui-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.home-about h2 {
+  margin-top: 0;
+}
+
+.home-about h3 {
+  margin: 20px 0 8px;
+  font-size: clamp(18px, 2vw, 22px);
+}
+
+.home-about p {
+  margin-bottom: 10px;
+}
+
+.home-readmore {
+  margin-top: 8px;
+}
+
+.home-readmore[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-readmore summary {
+  list-style: none;
+}
+
+.home-readmore summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-readmore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(141, 208, 255, 0.34);
+  background: linear-gradient(145deg, rgba(17, 31, 56, 0.9), rgba(27, 45, 77, 0.88));
+  color: var(--ui-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 9px 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.home-readmore-btn::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.18s ease;
+}
+
+.home-readmore__label-close {
+  display: none;
+}
+
+.home-readmore[open] .home-readmore-btn::after {
+  transform: rotate(-135deg) translate(-1px, -1px);
+}
+
+.home-readmore[open] .home-readmore__label-open {
+  display: none;
+}
+
+.home-readmore[open] .home-readmore__label-close {
+  display: inline;
+}
+
+.home-readmore-content {
+  margin-top: 12px;
+}
+
+.home-readmore[open] .home-readmore-btn {
+  order: 2;
+  margin-top: 12px;
+  width: fit-content;
+}
+
+.home-readmore[open] .home-readmore-content {
+  order: 1;
+  margin-top: 0;
+}
+
+.home-about a {
+  color: #8fcdff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-about a:hover {
+  text-decoration: underline;
+}
+
+:root[data-theme="light"] .home-about a {
+  color: #2e4f86;
+}
+
+:root[data-theme="light"] .seo-tag-link {
+  border-color: rgba(23, 43, 73, 0.16);
+  background: rgba(255, 255, 255, 0.95);
+  color: #2f425f;
+}
+
+:root[data-theme="light"] .seo-game-links a {
+  color: #2e4f86;
+}
+
+:root[data-theme="light"] .home-readmore-btn {
+  border-color: rgba(23, 43, 73, 0.2);
+  background: linear-gradient(145deg, #ffffff, #f3f7fc);
+  color: #2f425f;
+}
+
+.home-about-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.home-about-list li {
+  color: var(--ui-text);
+}
+
+.home-about-list strong {
+  color: var(--ui-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.home-about-list p {
+  margin: 4px 0 0;
+}
+
+.home-about-category-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.home-about-category-card {
+  border-radius: 14px;
+  border: 1px solid rgba(146, 210, 255, 0.28);
+  background: linear-gradient(145deg, rgba(17, 30, 54, 0.88), rgba(24, 40, 70, 0.84));
+  padding: 12px;
+  display: grid;
+  gap: 6px;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(5, 14, 31, 0.3);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.home-about-category-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(130, 205, 255, 0.65);
+  text-decoration: none;
+}
+
+.home-about-category-card span {
+  color: var(--ui-text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.home-about-category-card .home-about-category-title {
+  color: var(--ui-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+:root[data-theme="light"] .home-about-category-card {
+  border-color: rgba(23, 43, 73, 0.14);
+  background: linear-gradient(145deg, #ffffff, #f3f7fc);
+  box-shadow: 0 7px 16px rgba(28, 49, 80, 0.08);
+}
+
+.home-faq-panel {
+  margin-top: 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(146, 210, 255, 0.24);
+  background: linear-gradient(145deg, rgba(12, 22, 41, 0.9), rgba(17, 31, 56, 0.88));
+  box-shadow: 0 12px 26px rgba(5, 14, 31, 0.3);
+  overflow: hidden;
+}
+
+.home-faq-item {
+  border-bottom: 1px solid rgba(146, 210, 255, 0.18);
+}
+
+.home-faq-item:last-child {
+  border-bottom: 0;
+}
+
+.home-faq-item summary {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 16px 64px 16px 14px;
+  color: var(--ui-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.home-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-faq-item summary::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(146, 210, 255, 0.32);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-50%);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.home-faq-item summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid rgba(236, 245, 255, 0.9);
+  border-bottom: 2px solid rgba(236, 245, 255, 0.9);
+  transform: translateY(-62%) rotate(45deg);
+  transition: transform 0.18s ease;
+}
+
+.home-faq-item summary:hover::before {
+  border-color: rgba(130, 205, 255, 0.64);
+}
+
+.home-faq-item[open] summary::before {
+  border-color: rgba(130, 205, 255, 0.64);
+  background: rgba(128, 206, 255, 0.1);
+}
+
+.home-faq-item[open] summary::after {
+  transform: translateY(-38%) rotate(-135deg);
+}
+
+.home-faq-answer {
+  padding: 0 14px 14px;
+}
+
+.home-faq-answer p {
+  margin: 0;
+  color: var(--ui-text-muted);
+  line-height: 1.7;
+}
+
+:root[data-theme="light"] .home-faq-panel {
+  border-color: rgba(23, 43, 73, 0.14);
+  background: linear-gradient(145deg, #ffffff, #f3f7fc);
+  box-shadow: 0 12px 24px rgba(28, 49, 80, 0.08);
+}
+
+:root[data-theme="light"] .home-faq-item {
+  border-bottom-color: rgba(23, 43, 73, 0.12);
+}
+
+:root[data-theme="light"] .home-faq-item summary::before {
+  border-color: rgba(23, 43, 73, 0.18);
+  background: rgba(23, 43, 73, 0.04);
+}
+
+:root[data-theme="light"] .home-faq-item summary::after {
+  border-right-color: #2f425f;
+  border-bottom-color: #2f425f;
+}
+
 @media (max-width: 1080px) {
   .app-shell {
     grid-template-columns: minmax(0, 1fr);
@@ -1319,6 +1683,54 @@ body.page-game .sidebar-toggle {
 
   .home-info-card h2 {
     font-size: 20px;
+  }
+
+  .home-about {
+    padding: 12px;
+  }
+
+  .home-about h3 {
+    font-size: 18px;
+  }
+
+  .seo-content {
+    padding: 12px;
+  }
+
+  .seo-title {
+    font-size: 24px;
+  }
+
+  .seo-game-links {
+    grid-template-columns: 1fr;
+  }
+
+  .home-readmore-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .home-about-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-faq-item summary {
+    padding: 13px 56px 13px 12px;
+    font-size: 16px;
+  }
+
+  .home-faq-item summary::before {
+    right: 12px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .home-faq-item summary::after {
+    right: 23px;
+  }
+
+  .home-faq-answer {
+    padding: 0 12px 12px;
   }
 
   .app-sidebar__stats {

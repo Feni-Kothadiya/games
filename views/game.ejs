@@ -140,9 +140,87 @@
         </div>
     </div>
 
-    <article class="bottom_info container home-info-card">
-        <h2><%= game.name %></h2>
-        <p><%= game.desc %></p>
+    <article class="bottom_info container home-info-card seo-content">
+        <%
+            var cleanDesc = (game && game.desc ? game.desc : '').replace(/\s+/g, ' ').trim();
+            var descWords = cleanDesc ? cleanDesc.split(' ') : [];
+            var shortDescription = descWords.slice(0, 75).join(' ');
+            if (descWords.length > 75) { shortDescription += '...'; }
+            var categorySlug = game && game.category ? game.category : '';
+            var categoryLabel = categorySlug
+                ? categorySlug.replace(/-/g, ' ').replace(/\b\w/g, function(ch) { return ch.toUpperCase(); })
+                : 'Arcade';
+            var categoryHref = categorySlug ? '/category/' + encodeURIComponent(categorySlug) : '/';
+            var similarGames = relatedGames.filter(function(item) {
+                return item && item.category === game.category;
+            }).slice(0, 6);
+            if (!similarGames.length) { similarGames = relatedGames.slice(0, 6); }
+            var extraCategoryTags = Array.isArray(categories)
+                ? categories.filter(function(item) { return item && item.category !== game.category; }).slice(0, 4)
+                : [];
+        %>
+        <h1 class="seo-title"><%= game.name %></h1>
+        <p class="seo-short"><%= shortDescription || 'Play instantly in your browser with no download or installation required.' %></p>
+
+        <h3>How to Play</h3>
+        <ul class="seo-list">
+            <li>Press Play Game to launch <strong><%= game.name %></strong> instantly in your browser.</li>
+            <li>Follow the in-game objective and complete each round by improving timing, movement, and score.</li>
+            <li>Replay levels and challenges to improve performance and unlock better runs.</li>
+        </ul>
+
+        <h3>Controls</h3>
+        <ul class="seo-list">
+            <li>Desktop: Use keyboard and mouse based on on-screen prompts.</li>
+            <li>Mobile: Use touch controls and gestures provided by the game interface.</li>
+            <li>If controls do not respond, refresh the page and relaunch the game.</li>
+        </ul>
+
+        <h3>Category Tags</h3>
+        <p class="seo-tags">
+            <a class="seo-tag-link" href="<%= categoryHref %>"><%= categoryLabel %> Games</a>
+            <% extraCategoryTags.forEach(function(item) { %>
+                <a class="seo-tag-link" href="/category/<%= encodeURIComponent(item.category) %>"><%= item.category_name %></a>
+            <% }); %>
+        </p>
+
+        <h3>Why Play This Game?</h3>
+        <p><%= game.name %> offers fast, accessible gameplay with smooth browser performance and no installation steps.
+            It is easy to start, rewarding to replay, and ideal for short gaming sessions on desktop or mobile whenever
+            you want instant entertainment.</p>
+
+        <h3>Similar Games</h3>
+        <% if (similarGames.length) { %>
+            <ul class="seo-game-links">
+                <% similarGames.forEach(function(item) { %>
+                    <li><a href="<%= item.pagelink.replace(/ /g,'_') %>"><%= item.name %></a></li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Explore more titles from the <a href="/">full games collection</a>.</p>
+        <% } %>
+
+        <h3>FAQ</h3>
+        <div class="home-faq-panel">
+            <details class="home-faq-item">
+                <summary>Can I play <%= game.name %> for free?</summary>
+                <div class="home-faq-answer">
+                    <p>Yes. <%= game.name %> is free to play directly in your browser.</p>
+                </div>
+            </details>
+            <details class="home-faq-item">
+                <summary>Do I need to install anything to play?</summary>
+                <div class="home-faq-answer">
+                    <p>No installation is required. Click Play Game and start instantly.</p>
+                </div>
+            </details>
+            <details class="home-faq-item">
+                <summary>Where can I find more <%= categoryLabel %> games?</summary>
+                <div class="home-faq-answer">
+                    <p>Open the <a href="<%= categoryHref %>"><%= categoryLabel %> category page</a> to discover similar titles.</p>
+                </div>
+            </details>
+        </div>
     </article>
 
     <%- include('partials/footer') %>
