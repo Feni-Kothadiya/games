@@ -699,7 +699,7 @@ body.page-game .sidebar-toggle {
   display: grid;
   width: min(1520px, 100%);
   margin: 0 auto;
-  grid-template-columns: 206px minmax(0, 1fr) 206px;
+  grid-template-columns: 236px minmax(0, 1fr) 236px;
   gap: 14px;
   align-items: start;
 }
@@ -819,8 +819,8 @@ body.page-game .sidebar-toggle {
 }
 
 .game-player-stage.player-stage.game-container {
-  width: 100%;
-  margin: 0;
+  width: min(100%, 820px);
+  margin: 0 auto;
 }
 
 .game-player-stage .game-iframe-container {
@@ -1049,7 +1049,7 @@ body.page-game .sidebar-toggle {
   position: relative;
   grid-row: auto;
   grid-column: auto;
-  width: min(100%, 920px);
+  width: min(100%, 820px);
   margin: 0 auto;
 }
 
@@ -1092,18 +1092,19 @@ body.page-game .sidebar-toggle {
 
 @media (max-width: 1280px) {
   .game-arcade-layout {
-    grid-template-columns: 168px minmax(0, 1fr) 168px;
+    grid-template-columns: 192px minmax(0, 1fr) 192px;
     gap: 12px;
   }
 
-  .player-stage.game-container {
-    width: min(100%, 820px);
+  .player-stage.game-container,
+  .game-player-stage.player-stage.game-container {
+    width: min(100%, 760px);
   }
 }
 
 @media (max-width: 1120px) {
   .game-arcade-layout {
-    grid-template-columns: 138px minmax(0, 1fr) 138px;
+    grid-template-columns: 164px minmax(0, 1fr) 164px;
   }
 
   .game-bottom-grid {
@@ -1150,7 +1151,8 @@ body.page-game .sidebar-toggle {
     grid-auto-rows: 82px;
   }
 
-  .player-stage.game-container {
+  .player-stage.game-container,
+  .game-player-stage.player-stage.game-container {
     width: 100%;
   }
 
