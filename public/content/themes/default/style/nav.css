@@ -110,6 +110,9 @@
 }
 
 .nav-bar__logo {
+  display: inline-flex;
+  align-items: center;
+  height: clamp(36px, 4.6vw, 50px);
   color: var(--ui-text);
   text-decoration: none;
 }
@@ -122,11 +125,14 @@
 }
 
 .nav-brand__image {
-  width: clamp(120px, 15vw, 168px);
-  height: clamp(36px, 4.6vw, 50px);
+  width: clamp(120px, 15vw, 168px) !important;
+  height: clamp(36px, 4.6vw, 50px) !important;
+  max-width: none !important;
   border-radius: 10px;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
+  flex: 0 0 auto;
   box-shadow: 0 10px 22px rgba(21, 35, 80, 0.32);
 }
 
@@ -319,8 +325,8 @@
   }
 
   .nav-brand__image {
-    width: 120px;
-    height: 38px;
+    width: 120px !important;
+    height: 38px !important;
   }
 
   .nav-brand__copy {
