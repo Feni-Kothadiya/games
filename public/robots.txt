@@ -15,4 +15,4 @@ User-agent: Twitterbot
 Allow: /
 
 
-Sitemap: https://taptapgames.fun/sitemap.xml
+Sitemap: https://doradoraplay.com/sitemap.xml

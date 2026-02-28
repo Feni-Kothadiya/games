@@ -3,12 +3,12 @@
   "short_name": "tap tapgames",
   "icons": [
     {
-      "src": "images/taptapgames_192.png",
+      "src": "images/dora doragames_192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "images/taptapgames_512.png",
+      "src": "images/dora doragames_512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -16,7 +16,7 @@
   "related_applications": [
     {
       "platform": "webapp",
-      "url": "https://taptapgames.fun/manifest.json"
+      "url": "https://doradoraplay.com/manifest.json"
     }
   ],
   "lang": "en-US",

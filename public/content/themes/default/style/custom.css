@@ -145,7 +145,7 @@
     --pink-6: #ffaec5;
     --pink-7: #ffc2d6;
     --pink-8: #ffc9dd;
-    --taptap-blue: #707af3;
+    --dora dora-blue: #707af3;
     --pure-white: #fff;
     --purple-1: #c977e8;
     --purple-2: #d490f2;
@@ -242,7 +242,7 @@
 }
 
 .back-icon {
-    fill: var(--taptap-blue);
+    fill: var(--dora dora-blue);
     height: 15px;
     margin-left: 6px;
     transform: scaleX(-1);
@@ -1184,7 +1184,7 @@ body.legal-page .legal-content {
 }
 
 .main-search {
-    background-color: var(--taptap-blue);
+    background-color: var(--dora dora-blue);
     bottom: 0;
     box-shadow: var(--shadow-far);
     display: none;
@@ -1380,7 +1380,7 @@ body.legal-page .legal-content {
     display: block;
     padding: 0 8px;
     margin: auto;
-    color: var(--taptap-blue);
+    color: var(--dora dora-blue);
     flex: 1 0 0;
     font-size: 13px;
     letter-spacing: 1px;

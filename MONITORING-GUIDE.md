@@ -92,7 +92,7 @@ npm install -g pm2
 
 Start your app with PM2:
 ```bash
-pm2 start index.js --name taptapgames
+pm2 start index.js --name dora doragames
 ```
 
 Monitor CPU in real-time:

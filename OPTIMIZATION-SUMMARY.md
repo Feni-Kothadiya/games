@@ -127,7 +127,7 @@ app.use('/public', express.static('public', {
 **Before:**
 ```javascript
 mongoose.connect(
-  `mongodb+srv://${DB_USER}:${DB_PASS}@taptapgmes.ytzylbs.mongodb.net/${DB_NAME}`
+  `mongodb+srv://${DB_USER}:${DB_PASS}@dora doragmes.ytzylbs.mongodb.net/${DB_NAME}`
 );
 // Default settings, no optimization
 ```
@@ -135,7 +135,7 @@ mongoose.connect(
 **After:**
 ```javascript
 mongoose.connect(
-  `mongodb+srv://${DB_USER}:${DB_PASS}@taptapgmes.ytzylbs.mongodb.net/${DB_NAME}`,
+  `mongodb+srv://${DB_USER}:${DB_PASS}@dora doragmes.ytzylbs.mongodb.net/${DB_NAME}`,
   {
     maxPoolSize: 10,
     minPoolSize: 2,

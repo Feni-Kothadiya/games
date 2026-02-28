@@ -50,7 +50,7 @@ function initializeIMA() {
 
   var adsRequest = new google.ima.AdsRequest();
   
-  adsRequest.adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/23149964868/Video_tap_tap_01&description_url=http%3A%2F%2Ftaptapgames.fun&tfcd=0&npa=0&sz=320x480%7C400x300%7C480x320%7C640x480%7C768x1024%7C1024x768&ciu_szs=300x250%2C336x280%2C728x90&gdfp_req=1&unviewed_position_start=1&output=vast&env=vp&impl=s&correlator=';
+  adsRequest.adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/23149964868/Video_tap_tap_01&description_url=http%3A%2F%2Fdoradoraplay.com&tfcd=0&npa=0&sz=320x480%7C400x300%7C480x320%7C640x480%7C768x1024%7C1024x768&ciu_szs=300x250%2C336x280%2C728x90&gdfp_req=1&unviewed_position_start=1&output=vast&env=vp&impl=s&correlator=';
 
   // Specify the linear and nonlinear slot sizes. This helps the SDK to
   // select the correct creative if multiple are returned.

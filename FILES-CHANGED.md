@@ -89,7 +89,7 @@ module.exports = {
 
 ### Before:
 ```
-taptapgamesnode-main/
+dora doragamesnode-main/
 ├── config/
 │   └── db/
 │       └── index.js              (Basic connection)
@@ -104,7 +104,7 @@ taptapgamesnode-main/
 
 ### After:
 ```
-taptapgamesnode-main/
+dora doragamesnode-main/
 ├── config/
 │   └── db/
 │       └── index.js              ✅ (Connection pooling added)
