@@ -10,20 +10,6 @@ const { all, findOne, topsix, find } = require("./helpers");
 const { cache } = require("./lib");
 const app = express();
 
-const normalizeSitemapPath = (rawPath) => {
-  if (!rawPath) return "";
-  let pathStr = String(rawPath).trim();
-  if (!pathStr) return "";
-  if (!pathStr.startsWith("/")) {
-    pathStr = "/" + pathStr;
-  }
-  pathStr = pathStr.replace(/%20/gi, " ");
-  pathStr = pathStr.toLowerCase();
-  pathStr = pathStr.replace(/[\s-]+/g, "_");
-  pathStr = pathStr.replace(/_+/g, "_");
-  return pathStr;
-};
-
 const buildSitemapXml = (items, lastmod) => {
   const lines = [];
   lines.push('<?xml version="1.0" encoding="UTF-8"?>');
@@ -81,7 +67,7 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan("short"));
 }
 
-// 4.5 Sitemap - Dynamic, full game list with normalized URLs
+// 4.5 Sitemap - Dynamic, full game list
 app.get("/sitemap.xml", async (req, res) => {
   try {
     const host = req.get("host");
@@ -96,10 +82,11 @@ app.get("/sitemap.xml", async (req, res) => {
         const seen = new Set();
         const items = [];
 
-        const addUrl = (path, changefreq, priority) => {
-          const normalized = normalizeSitemapPath(path);
-          if (!normalized) return;
-          const loc = encodeURI(`${baseUrl}${normalized}`);
+        const addUrl = (pathValue, changefreq, priority) => {
+          if (!pathValue) return;
+          const pathStr = String(pathValue).trim();
+          if (!pathStr) return;
+          const loc = encodeURI(`${baseUrl}${pathStr}`);
           if (seen.has(loc)) return;
           seen.add(loc);
           items.push({ loc, changefreq, priority });
