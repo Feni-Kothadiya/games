@@ -819,13 +819,16 @@ body.page-game .sidebar-toggle {
 }
 
 .game-player-stage.player-stage.game-container {
-  width: min(100%, 820px);
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .game-player-stage .game-iframe-container {
   border-radius: 16px;
-  max-height: 60svh;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 70svh;
 }
 
 .game-player-meta {
@@ -1096,9 +1099,12 @@ body.page-game .sidebar-toggle {
     gap: 12px;
   }
 
-  .player-stage.game-container,
-  .game-player-stage.player-stage.game-container {
+  .player-stage.game-container {
     width: min(100%, 760px);
+  }
+
+  .game-player-stage.player-stage.game-container {
+    width: 100%;
   }
 }
 
@@ -1117,6 +1123,18 @@ body.page-game .sidebar-toggle {
   .game-arcade-layout {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .game-player-shell {
+    order: 1;
+  }
+
+  .game-side-rail--left {
+    order: 2;
+  }
+
+  .game-side-rail--right {
+    order: 3;
   }
 
   .game-side-rail {
@@ -1157,6 +1175,10 @@ body.page-game .sidebar-toggle {
   }
 
   .player-stage .game-iframe-container {
+    max-height: none;
+  }
+
+  .game-player-stage .game-iframe-container {
     max-height: none;
   }
 }
@@ -1737,5 +1759,19 @@ body.page-game .sidebar-toggle {
 
   .app-sidebar__stats {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .game-player-shell {
+    max-width: 100vw;
+  }
+
+  .game-side-rail--right {
+    display: none;
+  }
+
+  .game-side-rail--left {
+    display: none;
   }
 }
