@@ -106,9 +106,9 @@
                 ).toLowerCase().replace(/\s+/g, '-' ); var categoryLabel=(category || categorySlug || 'Games' )
                 .replace(/-/g, ' ' ) .replace(/\b\w/g, function(ch) { return ch.toUpperCase(); }); var
                 categoryGames=Array.isArray(data) ? data.slice(0, 16) : []; %>
-                <h2>
+                <h1 class="seo-title">
                     <%= categoryLabel %> Games
-                </h2>
+                </h1>
                 <p>Play the best <%= categoryLabel %> games online for free with instant browser access, smooth loading,
                         and
                         no download requirements. This category is curated for quick sessions and repeat play across
