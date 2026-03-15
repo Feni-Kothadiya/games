@@ -211,6 +211,20 @@ body.page-game {
   padding: 2px;
 }
 
+.home-categories-rail::-webkit-scrollbar {
+  height: 3px;
+}
+
+.home-categories-rail::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 99px;
+}
+
+.home-categories-rail::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #4dc4ff, #6b7bff);
+  border-radius: 99px;
+}
+
 .home-category-pill {
   flex: 0 0 auto;
   border-radius: 999px;
