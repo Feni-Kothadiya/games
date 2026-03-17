@@ -28,7 +28,7 @@
 <body id="page-top" class="page-game">
     <span class="search-trans-bg"></span>
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BGZ3CVT" height="0" width="0"
+        <iframe src="https://www.googletagmanager.com/ns.html?id=G-XSESV3SD4Z" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>
 
@@ -184,55 +184,52 @@
     </div>
 
     <article class="bottom_info container home-info-card seo-content">
-        <% 
-            var categorySlug = game && game.category ? game.category : ''; 
-            var categoryLabel = categorySlug ? categorySlug.replace(/-/g, ' ').replace(/\b\w/g, function(ch) { return ch.toUpperCase(); }) : 'Arcade'; 
-            var categoryHref = categorySlug ? '/category/' + encodeURIComponent(categorySlug) : '/'; 
-            var similarGames = relatedGames.filter(function(item) { return item && item.category === game.category; }).slice(0, 6); 
-            if (!similarGames.length) { 
-                similarGames = relatedGames.slice(0, 6); 
-            } 
-            var extraCategoryTags = Array.isArray(categories) ? categories.filter(function(item) { return item && item.category !== game.category; }).slice(0, 4) : []; 
-        %>
+        <% var categorySlug=game && game.category ? game.category : '' ; var categoryLabel=categorySlug ?
+            categorySlug.replace(/-/g, ' ' ).replace(/\b\w/g, function(ch) { return ch.toUpperCase(); }) : 'Arcade' ;
+            var categoryHref=categorySlug ? '/category/' + encodeURIComponent(categorySlug) : '/' ; var
+            similarGames=relatedGames.filter(function(item) { return item && item.category===game.category; }).slice(0,
+            6); if (!similarGames.length) { similarGames=relatedGames.slice(0, 6); } var
+            extraCategoryTags=Array.isArray(categories) ? categories.filter(function(item) { return item &&
+            item.category !==game.category; }).slice(0, 4) : []; %>
 
-        <h1 class="seo-title">
-            <%= game.name %>
-        </h1>
+            <h1 class="seo-title">
+                <%= game.name %>
+            </h1>
 
-        <div class="game-description-html">
-            <% if (game && game.desc) { %>
-                <%- game.desc %>
-            <% } else { %>
-                <p class="seo-short">
-                    Play instantly in your browser with no download or installation required.
-                </p>
-            <% } %>
-        </div>
+            <div class="game-description-html">
+                <% if (game && game.desc) { %>
+                    <%- game.desc %>
+                        <% } else { %>
+                            <p class="seo-short">
+                                Play instantly in your browser with no download or installation required.
+                            </p>
+                            <% } %>
+            </div>
 
-        <h3>Category Tags</h3>
-        <p class="seo-tags">
-            <a class="seo-tag-link" href="<%= categoryHref %>">
-                <%= categoryLabel %> Games
-            </a>
-            <% extraCategoryTags.forEach(function(item) { %>
-                <a class="seo-tag-link" href="/category/<%= encodeURIComponent(item.category) %>">
-                    <%= item.category_name %>
+            <h3>Category Tags</h3>
+            <p class="seo-tags">
+                <a class="seo-tag-link" href="<%= categoryHref %>">
+                    <%= categoryLabel %> Games
                 </a>
-            <% }); %>
-        </p>
+                <% extraCategoryTags.forEach(function(item) { %>
+                    <a class="seo-tag-link" href="/category/<%= encodeURIComponent(item.category) %>">
+                        <%= item.category_name %>
+                    </a>
+                    <% }); %>
+            </p>
 
-        <h3>Similar Games</h3>
-        <% if (similarGames.length) { %>
-            <ul class="seo-game-links">
-                <% similarGames.forEach(function(item) { %>
-                    <li><a href="<%= item.pagelink.replace(/ /g,'_') %>">
-                            <%= item.name %>
-                        </a></li>
-                <% }); %>
-            </ul>
-        <% } else { %>
-            <p>Explore more titles from the <a href="/">full games collection</a>.</p>
-        <% } %>
+            <h3>Similar Games</h3>
+            <% if (similarGames.length) { %>
+                <ul class="seo-game-links">
+                    <% similarGames.forEach(function(item) { %>
+                        <li><a href="<%= item.pagelink.replace(/ /g,'_') %>">
+                                <%= item.name %>
+                            </a></li>
+                        <% }); %>
+                </ul>
+                <% } else { %>
+                    <p>Explore more titles from the <a href="/">full games collection</a>.</p>
+                    <% } %>
     </article>
 
     <%- include('partials/footer') %>

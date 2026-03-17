@@ -357,7 +357,7 @@ app.get('/admin/dashboard', (req, res) => {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Performance Dashboard - Tap Tap Games</title>
+      <title>Performance Dashboard - Dora Dora Play</title>
       <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
