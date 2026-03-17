@@ -1,18 +1,1 @@
-User-agent: *
-Disallow: */search?q
-Disallow: */preview/
-Disallow: /cdn-cgi/
-
-User-agent: AdsBot-Google
-User-agent: AdsIdxBot
-User-agent: Google-InspectionTool
-User-agent: facebookexternalhit
-User-agent: Mediapartners-Google
-User-agent: Google-Display-Ads-Bot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-
-Sitemap: https://doradoraplay.com/sitemap.xml
+Sitemap: https://www.doradoraplay.com/sitemap.xml
