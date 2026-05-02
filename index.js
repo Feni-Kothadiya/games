@@ -10,28 +10,6 @@ const { all, findOne, topsix, find } = require("./helpers");
 const { cache } = require("./lib");
 const app = express();
 
-const buildSitemapXml = (items, lastmod) => {
-  const lines = [];
-  lines.push('<?xml version="1.0" encoding="UTF-8"?>');
-  lines.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
-  for (const item of items) {
-    lines.push("  <url>");
-    lines.push(`    <loc>${item.loc}</loc>`);
-    if (lastmod) {
-      lines.push(`    <lastmod>${lastmod}</lastmod>`);
-    }
-    if (item.changefreq) {
-      lines.push(`    <changefreq>${item.changefreq}</changefreq>`);
-    }
-    if (item.priority) {
-      lines.push(`    <priority>${item.priority}</priority>`);
-    }
-    lines.push("  </url>");
-  }
-  lines.push("</urlset>");
-  return lines.join("\n");
-};
-
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
@@ -66,50 +44,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan("short"));
 }
-
-// 4.5 Sitemap - Dynamic, full game list
-app.get("/sitemap.xml", async (req, res) => {
-  try {
-    const host = req.get("host");
-    const baseUrl = `https://${host}`.replace(/\/+$/, "");
-    const lastmod = new Date().toISOString().slice(0, 10);
-    const cacheKey = `sitemap_xml_${host}`;
-
-    const xml = await cache.getOrSet(
-      cacheKey,
-      async () => {
-        const games = await find("games", {}, false);
-        const seen = new Set();
-        const items = [];
-
-        const addUrl = (pathValue, changefreq, priority) => {
-          if (!pathValue) return;
-          const pathStr = String(pathValue).trim();
-          if (!pathStr) return;
-          const loc = encodeURI(`${baseUrl}${pathStr}`);
-          if (seen.has(loc)) return;
-          seen.add(loc);
-          items.push({ loc, changefreq, priority });
-        };
-
-        addUrl("/", "daily", "1.0");
-        for (const game of games) {
-          if (!game || !game.pagelink) continue;
-          addUrl(game.pagelink, "daily", "0.9");
-        }
-
-        return buildSitemapXml(items, lastmod);
-      },
-      3600
-    );
-
-    res.setHeader("Content-Type", "application/xml; charset=utf-8");
-    res.setHeader("Cache-Control", "public, max-age=3600");
-    res.send(xml);
-  } catch (err) {
-    res.status(500).send("Internal Server Error");
-  }
-});
 
 // 5. Static files with proper caching
 const staticOptions = {
