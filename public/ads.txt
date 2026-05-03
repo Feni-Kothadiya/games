@@ -1,3 +1,6 @@
+google.com, pub-8750273064596264, DIRECT, f08c47fec0942fa0
+
+
 #gpx-property-O00GD
 #gpx-last-updated-2024-11-21
 #gpx-reviq
